@@ -1,3 +1,26 @@
+# reference.github.io
+
+Referencias
+
+```bash
+docker pull ruby
+
+docker run --rm -it -p 4000:4000 -v $PWD:/src ruby /bin/bash
+
+cd /src
+gem install bundler jekyll
+bundle install
+bundle exec jekyll serve
+
+
+gem install bundler jekyll
+jekyll new reference
+mv reference/* ./src/
+rm -rf reference/.gitignore
+rmdir reference/
+bundle exec jekyll serve
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/afonsoaugusto/afonsoaugusto.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
