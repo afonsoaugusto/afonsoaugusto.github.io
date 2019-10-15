@@ -5,7 +5,10 @@ Referencias
 ```bash
 docker pull ruby
 
-docker run --rm -it -p 4000:4000 -v $PWD:/src ruby /bin/bash
+docker run --rm -it -p 4000:4000 --host 0.0.0.0 -v $PWD:/src ruby /bin/bash
+
+docker run --name newblog --volume="$PWD:/srv/jekyll" -p 3000:4000 -it jekyll/jekyll jekyll serve --watch --drafts
+
 
 cd /src
 gem install bundler jekyll
