@@ -30,4 +30,4 @@ plainwhite:
   sitemap: true
   disqus_shortname: afonsoaugusto-github-io
   
-  permalink: /title
+  permalink: /:category/:title
