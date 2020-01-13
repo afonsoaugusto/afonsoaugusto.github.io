@@ -1,9 +1,9 @@
-# reference.github.io
+# afonsoaugusto.github.io
 
-Referencias
+## Como executar este projeto localmente
 
 ```bash
-docker run --rm -it --volume="$PWD:/srv/jekyll" -p 3000:4000 -it jekyll/jekyll jekyll serve --watch --drafts
+docker run --rm -it --volume="$PWD:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll s --force_polling --incremental
 ```
 
 ## Jekyll Themes

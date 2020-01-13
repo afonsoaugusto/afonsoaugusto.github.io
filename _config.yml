@@ -19,7 +19,7 @@ plugins:
 
 plainwhite:
   name: Afonso Rodrigues
-  tagline: Site Reliability Engineer
+  tagline: Site Reliability Engineer, DBA
   date_format: "%b %-d, %Y"
 
   social_links:
