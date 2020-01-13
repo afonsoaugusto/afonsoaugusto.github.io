@@ -28,6 +28,6 @@ plainwhite:
     linkedIn: in/afonsoavr # format: locale/username
   
   sitemap: true
-  disqus_shortname: afonsoaugusto-github-io
+  #disqus_shortname: afonsoaugusto-github-io
   
   permalink: /:category/:title
