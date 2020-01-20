@@ -3,7 +3,7 @@ email: afonsoaugustoventura@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Este blog se destina para conter anotações e atalhos de script e dicas.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://afonsoaugusto.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Afonsoavr
 github_username:  afonsoaugusto
 
@@ -20,15 +20,12 @@ plugins:
 
 minima:
   name: Afonso Rodrigues
-  date_format: "%b %-d, %Y"
 
   social_links:
     twitter: Afonsoavr
     github:  afonsoaugusto
     linkedIn: in/afonsoavr # format: locale/username
     instagram: afonsoavr
-    stackoverflow: afonsoavr
-    telegram: afonsoavr
   
 comments:
    provider: disqus    
