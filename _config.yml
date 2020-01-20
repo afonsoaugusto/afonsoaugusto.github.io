@@ -9,25 +9,28 @@ github_username:  afonsoaugusto
 
 # Build settings
 markdown: kramdown
-#theme: plainwhite
-remote_theme: afonsoaugusto/plainwhite-jekyll
+permalink:   /:categories/:title/
+theme: minima
+#remote_theme: afonsoaugusto/plainwhite-jekyll
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-plainwhite:
+minima:
   name: Afonso Rodrigues
-  tagline: SRE | DBA
   date_format: "%b %-d, %Y"
 
   social_links:
     twitter: Afonsoavr
     github:  afonsoaugusto
     linkedIn: in/afonsoavr # format: locale/username
+    instagram: afonsoavr
+    stackoverflow: afonsoavr
+    telegram: afonsoavr
   
-  sitemap: true
-  disqus_shortname: afonsoaugusto-github-io
-  
-  permalink: /:category/:title
+comments:
+   provider: disqus    
+disqus:
+  shortname: afonsoaugusto-github-io
