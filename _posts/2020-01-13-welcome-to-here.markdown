@@ -14,3 +14,7 @@ Quero ter um local onde eu possa deixar uma dica direta, sem muitos floreios.
 A cara deste blog deve mudar, porque a cada post que for escrevendo terei novas ideias para ele.
 
 Obrigado por tudo, e até o proximo post.
+
+{% remote_markdown https://raw.githubusercontent.com/Rolinh/jekyll-remote-markdown/master/README.md %}
+
+
