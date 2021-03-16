@@ -15,6 +15,4 @@ A cara deste blog deve mudar, porque a cada post que for escrevendo terei novas 
 
 Obrigado por tudo, e até o proximo post.
 
-{% remote_markdown https://raw.githubusercontent.com/Rolinh/jekyll-remote-markdown/master/README.md %}
-
-
+{% remote_include https://raw.githubusercontent.com/jekyll/jekyll/master/README.markdown %}

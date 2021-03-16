@@ -19,6 +19,7 @@ group :jekyll_plugins do
   gem "jekyll-redirect-from"
   gem "jekyll-seo-tag"
   gem "jekyll-remote-theme"
+  gem 'jekyll-remote-include'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
