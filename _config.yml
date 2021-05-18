@@ -5,11 +5,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://afonsoaugusto.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Afonsoavr
-github_username:  afonsoaugusto
+github_username: afonsoaugusto
 
 # Build settings
 markdown: kramdown
-permalink:   /:categories/:title/
+permalink: /:categories/:title/
 theme: minima
 #remote_theme: afonsoaugusto/plainwhite-jekyll
 plugins:
@@ -24,11 +24,11 @@ minima:
 
   social_links:
     twitter: Afonsoavr
-    github:  afonsoaugusto
+    github: afonsoaugusto
     linkedIn: in/afonsoavr # format: locale/username
     instagram: afonsoavr
-  
+
 comments:
-   provider: disqus    
+  provider: disqus
 disqus:
   shortname: afonsoaugusto-github-io
