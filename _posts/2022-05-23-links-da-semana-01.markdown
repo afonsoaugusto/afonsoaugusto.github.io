@@ -21,3 +21,7 @@ categories: newsletter
 ## Videos
 
 - [Acelerando desenvolvimento de pipelines de dados no Inter com o DEDE framework - Meetup Engenharia de Dados](https://www.youtube.com/watch?v=wYJZHbbCXMI)
+
+## Produtos
+
+- [soda.io -](https://www.soda.io/)
