@@ -17,6 +17,7 @@ categories: newsletter
 
 - [How is a Data Lakehouse different from a Data Warehouse? - Vini Jaiswal](https://www.linkedin.com/feed/update/urn:li:activity:6927849664817848320/)
 - [Data Observability is paramount to any Modern Data Stack - Marc Lamberti](https://www.linkedin.com/posts/marclamberti_data-observability-dataengineering-activity-6922514285248024576-DOzj?utm_source=linkedin_share&utm_medium=member_desktop_web)
+- [Data Engineer e algumas tarrefas importantes - Rodrigo Santana Ferreira](https://shopee.com.br/Pantufa-pata-de-monstro-Azul-i.280121269.4469273725?xptdk=593935df-3f31-4dcf-a407-ba09fdc7c6c9)
 
 ## Videos
 
@@ -24,4 +25,18 @@ categories: newsletter
 
 ## Produtos
 
-- [soda.io -](https://www.soda.io/)
+- [soda.io - Data Reliability Engineering as Code](https://www.soda.io/)
+
+## Podcast
+
+- [#12 Data Mesh: a última tendência em arquitetura de dados - Data On Air](https://open.spotify.com/episode/4McOEukwiW7QlZgUptuM7g?si=_vKMSRhPRQivTeZR9APhXw&utm_source=whatsapp)
+
+## Ebook
+
+- [Cassandra: The Definitive Guide - 3rd Edition | O'Reilly](https://www.datastax.com/resources/ebook/oreilly-cassandra-the-definitive-guide#download)
+
+## Repositórios
+
+- [Go Concurrency Guide - luk4z7/go-concurrency-guide](https://github.com/luk4z7/go-concurrency-guide)
+- [Terraform State Storage HTTP Backend - tfstate/github-sls-rest-api](https://github.com/tfstate/github-sls-rest-api)
+- [Curso de monitoração com o Prometheus - cirolini/prometheus-curso-monitoring](https://github.com/cirolini/prometheus-curso-monitoring)

@@ -12,4 +12,4 @@ categories: newsletter
 ## Github
 
 - [sqldef - The easiest idempotent MySQL/PostgreSQL/SQLite3/SQL Server schema management by SQL](https://github.com/k0kubun/sqldef)
-  - Esse cara eu achei muito interessante, muito legal o conceito de idepotencia na evolução do schema do seu banco.
+  - Este projeto eu achei muito interessante, muito legal o conceito de idepotencia na evolução do schema do seu banco.
