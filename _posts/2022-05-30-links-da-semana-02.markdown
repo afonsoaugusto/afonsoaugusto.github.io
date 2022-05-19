@@ -8,6 +8,7 @@ categories: newsletter
 ## Links
 
 - [Nginx - Announcing Version 1.0.0 - Nginx Modern Apps Reference Architecture](https://www.nginx.com/blog/announcing-version-1-0-0-nginx-modern-apps-reference-architecture)
+- [Modern Data Platform - How to build one? - Anil Madan](https://www.linkedin.com/pulse/modern-data-platform-how-build-one-anil-madan/)
 
 ## Github
 

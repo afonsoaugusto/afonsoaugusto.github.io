@@ -5,13 +5,16 @@ date: 2022-05-23 12:00:00 +0000
 categories: newsletter
 ---
 
-## Links
+## Artigos
 
-- [Modern Data Platform - How to build one? - Anil Madan](https://www.linkedin.com/pulse/modern-data-platform-how-build-one-anil-madan/)
 - [Cinco de Trino - Starburst](https://www.starburst.io/info/cinco-de-trino/?utm_medium=email&_hsmi=212508739&_hsenc%5Btm_source%5D=hs_email&wchannelid=ak5dhl6ju8)
 - [Como a Loft lida com governança e qualidade na plataforma de dados](https://medium.com/loftbr/como-a-loft-lida-com-governan%C3%A7a-e-qualidade-na-plataforma-de-dados-f20e4f01bfda)
 - [A slice of life: table partitioning in PostgreSQL databases](https://evilmartians.com/chronicles/a-slice-of-life-table-partitioning-in-postgresql-databases)
 - [Data quality with Soda.io at americanas](https://lopesdiego12.medium.com/data-quality-with-soda-io-at-americanas-7d1a0e0a541a)
+- [Data Quality Monitoring is Dead. Say Hello to Full Data Stack Observability](https://www.siffletdata.com/blog/data-quality-monitoring-is-dead-say-hello-to-full-data-stack-observability)
+- [What is a Feature Store?](https://feast.dev/blog/what-is-a-feature-store/)
+- [Unlocking our data with a feature store](https://medium.com/billie-finanzratgeber/unlocking-our-data-with-a-feature-store-402ade0743b)
+- [Lift your MLOps pipeline to the cloud with Feast and Astra DB](https://www.datastax.com/blog/lift-your-mlops-pipeline-to-the-cloud-with-feast-and-astra-db)
 
 ## Posts do linkedin
 
@@ -26,6 +29,7 @@ categories: newsletter
 ## Produtos
 
 - [soda.io - Data Reliability Engineering as Code](https://www.soda.io/)
+- [RLLIB - Scalable, state of the art reinforcement learning](https://www.ray.io/rllib)
 
 ## Podcast
 
@@ -40,3 +44,7 @@ categories: newsletter
 - [Go Concurrency Guide - luk4z7/go-concurrency-guide](https://github.com/luk4z7/go-concurrency-guide)
 - [Terraform State Storage HTTP Backend - tfstate/github-sls-rest-api](https://github.com/tfstate/github-sls-rest-api)
 - [Curso de monitoração com o Prometheus - cirolini/prometheus-curso-monitoring](https://github.com/cirolini/prometheus-curso-monitoring)
+
+## Workshops
+
+- [One Observability Workshop - X-Ray, OpenTelemetry, Prometheus](https://catalog.workshops.aws/observability/en-US/xray/explore-xray)
