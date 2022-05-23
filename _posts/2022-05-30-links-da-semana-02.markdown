@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Links da Semana 02 - 23/05/2022 a 27/05/2022"
-date: 2022-05-30 12:00:00 +0000
+date: 2022-05-30 00:00:00 +0000
 categories: newsletter
 ---
 

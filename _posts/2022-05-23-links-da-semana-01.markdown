@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Links da Semana 01 - 16/05/2022 a 20/05/2022"
-date: 2022-05-23 12:00:00 +0000
+date: 2022-05-23 00:00:00 +0000
 categories: newsletter
 ---
 
@@ -15,6 +15,7 @@ categories: newsletter
 - [What is a Feature Store?](https://feast.dev/blog/what-is-a-feature-store/)
 - [Unlocking our data with a feature store](https://medium.com/billie-finanzratgeber/unlocking-our-data-with-a-feature-store-402ade0743b)
 - [Lift your MLOps pipeline to the cloud with Feast and Astra DB](https://www.datastax.com/blog/lift-your-mlops-pipeline-to-the-cloud-with-feast-and-astra-db)
+- [Build a DataOps platform to break silos between engineers and analysts](https://aws.amazon.com/pt/blogs/big-data/build-a-dataops-platform-to-break-silos-between-engineers-and-analysts/)
 
 ## Posts do linkedin
 
@@ -44,6 +45,7 @@ categories: newsletter
 - [Go Concurrency Guide - luk4z7/go-concurrency-guide](https://github.com/luk4z7/go-concurrency-guide)
 - [Terraform State Storage HTTP Backend - tfstate/github-sls-rest-api](https://github.com/tfstate/github-sls-rest-api)
 - [Curso de monitoração com o Prometheus - cirolini/prometheus-curso-monitoring](https://github.com/cirolini/prometheus-curso-monitoring)
+- [mlflow/mlflow](https://github.com/mlflow/mlflow)
 
 ## Workshops
 
