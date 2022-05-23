@@ -38,7 +38,7 @@ categories: newsletter
 
 ## Ebook
 
-- [Cassandra: The Definitive Guide - 3rd Edition | O'Reilly](https://www.datastax.com/resources/ebook/oreilly-cassandra-the-definitive-guide#download)
+- [Cassandra: The Definitive Guide - 3rd Edition - O'Reilly](https://www.datastax.com/resources/ebook/oreilly-cassandra-the-definitive-guide#download)
 
 ## Repositórios
 
