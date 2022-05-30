@@ -17,7 +17,7 @@ categories: newsletter
 
 - [Você já se deparou com aquele desenvolvedor que sempre escolhe as mesmas tecnologias em todos os system designs? - Douglas Rocha](https://www.linkedin.com/feed/update/urn:li:activity:6935622444896444416/)
 - [My favorite resources to keep improving yourself as a Data Engineer in 2022? - Marcos Ortiz Valmaseda](https://www.linkedin.com/posts/mlortiz_learning-spark-lightning-fast-data-analytics-activity-6933153779814940672-MyL0/?utm_source=linkedin_share&utm_medium=android_app)
-- [Boas práticas SQL - Rodrigo Santana Ferreira](https://www.linkedin.com/posts/rodrigo-santana-ferreira-0ab041128_dataengineering-datascience-sql-activity-6934862163161268224-Kp1E/?utm_source=linkedin_share&utm_medium=android_app)
+- [Boas práticas de SQL - Rodrigo Santana Ferreira](https://www.linkedin.com/posts/rodrigo-santana-ferreira-0ab041128_dataengineering-datascience-sql-activity-6934862163161268224-Kp1E/?utm_source=linkedin_share&utm_medium=android_app)
 - [Now anyone can learn AWS skills and earn **AWS digital badges for FREE!** - Viktoria Semaan](https://www.linkedin.com/posts/semaan_cloudcomputing-aws-awstraining-activity-6935049171401891840-x3Tj/?utm_source=linkedin_share&utm_medium=android_app)
 
 ## Github
@@ -30,7 +30,7 @@ categories: newsletter
 
 - [AWS Cloud Practitioner Essentials (Portuguese - skillbuilder.aws)](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/8287/aws-cloud-practitioner-essentials-portuguese?trk=2f8b0b52-91c9-4796-969e-929f02a41dc5&sc_channel=el&utm_medium=social&utm_source=linktree&utm_campaign=%23bondedaaws%20-%20treinamento%20fundamental%20-%20aws%20cloud%20practitioner%20essentials%20)
 
-## Passagem do Livro [SRE do Google]((https://sre.google/sre-book/table-of-contents/))
+## Passagem do Livro [SRE do Google](https://sre.google/sre-book/table-of-contents/)
 
 - [The Four Golden Signals](https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals)
 
