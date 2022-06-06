@@ -35,8 +35,10 @@ categories: newsletter
 
 ## Produtos
 
-- [Public Cloud Services Comparison - [github ilyas-it83/CloudComparer](https://github.com/ilyas-it83/CloudComparer)](<https://comparecloud.in/>)
-- [cheat.sh - Unified access to the best community driven cheat sheets repositories of the world. - [chubin/cheat.sh](https://github.com/chubin/cheat.sh)](cheat.sh/)
+- [Public Cloud Services Comparison](<https://comparecloud.in/>)
+  - [github ilyas-it83/CloudComparer](https://github.com/ilyas-it83/CloudComparer)
+- [cheat.sh - Unified access to the best community driven cheat sheets repositories of the world](cheat.sh/)
+  - [github chubin/cheat.sh](https://github.com/chubin/cheat.sh)
 - [**Amazon EMR Serverless** Now Generally Available – Run Big Data Applications without Managing Servers](https://aws.amazon.com/pt/blogs/aws/amazon-emr-serverless-now-generally-available-run-big-data-applications-without-managing-servers/)
 - [Google Interview Warmup](https://grow.google/certificates/interview-warmup/?s=08)
 
