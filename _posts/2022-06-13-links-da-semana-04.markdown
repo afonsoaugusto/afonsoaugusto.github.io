@@ -39,6 +39,7 @@ categories: newsletter
 - [UUID package for Go language - satori/go.uuid](https://github.com/satori/go.uuid)
 - [MindsDB ML-SQL Server enables machine learning workflows for the most powerful databases and datawarehouses using SQL - mindsdb/mindsdb](https://github.com/mindsdb/mindsdb)
 - [This is the first Petrobras' repository on GitHub. It supports the 3W project and promotes experimentation of Machine Learning-based approaches and algorithms for specific problems related to undesirable events that occur in offshore oil wells- petrobras/3W](https://github.com/petrobras/3W)
+- [Zinc is a search engine that does full text indexing. It is a lightweight alternative to Elasticsearch and runs using a fraction of the resources - zinclabs/zinc](https://github.com/zinclabs/zinc)
 
 ## Produtos
 
