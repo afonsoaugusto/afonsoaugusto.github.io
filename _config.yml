@@ -25,7 +25,7 @@ minima:
   social_links:
     twitter: Afonsoavr
     github: afonsoaugusto
-    linkedIn: in/afonsoavr # format: locale/username
+    linkedin: in/afonsoavr # format: locale/username
     instagram: afonsoavr
 
 comments:
@@ -33,4 +33,5 @@ comments:
 disqus:
   shortname: afonsoaugusto-github-io
 
-google_analytics: G-8TFSN8203P
+site:
+  google_analytics: G-8TFSN8203P
