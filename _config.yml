@@ -34,6 +34,6 @@ comments:
 disqus:
   shortname: afonsoaugusto-github-io
 
-site:
-  google_analytics: G-8TFSN8203P
+# site:
+#   google_analytics: G-8TFSN8203P
 google_analytics: G-8TFSN8203P
