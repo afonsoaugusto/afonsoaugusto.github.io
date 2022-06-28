@@ -10,7 +10,8 @@ github_username: afonsoaugusto
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
-theme: minima
+# theme: minima
+remote_theme: jekyll/minima
 #remote_theme: afonsoaugusto/plainwhite-jekyll
 plugins:
   - jekyll-feed
