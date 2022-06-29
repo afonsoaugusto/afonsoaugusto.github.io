@@ -33,7 +33,7 @@ categories: newsletter
 
 - [Opta - Is an infrastructure-as-code framework. Opta high-level constructs produce Terraform configuration files.](https://docs.opta.dev/){:target="_blank"}
 - [ebpf.io - Is a revolutionary technology with origins in the Linux kernel that can run sandboxed programs in an operating system kernel. It is used to safely and efficiently extend the capabilities of the kernel without requiring to change kernel source code or load kernel modules.](https://ebpf.io/)
-- [Kill The DevOps Team - Daniel Jones](https://www.engineerbetter.com/blog/kill-the-devops-team/){:target="_blank"})
+- [Kill The DevOps Team - Daniel Jones](https://www.engineerbetter.com/blog/kill-the-devops-team/){:target="_blank"}
 - [The State of Data Engineering 2022 - Einat Orr, PhD](https://lakefs.io/the-state-of-data-engineering-2022/?utm_source=linkedIn&utm_medium=Iddo&utm_campaign=state-de-22){:target="_blank"}
 
 ## Providers Terraform
