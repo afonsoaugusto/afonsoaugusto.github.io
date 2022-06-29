@@ -40,4 +40,4 @@ categories: newsletter
 
 - [Databricks Terraform Provider Is Now Generally Available](https://databricks.com/blog/2022/06/22/databricks-terraform-provider-is-now-generally-available.html){:target="_blank"}
 
-Artigo orignalmente postado em: <https://afonsorodrigues.com/newsletter/links-da-semana-06/>
+Artigo originalmente postado em: <https://afonsorodrigues.com/newsletter/links-da-semana-06/>
