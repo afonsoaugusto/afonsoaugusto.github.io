@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Links da Semana 06 - 20/06/2022 a 24/06/2022"
-date: 2022-06-27 00:00:00 +0000
+title: "Links da Semana 07 - 27/06/2022 a 01/07/2022"
+date: 2022-07-04 00:00:00 +0000
 categories: newsletter
 ---
 
