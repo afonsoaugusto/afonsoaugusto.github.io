@@ -17,7 +17,7 @@ categories: newsletter
 ## Posts no Linkedin
 
 - [You must understand the Big O notation 👇 - Marc Lamberti](https://www.linkedin.com/posts/marclamberti_dataengineering-dataengineer-softwareengineer-activity-6947911626754768897-xKDJ/?utm_source=linkedin_share&utm_medium=android_app){:target="_blank"}
-- [😵‍💫 Data Engineering is dying? 😵‍💫 - Darshil Parmar](https://www.linkedin.com/posts/darshil-parmar_dataengineering-dataengineer-datawithdarshil-activity-6947813745435754496-qNIQ/?utm_source=linkedin_share&utm_medium=member_desktop_web)){:target="_blank"}
+- [😵‍💫 Data Engineering is dying? 😵‍💫 - Darshil Parmar](https://www.linkedin.com/posts/darshil-parmar_dataengineering-dataengineer-datawithdarshil-activity-6947813745435754496-qNIQ/?utm_source=linkedin_share&utm_medium=member_desktop_web){:target="_blank"}
 
 ## Slides
 
