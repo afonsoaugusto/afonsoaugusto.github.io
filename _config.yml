@@ -19,6 +19,13 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-remote-include
+  - kramdown
+  - rouge
+
+highlighter: rouge
+
+kramdown:
+  input: GFM
 
 minima:
   name: Afonso Rodrigues
