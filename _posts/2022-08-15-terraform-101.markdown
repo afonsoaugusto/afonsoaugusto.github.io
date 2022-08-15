@@ -5,6 +5,8 @@ date: 2022-08-15 00:00:00 +0000
 categories: article
 ---
 
+*Link da apresentação deste artigo*: [slides](https://docs.google.com/presentation/d/1ubhuASaQY5wvIf2SIogP_IyYTW5tC-NPZNzYW49UZ6Q/edit?usp=sharing){:target="_blank"}
+
 ## Agenda
 
 - [Fundamentos de IaC](#fundamentos-de-iac)
