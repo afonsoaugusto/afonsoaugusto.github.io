@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Terraform 101"
+date: 2022-08-15 00:00:00 +0000
+categories: article
+---
+
+## O que é o terraform?
+
+## HashiCorp’s Cloud Engineer Certification
+
+- **HashiCorp Certified Terraform Associate**
+- HashiCorp Certified Vault Associate
+- HashiCorp Certified Consul Associate
+- HashiCorp Certified Vault Professional Operations
+
+### Caracteristicas da Terraform Associate 003
+
+A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A recomendação é que quem tem a Terraform Associate 002, faça o upgrade para a 003 quando for lançada, e quem não tem a 002 espere até o 003 ser lançada.
+
+![Timeline dos exames Terraform](/assets/1654637486-terraform-associate-002-vs-003-timeline.png)
+
+#### Caracteristicas
+
+- Prova multiplica escolha
+- Formato online
+- Duração 1 hora
+- Preço: $70.50 USD retake não incluido
+- Idioma: Inglês
+- Expiração: 2 Anos
+
+#### Objetivos do exame
+
+- Entendimento dos conceitos de IaC
+- Entendimento da proposta do Terraform (vs outros IaC)
+- Entendimento das bases do Terraform
+- Uso do Terraform fora do Workflow principal
+- Interação com Terraform modules
+- Uso do Terraform Workflow principal
+- Implementação e manutenção do estado
+- Leitura, geração e modificação de configuração
+- Entendimento das características e funcionalidades do Terraform Cloud
+
+### Simulados
+
+- [HashiCorp Certified: Terraform Associate Practice Exam 2022](https://www.udemy.com/course/terraform-associate-practice-exam/){:target="_blank"}
+
+## Links de referencia
+
+- [HashiCorp Certified: Terraform Associate Practice Exam 2022](https://www.udemy.com/course/terraform-associate-practice-exam/){:target="_blank"}
