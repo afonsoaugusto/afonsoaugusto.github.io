@@ -5,22 +5,469 @@ date: 2022-08-15 00:00:00 +0000
 categories: article
 ---
 
-## O que é o terraform?
+## Agenda
 
-## HashiCorp’s Cloud Engineer Certification
+- Terraform 101
+  - [Fundamentos de IaC](#fundamentos-de-iac)
+    - [Infrastructure as Code](#infrastructure-as-code)
+    - [Dry - Don't repeat yourself](#dry-don't-repeat-yourself)
+    - [Casos de Uso](#casos-de-uso)
+  - [Terraform](#terraform)
+    - [Terraform Workflow](#terraform-workflow)
+    - [Arquivos](#arquivos)
+  - [Básico do Terraform](#básico-do-terraform)
+    - [Variables](#variables)
+      - [Declarando uma variavel de input](#declarando-uma-variavel-de-input)
+      - [Precedencia de carregamento](#precedencia-de-carregamento)
+    - [Locals](#locals)
+    - [Output](#output)
+    - [Type Constraints](#type-constraints)
+      - [Simples](#simples)
+      - [Complexos](#complexos)
+    - [Functions](#functions)
+      - [Principais funções](#principais-funções)
+    - [Providers](#providers)
+      - [Terraform Registry](#terraform-registry)
+    - [Resources](#resources)
+    - [Data Sources](#data-sources)
+    - [Modulos](#modulos)
+    - [Backend](#backend)
+    - [Workspaces](#workspaces)
+  - [HashiCorp Certified Terraform Associate](#hashicorp-certified-terraform-associate)
 
-- **HashiCorp Certified Terraform Associate**
-- HashiCorp Certified Vault Associate
-- HashiCorp Certified Consul Associate
-- HashiCorp Certified Vault Professional Operations
+## Fundamentos de IaC
 
-### Caracteristicas da Terraform Associate 003
+### Infrastructure as Code
+
+[Infraestrutura como código](https://pt.wikipedia.org/wiki/Infraestrutura_como_C%C3%B3digo){:target="_blank"} (em inglês: infrastructure as code, ou IaC) é o processo de gerenciamento e provisionamento de [centros de processamentos dados](https://pt.wikipedia.org/wiki/Centro_de_processamento_de_dados){:target="_blank"} usando [arquivos](https://pt.wikipedia.org/wiki/Arquivo_de_computador){:target="_blank"} de configuração ao invés de configurações físicas de hardware ou [ferramentas de configuração interativas](https://pt.wikipedia.org/wiki/Interface_gr%C3%A1fica_do_utilizador){:target="_blank"}.
+
+### [Dry - Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself){:target="_blank"}
+
+Quando dizemos “como código”, queremos dizer que todas as boas práticas que aprendemos no mundo do software devem ser aplicadas à infraestrutura.
+
+Uso do controle de versão, adesão ao princípio DRY, modularização, manutenção e uso de testes e implantação automatizados são práticas fundamentais.
+
+- [Technology Radar Thoughtworks](https://www.thoughtworks.com/pt-br/radar/techniques/infrastructure-as-code){:target="_blank"}
+
+<!-- 
+O que é o Technology Radar da Thoughtworks?
+O Radar é um documento que define as mudanças que consideramos serem atualmente relevantes no desenvolvimento de software — tendências que achamos que você deve prestar atenção e considerar usar em seus projetos. Ele reflete a opinião idiossincrática de um grupo de tecnologistas experientes e é baseado em nosso trabalho e experiências do dia-a-dia. Embora seja algo interessante, ele não deve ser tomado como uma análise profunda de mercado.
+-->
+
+### [Casos de Uso](https://www.terraform.io/intro/use-cases.html){:target="_blank"}
+
+- [Multi-Cloud Deployment](https://www.terraform.io/intro/use-cases#multi-cloud-deployment){:target="_blank"}
+- [Application Infrastructure Deployment, Scaling, and Monitoring Tools](https://www.terraform.io/intro/use-cases#application-infrastructure-deployment-scaling-and-monitoring-tools){:target="_blank"}
+- [Self-Service Clusters](https://www.terraform.io/intro/use-cases#self-service-clusters){:target="_blank"}
+- [Policy Compliance and Management](https://www.terraform.io/intro/use-cases#policy-compliance-and-management){:target="_blank"}
+- [Kubernetes](https://www.terraform.io/intro/use-cases#kubernetes){:target="_blank"}
+- [Parallel Environments](https://www.terraform.io/intro/use-cases#parallel-environments){:target="_blank"}
+
+## Terraform
+
+Terraform é uma ferramenta open source de *provisionamento* de infraestrutura, criada pela [HashiCorp](https://www.hashicorp.com/){:target="_blank"}, que permite que definamos nossa infraestrutura como código([IaC](https://en.wikipedia.org/wiki/Infrastructure_as_Code){:target="_blank"}), usando uma linguagem simples e declarativa ([HCL - HashiCorp Configuration Language](https://github.com/hashicorp/hcl){:target="_blank"}).
+
+O terraform é desenvolvido em GO e é [OpenSource](https://github.com/hashicorp/terraform/blob/main/LICENSE){:target="_blank"}
+
+### Terraform Workflow
+
+O Workflow do terraform consiste em basicamente 3 etapas:
+
+- Write - Author infrastructure as code.
+- Plan - Preview changes before applying.
+- Apply - Provision reproducible infrastructure.
+
+![IaC](/assets/IaC.png)
+
+A idéia por traz do terraform é ele gerenciar o estado de uma infraestrutura, ou seja, o estado de cada recurso com base na interação com o seu provider.
+
+![Interacao Api](/assets/interacao-api.png)
+
+### Arquivos
+
+Para começarmos com o Terraform, nós temos que identificar as extenções dos arquivos que são utilizadas por ele.
+
+- **.tf**          - Arquivo de declaração do terraform. (variaveis, recursos, datasources, outputs, etc)
+- **.tfvars**      - Arquivo de valor das variáveis, sendo que se o arquivo for .auto.tfvars, o terraform irá automaticamente carregar o arquivo .tfvars.
+- **.plan**        - Arquivo de plano de ação que será executado pelo terraform apply.
+- **.TFSTATE**     - Arquivo de estado do terraform. Onde ele escreve o que foi realizado.
+
+## Básico do Terraform
+
+### Variables
+
+[Variáveis](https://www.terraform.io/docs/configuration/variables.html){:target="_blank"} são parametros para um modulo de Terraform, permitem que aspectos da implementação seja customizado sem que seu codigo seja alterado.
+
+Temos 3 tipos de uso de variáveis:
+
+- Input variables are like function arguments
+- Output values are like function return values
+- Local values are like a function's temporary local variables.
+
+#### Declarando uma variavel de input
+
+```hcl
+variable "image_id" {
+  type = string
+}
+```
+
+```hcl
+variable "availability_zone_names" {
+  type    = list(string)
+  default = ["us-west-1a"]
+}
+```
+
+```hcl
+variable "docker_ports" {
+  type = list(object({
+    internal = number
+    external = number
+    protocol = string
+  }))
+  default = [
+    {
+      internal = 8300
+      external = 8300
+      protocol = "tcp"
+    }
+  ]
+}
+```
+
+```hcl
+variable "image_id" {
+  type        = string
+  description = "The id of the machine image (AMI) to use for the server."
+
+  validation {
+    condition     = length(var.image_id) > 4 && substr(var.image_id, 0, 4) == "ami-"
+    error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
+  }
+}
+```
+
+#### Precedencia de carregamento
+
+- Environment variables
+- The terraform.tfvars file, if present.
+- The terraform.tfvars.json file, if present.
+- Any \-.auto.tfvars or \-.auto.tfvars.json files, processed in lexical order of their filenames.
+- Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
+
+### Locals
+
+Um Local é um valor que recebe um nome a partir de uma expressão ou valor.
+
+```hcl
+locals {
+  # Ids for multiple sets of EC2 instances, merged together
+  instance_ids = concat(aws_instance.blue.-.id, aws_instance.green.-.id)
+}
+
+locals {
+  # Common tags to be assigned to all resources
+  common_tags = {
+    Service = local.service_name
+    Owner   = local.owner
+  }
+}
+```
+
+### Output
+
+Output é uma forma de expor o valor, seja como retorno de um modulo ou imprimindo como retorno do root.
+
+```hcl
+output "instance_ip_addr" {
+  value = aws_instance.server.private_ip
+}
+```
+
+```hcl
+output "instance_ip_addr" {
+  value       = aws_instance.server.private_ip
+  description = "The private IP address of the main server instance."
+}
+```
+
+```hcl
+output "db_password" {
+  value       = aws_db_instance.db.password
+  description = "The password for logging in to the database."
+  sensitive   = true
+}
+```
+
+```hcl
+output "instance_ip_addr" {
+  value       = aws_instance.server.private_ip
+  description = "The private IP address of the main server instance."
+
+  depends_on = [
+    # Security group rule must be created before this IP address could
+    # actually be used, otherwise the services will be unreachable.
+    aws_security_group_rule.local_access,
+  ]
+}
+```
+
+### [Type Constraints](https://www.terraform.io/docs/configuration/variables.html#type-constraints)
+
+São os tipos que as variaveis podem declarados como argumentos na declaração e que podem ser customizados.
+Veja elas como uma Classe na programação ou uma estrutura de dados.
+
+#### Simples
+
+- string
+- number
+- bool
+
+#### Complexos
+
+- list(\<TYPE>)
+- set(\<TYPE>)
+- map(\<TYPE>)
+- object({\<ATTR NAME> = \<TYPE>, ... })
+- tuple([\<TYPE>, ...])
+
+### [Functions](https://www.terraform.io/docs/configuration/functions.html)
+
+- Numeric Functions
+- String Functions
+- Collection Functions
+- Encoding Functions
+- Filesystem Functions
+- Date and Time Functions
+- Hash and Crypto Functions
+- IP Network Functions
+- Type Conversion Functions
+
+#### Principais funções
+
+##### [Format](https://www.terraform.io/docs/configuration/functions/format.html)
+
+`format(spec, values...)`
+
+```hcl
+> format("Hello, %s!", "Ander")
+Hello, Ander!
+> format("There are %d lights", 4)
+There are 4 lights
+```
+
+```hcl
+> format("Hello, %s!", var.name)
+Hello, Valentina!
+> "Hello, ${var.name}!"
+Hello, Valentina!
+```
+
+##### [Join](https://www.terraform.io/docs/configuration/functions/join.html)
+
+`join(separator, list)`
+
+```hcl
+> join(", ", ["foo", "bar", "baz"])
+foo, bar, baz
+> join(", ", ["foo"])
+foo
+```
+
+##### [Split](https://www.terraform.io/docs/configuration/functions/split.html)
+
+`split(separator, string)`
+
+```hcl
+> split(",", "foo,bar,baz")
+[
+  "foo",
+  "bar",
+  "baz",
+]
+> split(",", "foo")
+[
+  "foo",
+]
+> split(",", "")
+[
+  "",
+]
+```
+
+##### [Upper](https://www.terraform.io/docs/configuration/functions/upper.html), [lower](https://www.terraform.io/docs/configuration/functions/lower.html), [title](https://www.terraform.io/docs/configuration/functions/title.html)
+
+```hcl
+> upper("hello")
+HELLO
+> upper("алло!")
+АЛЛО!
+```
+
+```hcl
+> lower("HELLO")
+hello
+> lower("АЛЛО!")
+алло!
+```
+
+```hcl
+> title("hello world")
+Hello World
+```
+
+##### [Element](https://www.terraform.io/docs/configuration/functions/element.html) [Index](https://www.terraform.io/docs/configuration/functions/index.html)
+
+`element(list, index)`
+
+```hcl
+> element(["a", "b", "c"], 1)
+b
+```
+
+`index(list, value)`
+
+```hcl
+> index(["a", "b", "c"], "b")
+1
+```
+
+##### [Map](https://www.terraform.io/docs/configuration/functions/map.html)
+
+- The *map* function is no longer available. Prior to Terraform v0.12 it was the only available syntax for writing a literal map inside an expression, but Terraform v0.12 introduced a new first-class syntax.
+
+```hcl
+tomap({
+  a = "b"
+  c = "d"
+})
+```
+
+##### [File](https://www.terraform.io/docs/configuration/functions/file.html)
+
+`file(path)`
+
+```hcl
+> file("${path.module}/hello.txt")
+Hello World
+```
+
+### [Providers](https://www.terraform.io/docs/providers/index.html)
+
+É a estrutura resposavel por comunicar com a API da estrutura desejada.
+
+```hcl
+# The default provider configuration; resources that begin with `aws_` will use
+# it as the default, and it can be referenced as `aws`.
+provider "aws" {
+  region = "us-east-1"
+}
+
+# Additional provider configuration for west coast region; resources can
+# reference this as `aws.west`.
+provider "aws" {
+  alias  = "west"
+  region = "us-west-2"
+}
+```
+
+#### [Terraform Registry](https://registry.terraform.io/)
+
+O registry do terrarform é uma coleção de providers, modulos e policies que podem ser usados em qualquer projeto.
+Os principais providers são:
+
+- AWS
+- Azure
+- Google Cloud Platform (GCP)
+- Kubernetes
+- Alibaba Cloud
+- Oracle Cloud Infrastructure
+
+### [Resources](https://www.terraform.io/docs/configuration/resources.html)
+
+Item mais importante do Terraform, ele informa o recurso que será criado/gerenciado.
+
+```hcl
+resource "aws_instance" "web" {
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+}
+```
+
+### [Data Sources](https://www.terraform.io/docs/configuration/data-sources.html)
+
+Data recupera informações de recursos já criados no ambiente sem precisar de gerenciar o mesmo.
+Ou seja, sem precisar de importar o recurso e gerenciar ele.
+
+```hcl
+data "aws_ami" "example" {
+  most_recent = true
+
+  owners = ["self"]
+  tags = {
+    Name   = "app-server"
+    Tested = "true"
+  }
+}
+```
+
+### [Modulos](https://www.terraform.io/docs/configuration/modules.html)
+
+É como uma abstração de um conjunto de recursos para reaproveitamento do mesmo.
+
+```hcl
+module "servers" {
+  source = "./app-cluster"
+
+  servers = 5
+}
+```
+
+### [Backend](https://www.terraform.io/docs/backends/index.html) - TFSTATE
+
+O backend é a estrutrua que define onde o terraform irá guardar o estado (TFSTATE) do seu ambiente.
+
+```hcl
+backend "s3" {
+  bucket = "terraform-state"
+  key    = "terraform.tfstate"
+  region = "us-east-1"
+}
+```
+
+Algo legal de utilizarmos é que os atributos do backend podem ser definidos dinamicamente no `terraform init`, isso traz uma maior flexibilidade podendo ser definido em tempo de execução.
+
+```sh
+terraform init \
+    -backend-config="address=demo.consul.io" \
+    -backend-config="path=example_app/terraform_state" \
+    -backend-config="scheme=https"
+```
+
+Algumas opções de backend:
+
+- [local](https://www.terraform.io/language/settings/backends/local)
+- [s3](https://www.terraform.io/language/settings/backends/s3)
+- [kubernetes](https://www.terraform.io/language/settings/backends/kubernetes) - Stores the state in a [Kubernetes secret](https://kubernetes.io/docs/concepts/configuration/secret/).
+- [consul](https://www.terraform.io/language/settings/backends/consul)
+
+### [Workspaces](https://www.terraform.io/language/state/workspaces)
+
+Workspaces é uma forma de gerenciar múltiplos ambientes de forma independente. Onde você pode associar cada ambiente com um conjunto de variaveis.
+
+![Workspaces](/assets/workspaces.png)
+
+## [HashiCorp Certified Terraform Associate](https://www.hashicorp.com/certification/terraform-associate)
+
+A certificação Terraform é uma excelente opção para comprovar seu conhecimento sobre o Terraform.
+Ela não vai cobrir todos os aspectos do dia-a-dia, mas vai guiar você para entender o que é Terraform e como ele funciona.
 
 A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A recomendação é que quem tem a Terraform Associate 002, faça o upgrade para a 003 quando for lançada, e quem não tem a 002 espere até o 003 ser lançada.
 
 ![Timeline dos exames Terraform](/assets/1654637486-terraform-associate-002-vs-003-timeline.png)
 
-#### Caracteristicas
+### Caracteristicas
 
 - Prova multiplica escolha
 - Formato online
@@ -29,7 +476,7 @@ A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A reco
 - Idioma: Inglês
 - Expiração: 2 Anos
 
-#### Objetivos do exame
+### Objetivos do exame
 
 - Entendimento dos conceitos de IaC
 - Entendimento da proposta do Terraform (vs outros IaC)
@@ -39,12 +486,27 @@ A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A reco
 - Uso do Terraform Workflow principal
 - Implementação e manutenção do estado
 - Leitura, geração e modificação de configuração
-- Entendimento das características e funcionalidades do Terraform Cloud
+- Entendimento das características e funcionalidades do **Terraform Cloud**
 
 ### Simulados
 
 - [HashiCorp Certified: Terraform Associate Practice Exam 2022](https://www.udemy.com/course/terraform-associate-practice-exam/){:target="_blank"}
 
+### Dicas para a prova
+
+- Pratique as questões da prova com simulados e exercícios
+- Crie um repositório ou um projeto pequeno só para testar a CLI e o proprio terraform
+- Leia o [Guia do Terraform Associate](https://www.terraform.io/docs/guides/associate/index.html)
+- Leia a documentação do terraform e entenda o que é o que é
+- Crie uma conta gratuita no Terraform Cloud e faça alguns testes
+- Durma cedo
+- Tenha uma alimentação tranquila no dia anterior
+- Marque a prova para um horário cedo
+
 ## Links de referencia
 
 - [HashiCorp Certified: Terraform Associate Practice Exam 2022](https://www.udemy.com/course/terraform-associate-practice-exam/){:target="_blank"}
+- [terraform.io](https://www.terraform.io/){:target="_blank"}
+- [learn-terraform](https://learn.hashicorp.com/terraform){:target="_blank"}
+- [Documentation](https://www.terraform.io/docs/configuration){:target="_blank"}
+- [Canal do yutube da Hashicorp](https://www.youtube.com/c/HashiCorp/videos){:target="_blank"}
