@@ -19,7 +19,7 @@ categories: article
 - [Básico do Terraform](#básico-do-terraform)
   - [Variables](#variables)
     - [Declarando uma variavel de input](#declarando-uma-variavel-de-input)
-    - [Precedencia de carregamento](#precedencia-de-carregamento)
+    - [Precedência de carregamento](#precedência-de-carregamento)
   - [Locals](#locals)
   - [Output](#output)
   - [Type Constraints](#type-constraints)
@@ -31,7 +31,7 @@ categories: article
     - [Terraform Registry](#terraform-registry)
   - [Resources](#resources)
   - [Data Sources](#data-sources)
-  - [Modulos](#modulos)
+  - [Módulos](#Módulos)
   - [Backend](#backend)
   - [Workspaces](#workspaces)
 - [HashiCorp Certified Terraform Associate](#hashicorp-certified-terraform-associate)
@@ -80,15 +80,15 @@ O Workflow do terraform consiste em basicamente 3 etapas:
 
 ![IaC](/assets/IaC.png)
 
-A idéia por traz do terraform é ele gerenciar o estado de uma infraestrutura, ou seja, o estado de cada recurso com base na interação com o seu provider.
+A ideia por trás do terraform é ele gerenciar o estado de uma infraestrutura, ou seja, o estado de cada recurso com base na interação com o seu provider.
 
 ![Interacao Api](/assets/interacao-api.png)
 
 ### Arquivos
 
-Para começarmos com o Terraform, nós temos que identificar as extenções dos arquivos que são utilizadas por ele.
+Para começarmos com o Terraform, nós temos que identificar as extensões dos arquivos utilizados por por ele.
 
-- **.tf**          - Arquivo de declaração do terraform. (variaveis, recursos, datasources, outputs, etc)
+- **.tf**          - Arquivo de declaração do terraform. (variáveis, recursos, datasources, outputs, etc)
 - **.tfvars**      - Arquivo de valor das variáveis, sendo que se o arquivo for .auto.tfvars, o terraform irá automaticamente carregar o arquivo .tfvars.
 - **.plan**        - Arquivo de plano de ação que será executado pelo terraform apply.
 - **.TFSTATE**     - Arquivo de estado do terraform. Onde ele escreve o que foi realizado.
@@ -97,7 +97,7 @@ Para começarmos com o Terraform, nós temos que identificar as extenções dos 
 
 ### Variables
 
-[Variáveis](https://www.terraform.io/docs/configuration/variables.html){:target="_blank"} são parametros para um modulo de Terraform, permitem que aspectos da implementação seja customizado sem que seu codigo seja alterado.
+[Variáveis](https://www.terraform.io/docs/configuration/variables.html){:target="_blank"} são parametros para um módulo de Terraform, permitem que aspectos da implementação seja customizado sem que seu codigo seja alterado.
 
 Temos 3 tipos de uso de variáveis:
 
@@ -105,7 +105,7 @@ Temos 3 tipos de uso de variáveis:
 - Output values are like function return values
 - Local values are like a function's temporary local variables.
 
-#### Declarando uma variavel de input
+#### Declarando uma variável de input
 
 ```hcl
 variable "image_id" {
@@ -149,7 +149,7 @@ variable "image_id" {
 }
 ```
 
-#### Precedencia de carregamento
+#### Precedência de carregamento
 
 - Environment variables
 - The terraform.tfvars file, if present.
@@ -178,7 +178,7 @@ locals {
 
 ### Output
 
-Output é uma forma de expor o valor, seja como retorno de um modulo ou imprimindo como retorno do root.
+Output é uma forma de expor o valor, seja como retorno de um módulo ou imprimindo como retorno do root.
 
 ```hcl
 output "instance_ip_addr" {
@@ -216,7 +216,7 @@ output "instance_ip_addr" {
 
 ### [Type Constraints](https://www.terraform.io/docs/configuration/variables.html#type-constraints){:target="_blank"}
 
-São os tipos que as variaveis podem declarados como argumentos na declaração e que podem ser customizados.
+São os tipos que as variáveis podem declarados como argumentos na declaração e que podem ser customizados.
 Veja elas como uma Classe na programação ou uma estrutura de dados.
 
 #### Simples
@@ -375,7 +375,7 @@ provider "aws" {
 
 #### [Terraform Registry](https://registry.terraform.io/){:target="_blank"}
 
-O registry do terrarform é uma coleção de providers, modulos e policies que podem ser usados em qualquer projeto.
+O registry do terrarform é uma coleção de providers, Módulos e policies que podem ser usados em qualquer projeto.
 Os principais providers são:
 
 - AWS
@@ -413,7 +413,7 @@ data "aws_ami" "example" {
 }
 ```
 
-### [Modulos](https://www.terraform.io/docs/configuration/modules.html){:target="_blank"}
+### [Módulos](https://www.terraform.io/docs/configuration/modules.html){:target="_blank"}
 
 É como uma abstração de um conjunto de recursos para reaproveitamento do mesmo.
 
@@ -437,7 +437,7 @@ backend "s3" {
 }
 ```
 
-Algo legal de utilizarmos é que os atributos do backend podem ser definidos dinamicamente no `terraform init`, isso traz uma maior flexibilidade podendo ser definido em tempo de execução.
+Algo legal de utilizarmos é que os atributos do backend podem ser definidos dinamicamente no `terraform init`, isso trás uma maior flexibilidade podendo ser definido em tempo de execução.
 
 ```sh
 terraform init \
@@ -455,7 +455,7 @@ Algumas opções de backend:
 
 ### [Workspaces](https://www.terraform.io/language/state/workspaces){:target="_blank"}
 
-Workspaces é uma forma de gerenciar múltiplos ambientes de forma independente. Onde você pode associar cada ambiente com um conjunto de variaveis.
+Workspaces é uma forma de gerenciar múltiplos ambientes de forma independente. Onde você pode associar cada ambiente com um conjunto de variáveis.
 
 ![Workspaces](/assets/workspaces.png)
 
@@ -468,12 +468,12 @@ A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A reco
 
 ![Timeline dos exames Terraform](/assets/1654637486-terraform-associate-002-vs-003-timeline.png)
 
-### Caracteristicas
+### Características
 
 - Prova multiplica escolha
 - Formato online
 - Duração 1 hora
-- Preço: $70.50 USD retake não incluido
+- Preço: $70.50 USD retake não incluído
 - Idioma: Inglês
 - Expiração: 2 Anos
 
@@ -504,7 +504,7 @@ A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A reco
 - Tenha uma alimentação tranquila no dia anterior
 - Marque a prova para um horário cedo
 
-## Links de referencia
+## Links de referência
 
 - [HashiCorp Certified: Terraform Associate Practice Exam 2022](https://www.udemy.com/course/terraform-associate-practice-exam/){:target="_blank"}
 - [terraform.io](https://www.terraform.io/){:target="_blank"}
