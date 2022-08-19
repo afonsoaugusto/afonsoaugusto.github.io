@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Utilizando trivy na pipeline"
-date: 2022-08-16 00:00:00 +0000
+date: 2023-08-16 00:00:00 +0000
 categories: article
 ---
 
