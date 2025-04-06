@@ -282,3 +282,32 @@ For **linear regression models**, where a line is fitted to data points, the **e
 *   **Mean Absolute Error (MAE):** The average of the absolute values of the errors, less sensitive to outliers than MSE and RMSE.
 
 Finally, the lesson underscores the critical role of **business metrics**. The first step in the ML pipeline is defining the business goal, which then dictates how success will be measured. Business metrics quantify the value of an ML model to the business, such as cost reduction, increased users/sales, improved customer feedback, or any other relevant KPI. It's also crucial to estimate the risks and potential costs of errors. After deployment, data must be collected to track these metrics and compare actual results against initial goals, including the cost of building and operating the model to calculate the return
+
+## More resources
+
+1. A Framework to Mitigate Bias and Improve Outcomes in the New Age of AI
+<https://aws.amazon.com/blogs/publicsector/framework-mitigate-bias-improve-outcomes-new-age-ai/>
+
+2. What Are Transformers in Artificial Intelligence?
+<https://aws.amazon.com/what-is/transformers-in-artificial-intelligence/>
+
+3. What Is Overfitting?
+<https://aws.amazon.com/what-is/overfitting/>
+
+4. What Are Large Language Models (LLMs)?
+<https://aws.amazon.com/what-is/large-language-model/>
+
+5. Responsible Use of Machine Learning
+<https://d1.awsstatic.com/responsible-machine-learning/responsible-use-of-machine-learning-guide.pdf>
+
+6. Easily Add Intelligence to Your Applications
+<https://aws.amazon.com/ai/services/>
+
+7. What Is MLOps?
+<https://aws.amazon.com/what-is/mlops/>
+
+8. Amazon SageMaker MLOps: From Idea to Production in Six Steps
+<https://catalog.us-east-1.prod.workshops.aws/workshops/741835d3-a2bf-4cb6-81f0-d0bb4a62edca/en-US>
+
+9. Machine Learning Lens
+<https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html>
