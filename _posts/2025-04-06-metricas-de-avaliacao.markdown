@@ -71,3 +71,45 @@ Entender e analisar os valores nessa matriz é o primeiro passo para avaliar um 
 *   **Interpretabilidade:** Algumas métricas são mais fáceis de interpretar e comunicar para stakeholders não técnicos.
 
 Em resumo, as métricas de avaliação são ferramentas poderosas para entender e comparar modelos de Machine Learning. A escolha das métricas certas e sua análise cuidadosa são passos essenciais no ciclo de vida do desenvolvimento de ML para garantir que o modelo implantado atenda aos objetivos desejados.
+
+--- 
+
+## Parte 2
+
+**1. Ciclo de Vida do Desenvolvimento de ML e Métricas de Avaliação:**
+
+* O texto retoma a discussão sobre o ciclo de vida do desenvolvimento de Machine Learning, especificamente focando em métricas para avaliar modelos.
+
+**2. Métricas Derivadas da Matriz de Confusão (Classificação Binária):**
+
+* **Taxa de Falsos Positivos (False Positive Rate - FPR):** Mede a proporção de previsões positivas incorretas em relação ao total de instâncias negativas reais. No exemplo, indica quantas imagens que não eram peixes foram classificadas como peixes.
+* **Taxa de Verdadeiros Negativos (True Negative Rate - TNR) / Especificidade:** Mede a proporção de previsões negativas corretas em relação ao total de instâncias negativas reais. No exemplo, indica quantas imagens que não eram peixes foram corretamente classificadas como não sendo peixes.
+
+**3. Área Sob a Curva ROC (AUC):**
+
+* Utilizada para comparar e avaliar algoritmos de classificação binária que retornam probabilidades (como regressão logística).
+* As probabilidades são convertidas em previsões discretas usando um **threshold** (limiar).
+* O threshold define o nível de confiança que o modelo precisa ter para classificar uma instância como pertencente a uma classe.
+* A **Curva ROC (Receiver Operating Characteristic)** é um gráfico que plota a Taxa de Verdadeiros Positivos (TPR) contra a Taxa de Falsos Positivos (FPR) para diferentes valores de threshold.
+* Aumentar o threshold geralmente diminui os falsos positivos, mas aumenta os falsos negativos.
+* **AUC** representa a área sob essa curva ROC e fornece uma medida agregada do desempenho do modelo em todos os possíveis thresholds.
+* Os valores de AUC variam de 0 a 1, sendo 1 a acurácia perfeita e 0.5 um desempenho equivalente a um classificador aleatório.
+
+**4. Métricas para Regressão Linear:**
+
+* **Erro Médio Quadrático (Mean Squared Error - MSE):** Calcula a média das diferenças quadráticas entre as previsões e os valores reais. Sempre positivo, e quanto menor, melhor o modelo. Enfatiza o impacto de outliers devido ao quadrado dos erros.
+* **Raiz do Erro Médio Quadrático (Root Mean Squared Error - RMSE):** É a raiz quadrada do MSE. A vantagem é que suas unidades correspondem às unidades da variável dependente, facilitando a interpretação. Também enfatiza outliers.
+* **Erro Médio Absoluto (Mean Absolute Error - MAE):** Calcula a média dos valores absolutos das diferenças entre as previsões e os valores reais. Não enfatiza grandes erros como o MSE e RMSE.
+
+**5. Métricas de Negócio:**
+
+* As soluções de ML devem resolver problemas de negócio.
+* É crucial definir o objetivo de negócio e como medir o sucesso em alcançá-lo.
+* **Métricas de negócio** quantificam o valor do modelo de ML para a empresa (ex: redução de custos, aumento de usuários/vendas, melhoria no feedback do cliente).
+* É importante estimar os riscos e custos potenciais de erros do modelo.
+* Após a implantação, é necessário coletar dados para comparar os resultados reais com os objetivos iniciais e calcular o Retorno sobre o Investimento (ROI), considerando os custos de construção e operação do modelo.
+
+**6. AWS Cost Explorer:**
+
+* A AWS permite o uso de **tags de alocação de custos** para rastrear os gastos de projetos específicos de ML.
+* Ao aplicar tags aos recursos utilizados no pipeline de ML, é possível filtrar os relatórios no AWS Cost Explorer para determinar os custos reais incorridos.
