@@ -120,3 +120,100 @@ Em resumo, o texto cumpre bem o objetivo de explicar os conceitos básicos de IA
 * **Pré/Fine-tuning:** Modelo ganha entendimento.
 * **Recursos:** Link e flashcards adicionados.
 * **Próxima Lição:** Continuação dos conceitos.
+
+## Task Statement 2.1 Lesson 3
+
+O texto aborda o desenvolvimento e as características de modelos de linguagem grandes (LLMs) e modelos de Inteligência Artificial generativa multimodal e de difusão. Aqui estão os principais pontos discutidos:
+
+**Modelos de Linguagem Grandes (LLMs):**
+
+*   **Escalabilidade e Capacidade:** Modelos maiores tendem a funcionar melhor sem necessidade de aprendizado in-context adicional ou treinamento posterior, impulsionando o desenvolvimento de modelos cada vez maiores.
+*   **Pilares do Desenvolvimento:** O avanço dos LLMs é resultado da arquitetura Transformer altamente escalável, acesso a grandes volumes de dados para treinamento e recursos computacionais mais potentes.
+*   **Desafios do Escalamento Contínuo:** Treinar modelos muito grandes é difícil e caro, levantando a questão sobre os limites do crescimento desses modelos.
+*   **Representação Estatística da Linguagem:** LLMs codificam uma representação estatística profunda da linguagem, aprendida durante a fase de pré-treinamento com grandes quantidades de dados não estruturados.
+*   **Pré-treinamento:**
+    *   Utiliza grandes volumes de dados textuais de diversas fontes (internet, textos compilados).
+    *   É um processo de aprendizado auto-supervisionado onde o modelo internaliza padrões e estruturas da linguagem.
+    *   O objetivo do treinamento varia dependendo da arquitetura do modelo.
+    *   Os pesos do modelo são atualizados para minimizar a perda do objetivo de treinamento.
+    *   O encoder gera embeddings (representações vetoriais) para cada token.
+    *   Requer grande poder computacional e o uso de GPUs.
+*   **Processamento de Dados de Treinamento:** Dados coletados precisam ser processados para aumentar a qualidade, mitigar vieses e remover conteúdo prejudicial. Estima-se que apenas 1% a 3% dos tokens são usados para pré-treinamento após essa curadoria.
+
+**Inteligência Artificial Generativa Multimodal:**
+
+*   **Unimodal vs. Multimodal:** Modelos unimodais trabalham com um único tipo de dado (ex: LLMs com texto), enquanto modelos multimodais utilizam múltiplas modalidades (imagem, vídeo, áudio, etc.).
+*   **Vantagens da Multimodalidade:** Permite entender diversas fontes de dados e gerar previsões mais robustas.
+*   **Aplicações da IA Generativa Multimodal:** Marketing, legenda de imagens, design de produtos, atendimento ao cliente, chatbots e avatares.
+*   **Capacidades de Modelos Multimodais:** Processam e geram múltiplos tipos de dados, inclusive em combinação, permitindo raciocínio cross-modal, tradução, busca e criação que se assemelham mais à inteligência humana.
+*   **Exemplos de Tarefas Multimodais:** Legenda de imagens, resposta visual a perguntas e síntese de imagem a partir de texto (exemplos: DALL-E, Stable Diffusion, Midjourney).
+
+**Modelos de Difusão:**
+
+*   **Aplicações:** Suportam diversas tarefas para modelos multimodais, como geração, upscaling e inpainting de imagens.
+*   **Princípio de Funcionamento:** Aprendem a reverter um processo gradual de adição de ruído.
+*   **Vantagens:** Oferecem maior controle na qualidade e diversidade das imagens geradas.
+*   **Componentes Principais:** Forward diffusion (adição gradual de ruído), reverse diffusion (remoção iterativa do ruído) e stable diffusion.
+*   **Stable Diffusion:** Opera em um espaço latente de menor dimensão (em vez do espaço de pixels), facilitando a geração de imagens a partir de texto (disponível no Amazon SageMaker JumpStart).
+*   **Comparação com Outras Abordagens Generativas (GANs e VAEs):** Modelos de difusão tendem a produzir resultados de maior qualidade, com mais diversidade e consistência, além de serem mais estáveis e fáceis de treinar.
+*   **Exemplos de Modelos de Difusão:** Stable Diffusion (imagem), Whisper (reconhecimento e tradução de fala), AudioLM (geração de áudio).
+
+**Infraestrutura e Ferramentas da AWS:**
+
+*   A AWS oferece serviços e ferramentas para construir e implantar modelos multimodais e de difusão.
+*   O SageMaker suporta frameworks de deep learning como TensorFlow e PyTorch, com módulos para dados multimodais.
+*   A AWS também oferece modelos pré-treinados (como Stable Diffusion) que podem ser ajustados e implantados com poucas linhas de código.
+
+O texto encerra com uma pausa, indicando que a discussão sobre a "task statement 2.1" continuará na próxima lição.
+
+**Modelos de Linguagem Grandes (LLMs)**
+
+*   Modelos maiores, melhor desempenho
+*   Escalabilidade impulsiona desenvolvimento
+*   Transformer, dados, computação
+*   Treinamento caro e difícil
+*   Limites do crescimento?
+*   Representação estatística da linguagem
+*   Pré-treinamento com vastos dados
+*   Aprendizado auto-supervisionado
+*   Atualização de pesos do modelo
+*   Geração de embeddings
+*   Requer grande poder computacional
+*   Processamento de dados essencial
+*   Qualidade, bias, remoção
+*   1-3% tokens pré-treinamento
+
+**IA Generativa Multimodal**
+
+*   Unimodal versus multimodal
+*   Múltiplas modalidades, mais robustez
+*   Aplicações diversas da multimodalidade
+*   Entendimento diverso de dados
+*   Raciocínio cross-modal
+*   Exemplos de tarefas multimodais
+*   Legenda, perguntas visuais
+*   Texto para imagem (DALL-E)
+
+**Modelos de Difusão**
+
+*   Geração, upscaling, inpainting
+*   Reversão de processo de ruído
+*   Controle de qualidade e diversidade
+*   Forward, reverse, stable diffusion
+*   Remoção iterativa do ruído
+*   Stable Diffusion em espaço latente
+*   Geração texto para imagem
+*   Melhor que GANs e VAEs
+*   Qualidade, diversidade, estabilidade
+*   Exemplos: Stable, Whisper, AudioLM
+
+**AWS e Modelos Generativos**
+
+*   Serviços para modelos multimodais
+*   SageMaker suporta frameworks
+*   Modelos pré-treinados disponíveis
+*   Fácil ajuste e implantação
+
+**Próxima Lição**
+
+*   Continuação da task statement 2.1
