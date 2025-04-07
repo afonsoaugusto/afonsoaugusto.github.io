@@ -1,24 +1,38 @@
 title: Afonso Rodrigues blog's
 email: afonsoaugustoventura@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Anotações, Scripts e Dicas
-baseurl: "" # the subpath of your site, e.g. /blog
-url: https://afonsoaugusto.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
+description: >-
+  Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS
+baseurl: "" # subcaminho, se necessário (ex: /blog)
+url: "https://afonsorodrigues.com" # URL principal do site
+
+lang: "pt-BR"
+encoding: "utf-8"
+
 twitter_username: Afonsoavr
 github_username: afonsoaugusto
+
+# SEO
+seo:
+  type: "Person"
+  name: "Afonso Rodrigues"
+  description: "Anotações, Scripts e Dicas de DevOps e SRE"
+  url: "https://afonsorodrigues.com"
+  twitter: "@Afonsoavr"
 
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
-# theme: minima
-remote_theme: jekyll/minima
-#remote_theme: afonsoaugusto/plainwhite-jekyll
+remote_theme: jekyll/minima@latest
+
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-redirect-from
   - jekyll-remote-theme
-  - jekyll-seo-tag
   - jekyll-remote-include
+  - jekyll-include-cache
+  - jekyll-paginate-v2
   - kramdown
   - rouge
 
@@ -29,18 +43,24 @@ kramdown:
 
 minima:
   name: Afonso Rodrigues
-
   social_links:
     twitter: Afonsoavr
     github: afonsoaugusto
-    linkedin: in/afonsoavr # format: locale/username
+    linkedin: in/afonsoavr
     instagram: afonsoavr
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "post"
+      image: /assets/images/default.jpg
+      og:
+        type: website
 
 comments:
   provider: disqus
 disqus:
   shortname: afonsoaugusto-github-io
 
-# site:
-#   google_analytics: G-8TFSN8203P
 google_analytics: G-8TFSN8203P
