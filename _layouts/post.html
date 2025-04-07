@@ -20,20 +20,39 @@
         text-align: center;
       }
       main {
-        display: grid;
-        grid-template-columns: 250px 1fr;
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         max-width: 1200px;
         margin: 2rem auto;
         padding: 0 1rem;
       }
+      .toc-wrapper {
+        position: relative;
+      }
+      #toc-toggle {
+        display: block;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+      }
       .toc {
-        position: sticky;
-        top: 2rem;
         background: #f3f4f6;
         padding: 1rem;
         border-left: 4px solid #3b82f6;
         border-radius: 0.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+      }
+      .toc.open {
+        max-height: 500px;
+        opacity: 1;
       }
       .toc a {
         color: #3b82f6;
@@ -51,6 +70,26 @@
         border-radius: 0.5rem;
         box-shadow: 0 0 10px rgba(0,0,0,0.05);
       }
+
+      /* Desktop responsivo */
+      @media (min-width: 768px) {
+        main {
+          flex-direction: row;
+        }
+        .toc-wrapper {
+          width: 250px;
+          flex-shrink: 0;
+        }
+        #toc-toggle {
+          display: none;
+        }
+        .toc {
+          max-height: none;
+          opacity: 1;
+          position: sticky;
+          top: 2rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -59,8 +98,11 @@
     </header>
 
     <main>
-      <!-- Índice lateral -->
-      <aside id="toc" class="toc"></aside>
+      <!-- TOC com botão toggle para mobile -->
+      <div class="toc-wrapper">
+        <button id="toc-toggle">Mostrar índice</button>
+        <aside id="toc" class="toc"></aside>
+      </div>
 
       <!-- Conteúdo do post -->
       <article class="post-content">
@@ -74,17 +116,23 @@
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}</p>
     </footer>
 
-    <!-- Script para gerar ToC -->
+    <!-- Script do TOC e toggle -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const content = document.querySelector(".post-content");
         const toc = document.getElementById("toc");
+        const tocToggle = document.getElementById("toc-toggle");
+
         if (!content || !toc) return;
 
         const headings = content.querySelectorAll("h2, h3");
-        if (headings.length === 0) return;
+        if (headings.length === 0) {
+          if (tocToggle) tocToggle.style.display = "none";
+          return;
+        }
 
-        let html = "<strong style='display:block; margin-bottom: .5rem;'>Índice</strong><ul style='list-style: none; padding: 0;'>";
+        // Gera o HTML do índice
+        let html = "<strong style='display:block; margin-bottom: .5rem;'>Índice</strong><ul style='list-style: none; padding: 0; margin: 0;'>";
         headings.forEach(h => {
           const id = h.id || h.textContent.trim().toLowerCase().replace(/[^\w]+/g, "-");
           h.id = id;
@@ -94,6 +142,14 @@
         });
         html += "</ul>";
         toc.innerHTML = html;
+
+        // Toggle para mobile
+        if (tocToggle) {
+          tocToggle.addEventListener("click", () => {
+            toc.classList.toggle("open");
+            tocToggle.textContent = toc.classList.contains("open") ? "Esconder índice" : "Mostrar índice";
+          });
+        }
       });
     </script>
   </body>
