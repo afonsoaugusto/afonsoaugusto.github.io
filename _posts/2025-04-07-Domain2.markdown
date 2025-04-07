@@ -329,3 +329,49 @@ O texto apresenta uma introdução ao tema das capacidades e limitações da int
 * **Próximos Passos:** O texto indica que a discussão sobre a tarefa 2.2 continuará na próxima lição.
 
 **Em resumo, o texto introduz a IA generativa como uma ferramenta poderosa e versátil para negócios, destacando seus benefícios em termos de flexibilidade e potencial de redução de custos. Contudo, enfatiza a necessidade de compreender suas limitações para um uso ético e responsável, utilizando um teste prático simples para avaliar a adequação de tarefas para LLMs.**
+
+## Task Statement 2.2 Lesson 2
+
+O texto aborda diversos aspectos importantes relacionados ao uso e desenvolvimento de Large Language Models (LLMs), com foco em aprimoramento e avaliação. Aqui está um resumo dos principais pontos:
+
+**Uso de Aplicações LLM e o Ciclo de Vida de Projetos de IA Generativa:**
+
+* O texto inicia mencionando a continuidade da discussão sobre o uso de aplicações LLM dentro do contexto do ciclo de vida de projetos de IA generativa.
+
+**Fine-tuning com Instruções:**
+
+* O objetivo do fine-tuning com instruções é treinar o modelo para compreender melhor prompts em linguagem humana e gerar respostas mais naturais e semelhantes às humanas.
+* Essa abordagem pode melhorar a sustentabilidade do desempenho do modelo em comparação com a versão pré-treinada original.
+
+**Desafios com a Linguagem Natural e Comportamento de LLMs:**
+
+* Gerar linguagem natural e evitar comportamentos inadequados (toxicidade, agressividade, informações perigosas) são desafios significativos.
+* Esses problemas ocorrem porque os LLMs são treinados em grandes volumes de dados da internet, que podem conter linguagem problemática.
+
+**Alucinações:**
+
+* LLMs podem fornecer respostas confiantes, mas incorretas, mesmo sobre informações factualmente erradas (exemplo da dieta para diabéticos). Isso é chamado de "alucinação".
+* É crucial verificar as respostas de LLMs com fontes confiáveis antes de considerá-las corretas.
+
+**Valores Humanos e Alinhamento:**
+
+* É importante que os LLMs não gerem conteúdo prejudicial (ofensivo, discriminatório, ilícito).
+* Os valores de utilidade (helpfulness), honestidade (honesty) e não-maleficência (harmlessness) guiam o uso responsável de IA.
+* O fine-tuning com feedback humano pode alinhar melhor os modelos com as preferências humanas e aumentar esses valores, além de reduzir toxicidade e informações incorretas.
+
+**Interpretabilidade do Modelo:**
+
+* A interpretabilidade de um modelo de machine learning se refere à facilidade de compreender suas previsões.
+* Existe um trade-off entre o desempenho do modelo (o que ele prevê) e sua interpretabilidade (por que ele fez essa previsão).
+* Métodos de interpretabilidade podem ser classificados em análise intrínseca (para modelos mais simples) e análise post hoc (para modelos mais complexos, como redes neurais).
+* A análise post hoc pode ser local (focada em um único ponto de dados) ou global (visão geral do comportamento do modelo).
+
+**Avaliação do Desempenho:**
+
+* Desenvolvedores de LLMs usam métricas específicas para avaliar o desempenho dos modelos e compará-los.
+* Ao contrário de modelos de machine learning tradicionais (determinísticos com saídas conhecidas), a avaliação de LLMs é mais desafiadora devido à natureza não determinística e baseada em linguagem de suas saídas.
+* ROUGE (Recall-Oriented Understudy for Gisting Evaluation) é usado para avaliar a qualidade de resumos gerados automaticamente.
+* BLEU (Bilingual Evaluation Understudy) é usado para avaliar a qualidade de traduções automáticas.
+* O texto menciona que a discussão sobre ROUGE e BLEU continuará posteriormente.
+
+**Em resumo, o texto destaca a importância do fine-tuning para melhorar a qualidade e segurança das respostas de LLMs, os desafios relacionados à linguagem natural e à possibilidade de "alucinações", a necessidade de alinhar os modelos com valores humanos, o conceito de interpretabilidade de modelos e os métodos de avaliação de desempenho específicos para LLMs.**
