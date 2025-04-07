@@ -242,3 +242,69 @@ Aqui estão os pontos chave do texto:
 *   **Próxima Lição:** O texto indica que a discussão sobre o tópico 2.1 continuará na próxima lição.
 
 Em resumo, o texto fornece uma introdução aos LLMs como IA generativa e destaca seus principais casos de uso, com ênfase na geração e sumarização de texto, além da sua aplicação como ferramenta para desenvolvedores na geração de código. Também introduz as ferramentas da AWS que suportam essas aplicações e a importância de conhecer as diferentes arquiteturas de modelos generativos.
+
+## Task Statement 2.1 Lesson 5
+
+O texto discute o ciclo de vida de um projeto de Inteligência Artificial Generativa (IAG), desde a concepção até a implementação e monitoramento. Ele apresenta diferentes perspectivas sobre as etapas envolvidas e oferece conselhos práticos para o desenvolvimento de modelos de linguagem grandes (LLMs).
+
+**Principais pontos abordados no texto:**
+
+* **Ciclo de Vida Geral de Projetos de IAG:**
+    * Identificação do caso de uso
+    * Experimentação e seleção
+    * Adaptação, alinhamento e aumento
+    * Avaliação
+    * Implantação e iteração
+    * Monitoramento
+
+* **Primeira Etapa do Ciclo (Foco em Modelagem):**
+    * Definição de objetivos
+    * Coleta de dados
+    * Processamento de dados
+    * Seleção do modelo
+    * Treinamento e desenvolvimento do modelo
+
+* **Desenvolvimento do Modelo (Próxima Etapa):**
+    * Engenharia de features
+    * Construção
+    * Testes
+    * Validação
+    * Otimização
+    * Escalabilidade
+
+* **Implantação e Manutenção (Última Etapa):**
+    * Avaliação do modelo
+    * Implantação
+    * Feedback
+    * Atualizações
+    * Segurança
+    * Escalabilidade
+
+* **Ciclo de Vida do Modelo Fundacional (Perspectiva do Guia de Exame):**
+    * Seleção de dados
+    * Seleção do modelo
+    * Pré-treinamento
+    * Fine-tuning
+    * Avaliação
+    * Implantação
+    * Feedback
+
+* **Importância da Definição do Escopo:** Enfatiza a necessidade de definir o escopo do projeto de forma precisa e restrita, considerando a função específica do LLM na aplicação. Isso pode economizar tempo e custos de computação.
+
+* **Escolha do Modelo Inicial:** A decisão de treinar um modelo do zero ou utilizar um modelo base existente.
+
+* **Ajuste Fino e Prompt Engineering:**
+    * A avaliação do desempenho do modelo e a possibilidade de treinamento adicional.
+    * A importância do prompt engineering (aprendizagem in-context com exemplos) para melhorar o desempenho.
+    * A técnica de fine-tuning (aprendizagem supervisionada) como alternativa quando o prompt engineering não é suficiente.
+    * A técnica de Reinforcement Learning from Human Feedback (RLHF) para garantir que o modelo se comporte de acordo com as preferências humanas.
+
+* **Avaliação Contínua:** A necessidade de utilizar diferentes métricas e benchmarks para avaliar o desempenho e o alinhamento do modelo. O processo de adaptação e alinhamento é geralmente iterativo.
+
+* **Estratégia Preferencial:** O autor prefere começar com prompt engineering e avaliação, e depois utilizar fine-tuning para melhorias, sempre revisando o prompt engineering.
+
+* **Implantação:** O processo de deploy do modelo na infraestrutura e integração com a aplicação, otimizando recursos computacionais e a experiência do usuário.
+
+* **Infraestrutura Adicional e Limitações dos LLMs:** Considerações sobre a infraestrutura necessária e reconhecimento das limitações inerentes aos LLMs, como alucinações e dificuldades com raciocínio complexo e matemática, que podem ser difíceis de superar apenas com treinamento.
+
+**Em resumo, o texto oferece uma visão geral abrangente do ciclo de vida de projetos de IAG, destacando a importância de um planejamento cuidadoso, experimentação, ajuste fino e avaliação contínua para o sucesso do projeto.** Ele também antecipa a próxima etapa da discussão, focando na "task statement 2.2".
