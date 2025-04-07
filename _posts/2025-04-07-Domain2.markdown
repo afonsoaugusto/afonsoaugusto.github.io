@@ -444,3 +444,19 @@ Aqui estão os principais pontos abordados no texto:
 *   Devido à evolução constante da IA, é essencial medir, monitorar, revisar e reavaliar os modelos para garantir que atendam aos requisitos e objetivos de negócio.
 
 Em resumo, o texto fornece uma visão geral dos aspectos cruciais para a seleção e avaliação de modelos generativos de IA, enfatizando a importância de alinhar a escolha do modelo com as necessidades do negócio e de definir métricas claras para medir o sucesso das aplicações. Ele também destaca os desafios e oportunidades que os modelos de fundação apresentam para as organizações.
+
+## Task Statement 2.3 Lesson 1
+
+O texto aborda a terceira tarefa do Domínio 2, que se concentra em descrever a infraestrutura e as tecnologias da AWS para a construção de aplicações de inteligência artificial generativa (IA generativa). O autor inicia listando as vantagens de usar os serviços de IA generativa da AWS, como acessibilidade, baixo custo de entrada, eficiência, custo-benefício, rapidez na chegada ao mercado e a capacidade de atender aos objetivos de negócio.
+
+Um ponto crucial destacado é o tempo e o volume de dados necessários para treinar um Large Language Model (LLM), envolvendo milhões de cálculos. O texto então explica o conceito de *transfer learning* (aprendizado por transferência) como uma forma de acelerar esse processo, utilizando modelos pré-treinados como ponto de partida para treinar em novos datasets. Isso permite obter modelos precisos com menos dados e tempo de treinamento. A AWS oferece o SageMaker JumpStart, que auxilia na descoberta de projetos pré-construídos com datasets, modelos, tipos de algoritmos e soluções baseadas em melhores práticas da indústria.
+
+O texto também enfatiza os benefícios da infraestrutura da AWS para aplicações de IA generativa, com foco em segurança, conformidade, responsabilidade e segurança (*safety*). A preocupação dos clientes com a segurança de dados sensíveis é mencionada como um dos maiores desafios na IA generativa. A AWS prioriza a segurança em três camadas da stack de IA generativa:
+
+*   **Camada Inferior:** Ferramentas para construir e treinar LLMs e outros Foundation Models (FMs). A AWS oferece hardware especializado (AWS Nitro System com AWS Inferentia e AWS Trainium, além de instâncias com GPUs) para melhorar o desempenho e reduzir custos, garantindo zero acesso não autorizado a dados sensíveis de IA, como pesos de modelos e dados processados.
+*   **Camada Média:** Acesso a modelos e ferramentas para construir e escalar aplicações de IA generativa. Inclui serviços de ML para treinar ou ajustar FMs.
+*   **Camada Superior:** Aplicações que usam LLMs e outros FMs para diversas tarefas, como escrever e depurar código, gerar conteúdo e obter insights. Exemplos incluem dashboards e arquiteturas como Retrieval-Augmented Generation (RAG).
+
+O texto define os três componentes críticos de qualquer sistema de IA como entrada, modelo e saída, e ressalta a importância de proteger esses componentes com políticas de segurança, padrões e diretrizes, além de definir papéis e responsabilidades. Vulnerabilidades específicas de sistemas de IA, como prompt injection, data poisoning e model inversion, são mencionadas, reforçando a necessidade de validar políticas e implementar medidas de segurança como criptografia, autenticação multifator e monitoramento contínuo.
+
+Por fim, o autor menciona o AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI (CAF-AI) como um guia para a jornada em IA, ML e IA generativa, útil para discussões estratégicas e colaboração. O autor encerra a primeira parte da lição, indicando que a discussão sobre a tarefa 2.3 continuará na próxima lição.
