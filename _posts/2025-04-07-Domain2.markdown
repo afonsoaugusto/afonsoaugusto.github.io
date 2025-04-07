@@ -375,3 +375,72 @@ O texto aborda diversos aspectos importantes relacionados ao uso e desenvolvimen
 * O texto menciona que a discussão sobre ROUGE e BLEU continuará posteriormente.
 
 **Em resumo, o texto destaca a importância do fine-tuning para melhorar a qualidade e segurança das respostas de LLMs, os desafios relacionados à linguagem natural e à possibilidade de "alucinações", a necessidade de alinhar os modelos com valores humanos, o conceito de interpretabilidade de modelos e os métodos de avaliação de desempenho específicos para LLMs.**
+
+## Task Statement 2.2 Lesson 3
+
+O texto aborda a **tarefa 2.2** dentro de um contexto maior de aprendizado sobre Inteligência Artificial Generativa (IAG). O foco principal desta tarefa é a **seleção de modelos generativos de IA apropriados** para diferentes projetos, considerando diversos fatores e a importância de definir **métricas de negócio** para avaliar o sucesso dessas aplicações.
+
+Aqui estão os principais pontos abordados no texto:
+
+**1. Escolha da Arquitetura do Modelo:**
+
+*   A seleção da arquitetura correta é crucial para o sucesso de projetos de IAG.
+*   Modelos de fundação generativos são projetados para gerar diferentes tipos de conteúdo (texto, imagens, código, vídeo, embeddings).
+*   Esses modelos podem ser modificados para se adequarem a domínios e tarefas específicas.
+*   Modelos comuns para geração de dados incluem VAEs, GANs e modelos auto-regressivos, cada um com suas vantagens e desvantagens dependendo da complexidade e qualidade dos dados.
+*   O número e o tamanho dos modelos de fundação disponíveis cresceram rapidamente.
+
+**2. Métricas de Negócio para Aplicações de IAG:**
+
+*   É fundamental determinar métricas de negócio para avaliar o desempenho e o impacto das aplicações de IAG.
+*   Exemplos de métricas incluem performance cross-domain, eficiência, taxa de conversão, receita média por usuário, acurácia, valor do ciclo de vida do cliente (CLTV), entre outros.
+
+**3. Modelos de Fundação (FMs):**
+
+*   São treinados em grandes conjuntos de dados não rotulados e servem como base para a IAG.
+*   São significativamente maiores que modelos tradicionais de Machine Learning.
+*   São usados como ponto de partida para desenvolvimento e criação de modelos específicos.
+*   Podem interpretar linguagem, ter conversas e gerar imagens.
+*   Diferentes FMs se especializam em diferentes áreas (ex: Stable Diffusion para imagens, GPT-4 para linguagem natural).
+*   Geram outputs com alta acurácia baseados em prompts, mas é crucial entender as métricas (KPIs) para avaliar seu sucesso.
+
+**4. Desafios e Oportunidades dos FMs:**
+
+*   **Oportunidades:** Criação de novas funcionalidades e soluções baseadas na capacidade de gerar conteúdo diverso.
+*   **Desafios:**
+    *   Garantir outputs de alta qualidade alinhados com as necessidades do negócio.
+    *   Minimizar alucinações ou informações falsas.
+    *   Integração com sistemas e workflows de negócios existentes (acesso a bancos de dados, ERP, CRM).
+    *   Necessidade de profissionais com habilidades técnicas para implementação, customização e manutenção.
+    *   Requisitos de recursos computacionais e infraestrutura.
+
+**5. Métricas de Qualidade do Output:**
+
+*   Cruciais para a adoção de FMs, especialmente em aplicações voltadas para o cliente (chatbots).
+*   Incluem relevância, acurácia, coerência e adequação.
+*   Devem ser medidas com padrões predefinidos para garantir a eficiência.
+
+**6. Métricas de Eficiência:**
+
+*   Impactam o workflow da IAG e contribuem para a produtividade operacional.
+*   Podem ser rastreadas por taxas de conclusão de tarefas e redução de esforços manuais.
+*   Baixa taxa de erro é importante para manter a acurácia e a credibilidade.
+*   É necessário avaliar o retorno sobre o investimento (ROI) considerando custos e benefícios.
+
+**7. Métricas de Custos Operacionais e Eficiências Ganhas:**
+
+*   Importantes para comparar e avaliar os ganhos obtidos com a implementação de FMs.
+
+**8. Valor do Ciclo de Vida do Cliente (CLTV):**
+
+*   Estratégias para maximizar o CLTV incluem programas de fidelidade, criação de lealdade à marca, coleta de feedback, cross-selling e experiências personalizadas.
+
+**9. Métricas de Performance Cross-Domain:**
+
+*   Avaliam a capacidade de transferir e aplicar conhecimento entre diferentes domínios para gerar ou prever dados e conteúdo cross-domain.
+
+**10. Importância da Monitorização e Reavaliação Contínua:**
+
+*   Devido à evolução constante da IA, é essencial medir, monitorar, revisar e reavaliar os modelos para garantir que atendam aos requisitos e objetivos de negócio.
+
+Em resumo, o texto fornece uma visão geral dos aspectos cruciais para a seleção e avaliação de modelos generativos de IA, enfatizando a importância de alinhar a escolha do modelo com as necessidades do negócio e de definir métricas claras para medir o sucesso das aplicações. Ele também destaca os desafios e oportunidades que os modelos de fundação apresentam para as organizações.
