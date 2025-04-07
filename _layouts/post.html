@@ -2,21 +2,68 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} | {{ site.title }}</title>
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        background: #f9fafb;
+        color: #111827;
+      }
+      header, footer {
+        background: #1f2937;
+        color: #f3f4f6;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .toc {
+        position: sticky;
+        top: 2rem;
+        background: #f3f4f6;
+        padding: 1rem;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0.5rem;
+      }
+      .toc a {
+        color: #3b82f6;
+        text-decoration: none;
+      }
+      .toc a:hover {
+        text-decoration: underline;
+      }
+      .post-content h2, .post-content h3 {
+        margin-top: 2rem;
+      }
+      .post-content {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <h1><a href="{{ '/' | relative_url }}" style="color: #60a5fa; text-decoration: none;">{{ site.title }}</a></h1>
     </header>
 
-    <main style="display: flex; gap: 2rem; align-items: flex-start;">
-      <!-- Sidebar com Table of Contents -->
-      <aside id="toc" class="toc" style="flex: 0 0 250px;"></aside>
+    <main>
+      <!-- Índice lateral -->
+      <aside id="toc" class="toc"></aside>
 
       <!-- Conteúdo do post -->
-      <article class="post-content" style="flex: 1;">
+      <article class="post-content">
         <h1>{{ page.title }}</h1>
         <p><small>{{ page.date | date: "%d %B %Y" }}</small></p>
         {{ content }}
@@ -37,13 +84,15 @@
         const headings = content.querySelectorAll("h2, h3");
         if (headings.length === 0) return;
 
-        let html = "<div style='padding: 1em; background: #f5f5f5; border-left: 3px solid #007acc'><strong>Índice</strong><ul>";
+        let html = "<strong style='display:block; margin-bottom: .5rem;'>Índice</strong><ul style='list-style: none; padding: 0;'>";
         headings.forEach(h => {
           const id = h.id || h.textContent.trim().toLowerCase().replace(/[^\w]+/g, "-");
           h.id = id;
-          html += `<li style="margin-left:${h.tagName === 'H3' ? '1em' : '0'}"><a href="#${id}">${h.textContent}</a></li>`;
+          html += `<li style='margin: .25rem 0 .25rem ${h.tagName === "H3" ? "1em" : "0"};'>
+                    <a href="#${id}">${h.textContent}</a>
+                   </li>`;
         });
-        html += "</ul></div>";
+        html += "</ul>";
         toc.innerHTML = html;
       });
     </script>
