@@ -22,7 +22,7 @@ seo:
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
-remote_theme: jekyll/minima@latest
+remote_theme: jekyll/minima
 
 plugins:
   - jekyll-feed
