@@ -1,0 +1,68 @@
+---
+layout: post
+title: "Domain2"
+date: 2025-04-07 00:00:00 +0000
+categories: article
+---
+
+## Task Statement 2.1 Lesson 1
+
+O texto fornece uma introdução clara e concisa aos conceitos básicos da Inteligência Artificial Generativa (IA Generativa). Aqui estão os principais pontos abordados:
+
+**O que é IA Generativa:**
+
+*   É um subconjunto do aprendizado profundo (Deep Learning).
+*   Sua principal função é gerar conteúdo novo e original, em vez de classificar ou encontrar conteúdo existente.
+*   Pode criar diversos tipos de conteúdo, como texto, imagens, áudio, vídeo e até código.
+*   Aprende padrões e representações a partir de grandes volumes de dados de treinamento.
+*   Utiliza esse conhecimento para gerar outputs que se assemelham aos dados de treinamento.
+
+**Modelos de Fundação:**
+
+*   A IA Generativa frequentemente usa modelos de fundação, que são treinados em grandes quantidades de dados.
+*   Esses modelos buscam padrões estatísticos em diferentes modalidades, como linguagem natural e imagens.
+*   São redes neurais grandes e complexas, com bilhões de parâmetros aprendidos durante o treinamento (pré-treinamento).
+*   Modelos maiores, com mais parâmetros, possuem mais "memória" e podem executar tarefas mais avançadas.
+*   Podem ser usados diretamente ou adaptados para casos de uso específicos através de técnicas de ajuste fino (fine-tuning).
+
+**Como os Modelos Funcionam:**
+
+*   No coração da IA Generativa estão os modelos, construídos com redes neurais, recursos de sistema, dados e prompts.
+*   O treinamento equipa o modelo com o conhecimento necessário para gerar outputs únicos.
+*   O modelo recebe dados ou texto (o prompt) como entrada e fornece uma saída.
+*   Essa saída é uma "adivinhação" de qual deve ser a próxima palavra ou token.
+
+**Redes Transformer:**
+
+*   O elemento central da IA Generativa atual é a rede transformer, introduzida em 2017.
+*   Grandes Modelos de Linguagem (LLMs) como o ChatGPT são baseados nessa arquitetura.
+*   Esses LLMs são pré-treinados em grandes volumes de dados textuais da internet, construindo uma ampla base de conhecimento.
+*   Podem ser ajustados para tarefas específicas com relativamente poucos dados adicionais.
+
+**Aplicações e Conceitos Importantes:**
+
+*   A IA Generativa pode ser usada para diversas tarefas e casos de uso de conteúdo.
+*   LLMs podem interpretar instruções em linguagem natural e executá-las como um humano.
+*   O texto enfatiza a importância de entender conceitos como:
+    *   **Prompt:** A entrada fornecida ao modelo.
+    *   **Inference:** O processo de gerar uma saída a partir do prompt.
+    *   **Completion:** A saída gerada pelo modelo.
+    *   **Context Window:** A quantidade de informações que o modelo pode considerar ao gerar uma saída.
+    *   **Tokens:** As unidades básicas de texto que o modelo processa.
+    *   **Vocabulário dos LLMs:** O conjunto de tokens que o modelo conhece.
+    *   **Tokenizer:** O processo de converter texto em tokens.
+    *   **Prompt Engineering:** A arte de criar prompts eficazes para obter os resultados desejados.
+
+**Base Matemática:**
+
+*   Modelos de Machine Learning (ML), IA e IA Generativa utilizam estatística e álgebra linear para seus cálculos, incluindo modelagem de probabilidade, função de perda e multiplicação de matrizes.
+*   Esses cálculos são cruciais no aprendizado profundo, pois os modelos trabalham com números, não diretamente com dados brutos.
+
+**Prompt Engineering e In-Context Learning:**
+
+*   Se o modelo não produzir o resultado desejado inicialmente, o prompt engineering pode ser usado para refinar a entrada.
+*   Incluir exemplos da tarefa desejada dentro do prompt é chamado de "in-context learning".
+*   Essa técnica ajuda os LLMs a aprender mais sobre a tarefa ao fornecer exemplos ou dados adicionais no prompt.
+*   O prompt contém instruções e conteúdo, e o in-context learning pode ser implementado com inferência "few-shot", "zero-shot" e "one-shot".
+
+Em resumo, o texto oferece uma visão geral fundamental da IA Generativa, explicando o que é, como funciona em alto nível (com foco em modelos de fundação e redes transformer), suas possíveis aplicações e os principais conceitos que precisam ser compreendidos para trabalhar com essa tecnologia. O texto também introduz a importância do prompt e técnicas para otimizar a interação com modelos generativos.
