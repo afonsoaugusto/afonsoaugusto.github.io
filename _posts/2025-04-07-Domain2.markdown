@@ -69,7 +69,7 @@ Em resumo, o texto oferece uma visão geral fundamental da IA Generativa, explic
 
 ## Task Statement 2.1 Lesson 2
 
-## Análise do Texto sobre Conceitos Básicos de IA Generativa
+### Análise do Texto sobre Conceitos Básicos de IA Generativa
 
 O texto apresenta uma introdução aos conceitos fundamentais da Inteligência Artificial Generativa (IA Generativa), com foco no modelo Transformer. Ele é estruturado como uma parte de uma aula ou projeto maior, indicando uma progressão lógica dos tópicos.
 
@@ -106,3 +106,17 @@ O texto oferece uma introdução clara e concisa aos conceitos básicos de IA Ge
 * **Maior detalhe técnico (opcional):** Para um público mais técnico, poderia haver uma breve menção às dimensões dos embeddings ou à matemática básica por trás da autoatenção (produto escalar, softmax). No entanto, o texto parece direcionado a um público que busca uma compreensão conceitual inicial.
 
 Em resumo, o texto cumpre bem o objetivo de explicar os conceitos básicos de IA Generativa, com foco no Transformer, de forma acessível e organizada. Ele prepara o terreno para discussões mais aprofundadas sobre modelos pré-treinados e outros aspectos da área.
+
+* **IA Generativa:** Cria conteúdo humano-mimético.
+* **Modelos Fundacionais:** Pré-treinados, disponíveis publicamente.
+* **Tokenização:** Texto vira IDs numéricos.
+* **Vetor:** Lista ordenada de números.
+* **Embeddings:** Vetores com significado semântico.
+* **Transformer:** Rede neural central da IA.
+* **Autoatenção:** Pondera importância da entrada.
+* **Positional Embeddings:** Codifica ordem dos tokens.
+* **Inferência:** Transformer gera conclusões.
+* **Artigo "Attention":** Modelo supera arquiteturas antigas.
+* **Pré/Fine-tuning:** Modelo ganha entendimento.
+* **Recursos:** Link e flashcards adicionados.
+* **Próxima Lição:** Continuação dos conceitos.
