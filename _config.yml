@@ -33,6 +33,7 @@ plugins:
   - jekyll-remote-include
   - jekyll-include-cache
   - jekyll-paginate-v2
+  - jekyll-toc
   - kramdown
   - rouge
 
