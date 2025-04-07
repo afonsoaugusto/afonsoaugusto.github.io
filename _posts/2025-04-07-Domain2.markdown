@@ -308,3 +308,24 @@ O texto discute o ciclo de vida de um projeto de Inteligência Artificial Genera
 * **Infraestrutura Adicional e Limitações dos LLMs:** Considerações sobre a infraestrutura necessária e reconhecimento das limitações inerentes aos LLMs, como alucinações e dificuldades com raciocínio complexo e matemática, que podem ser difíceis de superar apenas com treinamento.
 
 **Em resumo, o texto oferece uma visão geral abrangente do ciclo de vida de projetos de IAG, destacando a importância de um planejamento cuidadoso, experimentação, ajuste fino e avaliação contínua para o sucesso do projeto.** Ele também antecipa a próxima etapa da discussão, focando na "task statement 2.2".
+
+## Task Statement 2.2 Lesson 1
+
+O texto apresenta uma introdução ao tema das capacidades e limitações da inteligência artificial generativa (IA generativa) para solucionar problemas de negócios, sendo esta a segunda tarefa do Domínio 2 de um curso. A explicação está dividida em três lições, e este trecho corresponde ao início.
+
+**Principais pontos abordados:**
+
+* **IA Generativa como Tecnologia de Propósito Geral:** Assim como o aprendizado profundo, a IA generativa e os LLMs (Large Language Models) são tecnologias com diversas aplicações em diferentes setores da economia, não se limitando a um único uso.
+* **Vantagens da IA Generativa:**
+    * **Adaptabilidade:** Capacidade de se ajustar a diferentes tarefas e contextos.
+    * **Responsividade:** Habilidade de gerar saídas relevantes e coerentes com as entradas.
+    * **Simplicidade:** Potencial para tornar a construção de aplicações de IA mais direta e acessível em comparação com sistemas de IA tradicionais.
+* **Impacto nos Negócios:** A IA generativa pode auxiliar empresas a construir aplicações valiosas de IA a custos mais baixos e com maior rapidez.
+* **Importância de Compreender as Limitações:** É crucial entender o que a IA generativa não pode fazer para garantir o desenvolvimento de modelos responsáveis, éticos e justos, alinhados com o uso responsável da IA (que será aprofundado no Domínio 4).
+* **Teste Prático para Avaliar a Capacidade de LLMs:** A pergunta "Uma criança de 10 anos conseguiria seguir as instruções no prompt e completar a tarefa?" é apresentada como um guia para avaliar se uma determinada tarefa é adequada para um LLM.
+    * **Exemplo Positivo:** Identificar se um e-mail é uma reclamação (tarefa que uma criança de 10 anos provavelmente conseguiria realizar).
+    * **Exemplo Negativo:** Escrever um artigo sobre um novo serviço da AWS sem informações prévias sobre ele (tarefa que nem um adulto sem informação conseguiria realizar detalhadamente).
+* **Natureza das Interações com LLMs:** Cada interação com um LLM é tratada isoladamente, sem memória de conversas anteriores. Isso significa que não é possível "treinar" o modelo em tempo real sobre especificidades do negócio ou preferências de estilo (embora o fine-tuning seja uma possibilidade para isso).
+* **Próximos Passos:** O texto indica que a discussão sobre a tarefa 2.2 continuará na próxima lição.
+
+**Em resumo, o texto introduz a IA generativa como uma ferramenta poderosa e versátil para negócios, destacando seus benefícios em termos de flexibilidade e potencial de redução de custos. Contudo, enfatiza a necessidade de compreender suas limitações para um uso ético e responsável, utilizando um teste prático simples para avaliar a adequação de tarefas para LLMs.**
