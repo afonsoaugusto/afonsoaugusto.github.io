@@ -217,3 +217,28 @@ O texto encerra com uma pausa, indicando que a discussão sobre a "task statemen
 **Próxima Lição**
 
 *   Continuação da task statement 2.1
+
+## Task Statement 2.1 Lesson 4
+
+O texto aborda o conceito de **Inteligência Artificial Generativa (IA Generativa)**, focando principalmente em **Grandes Modelos de Linguagem (LLMs)** e seus **principais casos de uso**.
+
+Aqui estão os pontos chave do texto:
+
+*   **Definição de LLMs como IA Generativa:** O texto começa definindo LLMs como um tipo de IA generativa que pode ser aplicada a diversas tarefas sem necessidade de ajuste fino (fine-tuning).
+*   **Casos de Uso para Geração de Texto:**
+    *   **Escrita e Reesrita:** Adaptação de textos para diferentes públicos, como converter documentos técnicos em linguagem mais acessível para iniciantes.
+    *   **Sumarização de Texto:** Geração de resumos concisos de documentos longos, como relatórios técnicos, financeiros, legais, artigos de notícias, etc.
+*   **Ferramentas da AWS para IA Generativa:** O texto menciona serviços e ferramentas da Amazon Web Services (AWS) para a construção de aplicações de IA generativa para criação de conteúdo:
+    *   **Amazon Bedrock e Amazon Titan:** Modelos pré-treinados para texto, imagem e áudio que podem ser ajustados para casos de uso específicos.
+    *   **SageMaker e Amazon Q Developer (anteriormente CodeWhisperer):** Suporte para geração e completação de código.
+    *   **Amazon Sumerian:** Oferta para produção virtual e criação de conteúdo 3D.
+*   **Outros Casos de Uso Mencionados (sem detalhe):** Além da geração de texto, o texto lista outros exemplos de aplicações de IA generativa, incluindo: extração de informação, resposta a perguntas, classificação, identificação de conteúdo prejudicial, tradução, sistemas de recomendação, marketing e anúncios personalizados, chatbots, agentes de atendimento ao cliente e busca.
+*   **IA Generativa como Ferramenta para Desenvolvedores (Geração de Código):**
+    *   Aceleração do desenvolvimento de software através da geração de trechos de código funcionais e até programas inteiros a partir de descrições em linguagem natural ou exemplos.
+    *   Automatização de tarefas rotineiras de programação, como completação de código e tradução entre linguagens.
+    *   **Amazon Q Developer:** Gera sugestões de código em tempo real com base em comentários e código existente.
+    *   A AWS cuida da infraestrutura, gerenciamento de dados, treinamento de modelos e inferência, permitindo que os usuários foquem nos seus casos de uso e aplicações.
+*   **Arquiteturas de Modelos Generativos:** O texto menciona a importância de entender diferentes arquiteturas como Redes Adversárias Generativas (GANs), Autoencoders Variacionais (VAEs) e Transformers, destacando que cada uma tem vantagens e limitações únicas, e a escolha depende do objetivo e do conjunto de dados.
+*   **Próxima Lição:** O texto indica que a discussão sobre o tópico 2.1 continuará na próxima lição.
+
+Em resumo, o texto fornece uma introdução aos LLMs como IA generativa e destaca seus principais casos de uso, com ênfase na geração e sumarização de texto, além da sua aplicação como ferramenta para desenvolvedores na geração de código. Também introduz as ferramentas da AWS que suportam essas aplicações e a importância de conhecer as diferentes arquiteturas de modelos generativos.
