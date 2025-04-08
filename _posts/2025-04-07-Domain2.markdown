@@ -507,3 +507,13 @@ Aqui estão os principais pontos abordados no texto:
     *   Segurança e privacidade de nível empresarial.
 
 Em resumo, o texto oferece uma visão geral dos custos e das opções disponíveis na AWS para trabalhar com LLMs, destacando os serviços gerenciados como alternativas mais acessíveis e escaláveis em comparação com a hospedagem própria e o treinamento de modelos do zero.
+
+## Links
+
+- https://aws.amazon.com/blogs/startups/selecting-the-right-foundation-model-for-your-startup/
+- https://www.xenonstack.com/insights/generative-adversarial-networks
+- https://www.xenonstack.com/blog/generative-ai-architecture
+- https://partyrock.aws/
+- https://aws.amazon.com/blogs/mt/monitoring-generative-ai-applications-using-amazon-bedrock-and-amazon-cloudwatch-integration/
+- https://aws.amazon.com/what-is/gan/
+- https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html
