@@ -460,3 +460,50 @@ O texto também enfatiza os benefícios da infraestrutura da AWS para aplicaçõ
 O texto define os três componentes críticos de qualquer sistema de IA como entrada, modelo e saída, e ressalta a importância de proteger esses componentes com políticas de segurança, padrões e diretrizes, além de definir papéis e responsabilidades. Vulnerabilidades específicas de sistemas de IA, como prompt injection, data poisoning e model inversion, são mencionadas, reforçando a necessidade de validar políticas e implementar medidas de segurança como criptografia, autenticação multifator e monitoramento contínuo.
 
 Por fim, o autor menciona o AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI (CAF-AI) como um guia para a jornada em IA, ML e IA generativa, útil para discussões estratégicas e colaboração. O autor encerra a primeira parte da lição, indicando que a discussão sobre a tarefa 2.3 continuará na próxima lição.
+
+## Task Statement 2.3 Lesson 2
+
+O texto aborda principalmente as **trade-offs de custos ao utilizar serviços de IA generativa da AWS, com foco em Large Language Models (LLMs)**. Ele explora diferentes modelos de precificação e apresenta serviços específicos da AWS que facilitam a utilização de LLMs.
+
+Aqui estão os principais pontos abordados no texto:
+
+*   **Modelos de Precificação para LLMs:**
+    *   **Hospedagem Própria:** Envolve custos de infraestrutura (computação) e potencialmente licença do modelo.
+    *   **Pagamento por Token:** O custo é baseado no número de tokens processados (entrada e saída), onde um token representa uma unidade de informação (caractere, palavra, pixel, etc.).
+
+*   **Vantagens do Modelo de Pagamento por Token (AWS):**
+    *   Escalabilidade.
+
+*   **Desvantagens da Hospedagem Própria:**
+    *   Investimento em infraestrutura.
+    *   Manutenção da infraestrutura.
+
+*   **Infraestrutura Global da AWS e sua Importância:**
+    *   Menciona componentes como Regiões, Localidades de Borda e Zonas de Disponibilidade.
+    *   Enfatiza a alta disponibilidade e tolerância a falhas inerentes à infraestrutura da AWS, especialmente em seus serviços gerenciados (AMS).
+
+*   **Camadas da AWS ML Stack:**
+    *   Infraestrutura Global.
+    *   Serviços de Machine Learning (ex: Amazon SageMaker).
+    *   Serviços de IA (serviços pré-construídos, algoritmos e modelos).
+
+*   **Serviços da AWS para Construir Aplicações com LLMs:**
+    *   **Amazon SageMaker JumpStart:** Um hub de modelos para rápida implantação e integração de modelos fundacionais. Permite ajuste fino e deployment, oferecendo recursos como blogs e notebooks de exemplo. Requer GPUs e os endpoints devem ser excluídos quando não utilizados para otimizar custos.
+    *   **Amazon Bedrock:** Um serviço gerenciado que permite acessar diversos modelos fundacionais (da AWS e de terceiros como Cohere e Stability AI) via APIs. Facilita o desenvolvimento de aplicações de IA generativa em escala, permite importar pesos de modelos personalizados e utiliza um modelo de pagamento por uso. Oferece playgrounds e avaliações de modelos para ajudar na escolha do modelo mais adequado.
+    *   **PartyRock:** Um playground construído sobre o Amazon Bedrock para aprender técnicas fundamentais de interação com modelos fundacionais através da criação de aplicações simples.
+    *   **Amazon Titan:** Um modelo fundacional de propósito geral oferecido pela Amazon, adequado para geração de texto.
+
+*   **Motivos para Não Treinar ou Hospedar LLMs Próprios:**
+    *   Alto investimento em pesquisa, coleta e limpeza de dados de qualidade.
+    *   Tempo necessário para treinamento.
+    *   Despesas com hardware para treinamento e hospedagem.
+    *   Custos de armazenamento de dados (embeddings em bancos de dados vetoriais).
+
+*   **Benefícios de Usar Serviços de IA Generativa da AWS:**
+    *   Construção e escalabilidade de aplicações de IA generativa.
+    *   Criação de novas experiências para clientes e funcionários.
+    *   Capacidade de personalização com dados e casos de uso próprios.
+    *   Acesso a FMs e LLMs de diferentes tamanhos e tipos.
+    *   Segurança e privacidade de nível empresarial.
+
+Em resumo, o texto oferece uma visão geral dos custos e das opções disponíveis na AWS para trabalhar com LLMs, destacando os serviços gerenciados como alternativas mais acessíveis e escaláveis em comparação com a hospedagem própria e o treinamento de modelos do zero.
