@@ -114,3 +114,69 @@ O texto apresentado é uma introdução à discussão sobre os critérios de des
     *   **Performance e Métricas:** Avaliar o desempenho do modelo em datasets originais e novos usando métricas como acurácia, precisão, recall, F1 score, RMSE, MAP e MAE. A importância de escolher métricas relevantes para a tarefa específica (exemplo do MAP para detecção de objetos) e considerar datasets desbalanceados é ressaltada.
 
 **Em resumo, o texto estabelece a base para uma discussão mais aprofundada sobre como selecionar modelos de fundação adequados para diferentes aplicações, enfatizando a necessidade de equilibrar diversos fatores como custo, desempenho, velocidade e os requisitos específicos do caso de uso.** A estrutura do texto indica que as próximas lições continuarão a explorar esses e outros critérios de seleção.
+
+## Task Statement 3.1 Lesson 2
+
+### 1
+
+O texto aborda diversas considerações importantes ao se trabalhar com modelos pré-treinados em aprendizado de máquina, especificamente no contexto da tarefa 3.1 (mencionada no início e no final). As principais ideias e pontos levantados são:
+
+**1. Viéses nos Dados de Treinamento:**
+   - É crucial entender e mitigar os riscos e preocupações éticas relacionados a possíveis viéses presentes nos dados utilizados para treinar o modelo pré-treinado.
+   - Isso influencia a escolha e o ajuste fino do modelo.
+
+**2. Disponibilidade e Compatibilidade do Modelo Pré-Treinado:**
+   - Existem diversas fontes online (TensorFlow Hub, PyTorch Hub, Hugging Face, etc.) para encontrar modelos pré-treinados.
+   - É fundamental verificar a compatibilidade do modelo com o framework, linguagem e ambiente de trabalho.
+   - Outros aspectos importantes são a licença, a documentação, a regularidade das atualizações e manutenções, e a existência de problemas ou limitações conhecidas.
+
+**3. Customização e Explicabilidade do Modelo Pré-Treinado:**
+   - A capacidade de modificar ou estender o modelo pré-treinado para atender às necessidades específicas da tarefa (adição de camadas, classes, features) é uma consideração relevante.
+   - Compreender como o modelo funciona e toma decisões é importante. Modelos flexíveis, modulares e transparentes, que ofereçam ferramentas de visualização e interpretação, são desejáveis.
+
+**4. Interpretabilidade vs. Explicabilidade:**
+   - **Interpretabilidade:** Refere-se à capacidade de explicar matematicamente, através de coeficientes e fórmulas, o porquê de uma previsão. Isso geralmente é possível em modelos mais simples.
+   - **Explicabilidade:** Busca explicar o funcionamento de modelos complexos (como os "foundation models" ou "caixas pretas") através de aproximações locais com modelos mais simples e interpretáveis.
+   - **Modelos pré-treinados complexos não são inerentemente interpretáveis** devido à sua natureza. Se a interpretabilidade é um requisito fundamental, modelos mais simples (regressão linear, árvores de decisão) podem ser mais adequados.
+
+**5. Complexidade do Modelo:**
+   - Modelos mais complexos podem identificar padrões intrincados nos dados e potencialmente oferecer melhor desempenho.
+   - No entanto, maior complexidade acarreta desafios como aumento de custos (computacionais?), dificuldade na explicação das saídas e maiores dificuldades de manutenção.
+
+**6. Outras Considerações (mencionadas brevemente):**
+   - Restrições de hardware.
+   - Atualizações de manutenção.
+   - Privacidade de dados.
+   - Transfer learning.
+
+**Em resumo, o texto enfatiza a necessidade de uma avaliação abrangente ao escolher e utilizar modelos pré-treinados, indo além da simples disponibilidade e considerando aspectos cruciais como viéses, compatibilidade, capacidade de customização e, principalmente, a distinção entre interpretabilidade e explicabilidade, além dos impactos da complexidade do modelo.** O autor informa que a discussão sobre a tarefa 3.1 continuará na próxima lição.
+
+### 2
+
+**Resumo para Revisão e Estudo:**
+
+**Tópico:** Considerações Adicionais no Uso de Modelos Pré-Treinados
+
+**Pontos Chave:**
+
+*   **Vieses nos Dados de Treinamento:**
+    *   Importância de mitigar riscos e abordar questões éticas.
+    *   Necessidade de decisões informadas sobre seleção e ajuste fino.
+*   **Disponibilidade e Compatibilidade do Modelo:**
+    *   Diversas fontes online (TensorFlow Hub, PyTorch Hub, Hugging Face).
+    *   Verificar compatibilidade com framework, linguagem e ambiente.
+    *   Checar licença, documentação, atualizações, manutenção e limitações conhecidas.
+*   **Customização e Explicabilidade:**
+    *   Possibilidade de modificar/estender o modelo (adição de camadas, classes, features).
+    *   Importância de entender o funcionamento e as decisões do modelo.
+    *   Buscar modelos flexíveis, modulares, transparentes e com ferramentas de visualização/interpretação.
+*   **Interpretabilidade vs. Explicabilidade:**
+    *   **Interpretabilidade:** Capacidade de explicar matematicamente as previsões (comum em modelos simples). Modelos complexos (como foundation models) não são inherentemente interpretáveis ("caixa preta").
+    *   **Explicabilidade:** Tenta explicar a "caixa preta" aproximando-a localmente com um modelo mais simples e interpretável.
+    *   Modelos pré-treinados não são transparentes por design. Se interpretabilidade for crucial, modelos mais simples podem ser preferíveis (ex: regressão linear, árvores de decisão).
+*   **Complexidade do Modelo:**
+    *   Modelos complexos podem identificar padrões intrincados, mas dificultam manutenção e interpretabilidade.
+    *   Maior complexidade pode melhorar o desempenho, mas aumentar custos e dificultar a explicação dos resultados.
+*   **Outras Considerações (mencionadas):** Restrições de hardware, atualizações de manutenção, privacidade de dados, aprendizado por transferência, etc.
+
+**Próximo Passo:** Continuação do tópico 3.1 na próxima aula.
