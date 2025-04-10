@@ -180,3 +180,27 @@ O texto aborda diversas considerações importantes ao se trabalhar com modelos 
 *   **Outras Considerações (mencionadas):** Restrições de hardware, atualizações de manutenção, privacidade de dados, aprendizado por transferência, etc.
 
 **Próximo Passo:** Continuação do tópico 3.1 na próxima aula.
+
+## Task Statement 3.1 Lesson 3
+
+O texto aborda o tema da **inferência em modelos de fundação**, com foco em como os **parâmetros de inferência** e os **prompts** influenciam as respostas do modelo. Ele também introduz o conceito de **Retrieval Augmented Generation (RAG)** e a importância de **bancos de dados vetoriais** nesse processo.
+
+Aqui estão os principais pontos do texto:
+
+*   **Inferência:** Definida como o processo de usar um modelo treinado para fazer previsões em novos dados. Em modelos de linguagem, isso significa gerar uma saída (resposta) a partir de uma entrada (prompt).
+*   **Amazon Bedrock:** Mencionado como uma plataforma que permite executar inferência em diversos modelos de fundação, oferecendo a flexibilidade de usar modelos base, customizados ou provisionados.
+*   **Inputs para Inferência:** O principal input fornecido a um modelo durante a inferência é o **prompt**.
+*   **Parâmetros de Inferência:** São valores ajustáveis que controlam e influenciam a resposta do modelo. O texto lista exemplos como:
+    *   **Randomness e Diversidade:** Temperatura, Top K, Top P.
+    *   **Comprimento da Resposta:** Response length, penalties, stop sequences.
+*   **Importância da Experimentação:** É crucial experimentar com diferentes prompts e parâmetros de inferência para encontrar o equilíbrio ideal entre diversidade, coerência e eficiência de recursos. Além disso, é necessário monitorar e ajustar esses parâmetros em produção.
+*   **Prompts:** Definidos como um conjunto específico de entradas fornecidas pelo usuário para guiar o LLM a gerar uma resposta apropriada. Prompts podem ser enriquecidos com dados contextuais de bancos de dados internos.
+*   **Retrieval Augmented Generation (RAG):** Uma técnica que envolve integrar dados externos (de bancos de dados, especialmente bancos de dados vetoriais) ao prompt para enriquecer semanticamente a entrada e melhorar a qualidade e relevância da resposta gerada pelo modelo.
+*   **Bancos de Dados Vetoriais:** São coleções de dados armazenados como representações matemáticas (vetores). Eles armazenam dados estruturados e não estruturados juntamente com seus vetores de embedding.
+*   **Vector Embeddings:** Representações numéricas de dados (como palavras e frases) que capturam seu significado e relações semânticas. Um modelo de machine learning (especialmente um modelo de embedding) é necessário para criar esses vetores.
+*   **Relação entre Modelos de ML e Bancos de Dados Vetoriais:** Um modelo de machine learning é um pré-requisito para criar um banco de dados vetorial, pois é usado para gerar os embeddings. Bancos de dados vetoriais servem como referência factual para aplicações baseadas em modelos de fundação, ajudando a recuperar dados confiáveis.
+*   **Vantagens dos Bancos de Dados Vetoriais:** Permitem buscas eficientes e rápidas, além de oferecer funcionalidades como gerenciamento de dados, tolerância a falhas, autenticação, controle de acesso e um motor de consulta.
+*   **Knowledge Bases no Amazon Bedrock:** Um exemplo de como coletar fontes de dados em um repositório para aproveitar o RAG.
+*   **Tradeoffs de Custo:** O texto enfatiza a importância de entender os tradeoffs de custo das diferentes abordagens para personalização de modelos de fundação (pré-treinamento, fine-tuning, aprendizado in-context e RAG) para o exame.
+
+Em resumo, o texto estabelece as bases para entender como interagir com modelos de fundação através da inferência, destacando o papel crucial dos parâmetros e prompts. Ele também introduz o conceito avançado de RAG e a infraestrutura subjacente dos bancos de dados vetoriais, enfatizando a importância de considerar diferentes abordagens e seus respectivos custos. A próxima lição se aprofundará no RAG.
