@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Domain 3: Applications of Foundation Models (Standard AIF)"
+date: 2025-04-07 00:00:00 +0000
+categories: article
+---
+
+## Domain 3 Introduction
+
+O texto apresenta o **Domínio 3**, que aborda a **aplicação de modelos de fundação (foundation models)**. Ele se conecta ao Domínio 2, que discutiu os modelos de fundação e seu ciclo de vida, reforçando que são modelos pré-treinados, prontos para uso e treinados em vastos conjuntos de dados.
+
+**Pontos chave do texto:**
+
+* **O que são modelos de fundação:** Grandes redes neurais de aprendizado profundo que servem como ponto de partida para desenvolver modelos de machine learning mais rápidos e baratos para novas aplicações.
+* **Diferenciais dos modelos de fundação:**
+    * **Adaptabilidade:** Capacidade de realizar diversas tarefas com alta precisão a partir de prompts de entrada (exemplos: NLP, question answering, classificação de imagens).
+    * **Tamanho e propósito geral:** Diferentemente dos modelos tradicionais de ML, que são específicos para tarefas como análise de sentimento, classificação de imagens e previsão de tendências.
+* **Aplicações dos modelos de fundação:** Suporte ao cliente, tradução de idiomas, geração de conteúdo, geração de código, copywriting, classificação de imagens, criação e edição de imagens de alta resolução, geração de vídeo e áudio, extração de documentos, saúde, veículos autônomos e robótica.
+* **Estrutura do Domínio 3:** Dividido em quatro tarefas (task statements) que serão discutidas em lições futuras:
+    * **Tarefa 3.1:** Descrever considerações de design para aplicações que usam modelos de fundação (escolha do modelo pré-treinado, efeito dos parâmetros de inferência, RAG e suas aplicações, custos de personalização, serviços AWS para embeddings, papel dos agentes).
+    * **Tarefa 3.2:** Escolher técnicas eficazes de prompt engineering (melhores práticas, técnicas, riscos, limitações, conceitos e constructos).
+    * **Tarefa 3.3:** Descrever o processo de treinamento e fine-tuning de modelos de fundação (elementos e métodos de treinamento, preparação de dados para fine-tuning).
+    * **Tarefa 3.4:** Descrever métodos para avaliar o desempenho de modelos de fundação (abordagens, métricas, como determinar se o modelo atende aos objetivos de negócios).
+* **Próximos passos:** Os próximos vídeos abordarão cada uma das quatro tarefas individualmente, preparando o público para um exame sobre o tema. A próxima lição focará na Tarefa 3.1.
+
+Em resumo, o texto serve como uma introdução ao Domínio 3 sobre a aplicação de modelos de fundação, destacando suas características, aplicações e a estrutura dos tópicos que serão abordados nas próximas lições. O objetivo é preparar o leitor para entender os aspectos práticos da utilização desses modelos em diferentes cenários.
