@@ -97,3 +97,20 @@ Em resumo, o texto serve como uma introdução ao Domínio 3 sobre a aplicação
     *   Permitir que robôs entendam comandos de linguagem natural.
     *   Facilitar a interação entre humanos e robôs.
     *   Melhorar a capacidade de aprendizado e adaptação dos robôs.
+
+## Task Statement 3.1 Lesson 1
+
+O texto apresentado é uma introdução à discussão sobre os critérios de design para aplicações que utilizam *foundation models* (modelos de fundação). O objetivo principal desta primeira parte é identificar e explicar algumas considerações cruciais para a seleção desses modelos pré-treinados.
+
+**Os principais pontos abordados no texto são:**
+
+*   **Contextualização:** O texto se situa dentro do Domínio 3 (tarefa 1) e retoma discussões do Domínio 2 sobre as vantagens e considerações dos modelos pré-treinados (serem grandes e exigirem muitos recursos computacionais).
+*   **Objetivo da Tarefa:** Identificar critérios de seleção de modelos pré-treinados, com foco inicial em custo, modalidade e latência. Outros critérios como tamanho, complexidade, customização e comprimentos de entrada/saída são mencionados como parte da lista a ser considerada.
+*   **Custo:** A duração e o custo do treinamento são fatores importantes devido aos gastos com hardware e armazenamento. É levantada a questão do equilíbrio entre acurácia e custo de treinamento, enfatizando que a escolha depende dos requisitos do projeto e da necessidade de arquitetar uma solução escalável e eficiente.
+*   **Latência:** A velocidade de inferência e os requisitos de tempo real são cruciais, especialmente para aplicações que precisam fornecer resultados instantaneamente. Modelos mais complexos podem ter tempos de inferência mais longos, tornando-os inadequados para certos cenários. O exemplo de um veículo autônomo ilustra a importância da inferência rápida.
+*   **Modalidades:** A escolha de modelos que suportam as modalidades de dados necessárias para a aplicação é fundamental. Métodos de ensemble podem combinar modelos de diferentes modalidades para melhorar o desempenho. A necessidade de modelos multilinguais treinados em línguas relevantes também é mencionada.
+*   **Outras Considerações (introduzidas):** O texto também introduz brevemente outras considerações importantes como:
+    *   **Arquitetura e Complexidade:** Diferentes arquiteturas (CNNs para visão computacional, RNNs para NLP) têm diferentes pontos fortes e fracos. A complexidade do modelo (número de parâmetros, camadas) afeta velocidade, memória e acurácia.
+    *   **Performance e Métricas:** Avaliar o desempenho do modelo em datasets originais e novos usando métricas como acurácia, precisão, recall, F1 score, RMSE, MAP e MAE. A importância de escolher métricas relevantes para a tarefa específica (exemplo do MAP para detecção de objetos) e considerar datasets desbalanceados é ressaltada.
+
+**Em resumo, o texto estabelece a base para uma discussão mais aprofundada sobre como selecionar modelos de fundação adequados para diferentes aplicações, enfatizando a necessidade de equilibrar diversos fatores como custo, desempenho, velocidade e os requisitos específicos do caso de uso.** A estrutura do texto indica que as próximas lições continuarão a explorar esses e outros critérios de seleção.
