@@ -205,6 +205,86 @@ Aqui estão os principais pontos do texto:
 
 Em resumo, o texto estabelece as bases para entender como interagir com modelos de fundação através da inferência, destacando o papel crucial dos parâmetros e prompts. Ele também introduz o conceito avançado de RAG e a infraestrutura subjacente dos bancos de dados vetoriais, enfatizando a importância de considerar diferentes abordagens e seus respectivos custos. A próxima lição se aprofundará no RAG.
 
+## Task Statement 3.1 Lesson 4
+
+Com base no texto fornecido, aqui estão os principais pontos e uma análise:
+
+**Ideia Central:** O texto discute a Recuperação Aumentada por Geração (RAG) como uma técnica para aprimorar modelos de linguagem grandes (LLMs) com conhecimento externo e atualizado, mitigando o problema de alucinações. Ele também introduz o conceito de "Agents for Amazon Bedrock" como uma solução para permitir que LLMs realizem tarefas do mundo real.
+
+**Componentes do RAG:**
+
+*   **Retriever:** Componente responsável por pesquisar em uma base de conhecimento (tipicamente um banco de dados vetorial) informações relevantes para a consulta do usuário.
+*   **Gerador:** Componente que utiliza as informações recuperadas para gerar uma resposta contextualmente relevante e precisa.
+
+**Banco de Dados Vetoriais no RAG:**
+
+*   A consulta do usuário é codificada (embedding) em um formato vetorial.
+*   Esse embedding é usado para pesquisar no banco de dados vetorial embeddings semelhantes de dados externos.
+*   Os dados semelhantes recuperados são combinados com a consulta original e enviados ao LLM para gerar a resposta.
+
+**Exemplo de Uso de Banco de Dados Vetorial no Mundo Real:** O texto não fornece um exemplo específico além do contexto do RAG. No entanto, podemos inferir que um banco de dados vetorial seria usado em qualquer aplicação que precise encontrar informações semanticamente similares, como:
+    *   **Sistemas de recomendação:** Encontrar produtos ou conteúdos semelhantes aos que um usuário já gostou.
+    *   **Busca semântica:** Permitir que os usuários encontrem documentos ou informações com base no significado de suas palavras, em vez de correspondências exatas de palavras-chave.
+    *   **Detecção de similaridade:** Identificar documentos duplicados ou plagiarismo.
+
+**Hallucinações em LLMs e a Solução RAG:**
+
+*   LLMs generativos podem gerar respostas factualmente incorretas (alucinações) porque seu conhecimento é limitado aos dados com os quais foram treinados.
+*   O RAG resolve esse problema fornecendo aos LLMs acesso a uma base de conhecimento externa e atualizada, garantindo respostas mais precisas e contextualmente relevantes.
+
+**Serviços AWS para Banco de Dados Vetoriais:** O texto lista vários serviços da AWS que podem ser usados para armazenar embeddings vetoriais:
+
+*   Amazon OpenSearch Service
+*   Amazon Aurora
+*   Redis
+*   Amazon Neptune
+*   Amazon DocumentDB com compatibilidade MongoDB
+*   Amazon RDS com PostgreSQL (com a extensão `pgvector`)
+*   Amazon OpenSearch Serverless (com um "vector engine")
+*   Knowledge Bases for Amazon Bedrock (oferece RAG totalmente gerenciado)
+
+**Amazon OpenSearch Service e Busca Semântica:**
+
+*   O OpenSearch Service oferece capacidades de banco de dados vetorial para implementar busca semântica, RAG, sistemas de recomendação e busca de mídia.
+*   A busca semântica utiliza embeddings baseados em linguagem (como modelos BERT) para melhorar a relevância dos resultados da busca, indo além da busca por palavras-chave.
+*   O texto menciona um workshop utilizando o Amazon SageMaker para gerar vetores e armazená-los no OpenSearch.
+
+**Amazon OpenSearch Serverless:**
+
+*   Oferece armazenamento e busca vetorial sem a necessidade de gerenciar a infraestrutura do banco de dados.
+*   Facilita a construção de aplicações de busca aumentada e IA generativa.
+
+**Knowledge Bases for Amazon Bedrock:**
+
+*   Oferece uma solução RAG totalmente gerenciada, permitindo conectar FMs aos dados da empresa armazenados como embeddings.
+*   Visa fornecer respostas mais relevantes, contextuais e precisas sem a necessidade de retreinar continuamente o FM.
+
+**Amazon RDS for PostgreSQL e `pgvector`:**
+
+*   A extensão `pgvector` permite armazenar e pesquisar embeddings eficientemente no PostgreSQL.
+
+**Capacidade de Modelos Maiores:**
+
+*   Modelos maiores tendem a ser mais capazes de realizar tarefas bem, muitas vezes sem a necessidade de aprendizado no contexto ou treinamento adicional.
+
+**Introdução a Agentes para Amazon Bedrock:**
+
+*   LLMs sozinhos não podem realizar tarefas do mundo real (como reservar voos) porque essas tarefas exigem dados e workflows específicos de organizações que geralmente precisam de programação personalizada.
+*   Agentes para Amazon Bedrock são uma funcionalidade gerenciada da AWS que permite construir aplicações que utilizam FMs para realizar tarefas do mundo real.
+*   Agentes podem:
+    *   Dividir tarefas complexas.
+    *   Gerar lógica de orquestração ou código personalizado.
+    *   Conectar-se a bancos de dados e APIs de forma segura.
+    *   Ingerir e estruturar dados.
+    *   Aumentar informações com detalhes contextuais.
+    *   Chamar APIs para executar ações.
+    *   Invocar bases de conhecimento para complementar informações.
+*   Um exemplo é um agente para ajudar clientes a reservar férias de mergulho.
+
+**Próximos Passos:** O texto indica que a próxima lição abordará a tarefa 3.2.
+
+**Em resumo, o texto explica de forma clara e concisa o conceito de RAG, a importância de bancos de dados vetoriais nesse processo, os serviços AWS disponíveis para essa finalidade e introduz a ideia de agentes como uma camada adicional para permitir que LLMs interajam com o mundo real e executem tarefas complexas.**
+
 ## Links
 
 1 - What Are Foundation Models?
