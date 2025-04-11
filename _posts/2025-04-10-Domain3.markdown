@@ -285,6 +285,111 @@ Com base no texto fornecido, aqui estão os principais pontos e uma análise:
 
 **Em resumo, o texto explica de forma clara e concisa o conceito de RAG, a importância de bancos de dados vetoriais nesse processo, os serviços AWS disponíveis para essa finalidade e introduz a ideia de agentes como uma camada adicional para permitir que LLMs interajam com o mundo real e executem tarefas complexas.**
 
+## Task Statement 3.2 Lesson 1
+
+Com base no texto fornecido, podemos extrair as seguintes informações chave sobre o tema de prompt engineering:
+
+**O que é um Prompt:**
+
+* Um conjunto específico de entradas fornecidas pelo usuário.
+* Guia os LLMs (Large Language Models) a gerar uma resposta ou saída apropriada para uma tarefa ou instrução.
+
+**Componentes de um Prompt:**
+
+Um prompt pode conter um ou mais dos seguintes componentes:
+
+* **Tarefa ou Instrução:** O que o LLM deve fazer.
+* **Contexto:** Informações adicionais relevantes para a tarefa.
+* **Texto de Entrada:** O dado específico sobre o qual o LLM deve trabalhar para gerar a resposta.
+
+**Técnicas de Prompt Engineering:**
+
+O texto menciona diversas técnicas de prompt engineering:
+
+* **Few-shot Prompting:** Fornecer alguns exemplos no prompt para ajudar o LLM a entender melhor e calibrar sua saída às expectativas do usuário.
+* **Zero-shot Prompting:** Realizar uma tarefa (como classificação de sentimentos) sem fornecer nenhum exemplo no prompt.
+* **Prompt Templates:** Modelos predefinidos que podem incluir instruções, exemplos few-shot e conteúdo/questões específicas para diferentes casos de uso.
+* **Chain-of-Thought Prompting:** Para tarefas complexas, dividir o processo de raciocínio em etapas intermediárias para melhorar a qualidade e a coerência da saída final.
+* **Prompt Tuning:** Uma técnica avançada onde o texto do prompt é substituído por um "embedding backer" contínuo otimizado durante o treinamento do modelo. Isso permite um ajuste fino para uma tarefa específica, mantendo os outros parâmetros do modelo congelados, sendo mais eficiente que o fine-tuning completo.
+
+**Definição de Prompt Engineering pela AWS:**
+
+* A prática de criar e otimizar prompts de entrada.
+* Envolve a seleção de palavras, frases, sentenças, pontuação e caracteres separadores apropriados para usar LLMs de forma eficaz em diversas aplicações.
+
+**Importância da Qualidade do Prompt:**
+
+* A qualidade dos prompts fornecidos aos LLMs impacta diretamente a qualidade de suas respostas.
+* É crucial fornecer todas as informações e ferramentas necessárias no prompt.
+
+**Considerações para a Estratégia de Prompt Engineering:**
+
+* A estratégia depende tanto da tarefa específica quanto dos dados disponíveis.
+
+**Tarefas Comuns Suportadas por LLMs no Amazon Bedrock (exemplos):**
+
+* Classificação
+* Pergunta e Resposta (com e sem contexto)
+* Sumarização
+* Geração de texto de formato livre
+* Geração de código
+* Matemática
+* Raciocínio ou pensamento lógico
+
+**Espaço Latente (Latent Space):**
+
+* É o conhecimento codificado da linguagem dentro de um LLM.
+* Representa os padrões de dados armazenados que capturam relacionamentos.
+* Quando um LLM é solicitado (prompted), ele reconstrói a linguagem a partir desses padrões.
+* Pode ser visto como um "banco de dados estatístico" de padrões que o modelo usa para gerar novas saídas.
+* No exemplo da viagem de mergulho, o banco de dados de destinos, profundidade, visibilidade, temperatura da água e do ar, etc., seria o espaço latente.
+
+**Em resumo, o texto introduz o conceito de prompt engineering, detalha os componentes de um prompt, explora diversas técnicas para otimizar a interação com LLMs e destaca a importância de entender as capacidades e o "conhecimento" interno (espaço latente) dos modelos para criar prompts eficazes.**
+
+### Topicos 3.2.1
+
+**Conceitos Fundamentais:**
+
+*   **O que é um Prompt:** Definição e sua função como guia para LLMs.
+*   **Componentes de um Prompt:**
+    *   Tarefa ou Instrução
+    *   Contexto
+    *   Texto de Entrada
+*   **Definição de Prompt Engineering:** Prática de criar e otimizar prompts para uso eficaz de LLMs.
+*   **Importância da Qualidade do Prompt:** Impacto na qualidade das respostas geradas.
+
+**Técnicas de Prompt Engineering:**
+
+*   **Few-shot Prompting:** Uso de exemplos no prompt.
+*   **Zero-shot Prompting:** Realização de tarefas sem exemplos.
+*   **Prompt Templates:** Modelos predefinidos para diferentes casos de uso.
+*   **Chain-of-Thought Prompting:** Decomposição de tarefas complexas em etapas.
+*   **Prompt Tuning:** Otimização de "embedding backers" para tarefas específicas (conceito avançado).
+
+**Considerações Estratégicas:**
+
+*   **Dependência da Tarefa e dos Dados:** Como a escolha da técnica é influenciada.
+*   **Tarefas Comuns Suportadas por LLMs (exemplos no Amazon Bedrock):**
+    *   Classificação
+    *   Pergunta e Resposta (com/sem contexto)
+    *   Sumarização
+    *   Geração de texto livre
+    *   Geração de código
+    *   Matemática
+    *   Raciocínio lógico
+
+**Espaço Latente:**
+
+*   **Definição:** Conhecimento codificado e padrões de linguagem em LLMs.
+*   **Funcionamento:** Como o modelo usa esses padrões para gerar novas saídas.
+*   **Analogia com Banco de Dados Estatístico:** Compreensão do modelo sobre os dados.
+*   **Exemplo da Viagem de Mergulho:** Ilustração do espaço latente em um cenário prático.
+
+**Para o Exame:**
+
+*   Entender as diretrizes para fornecer informações e ferramentas necessárias nos prompts.
+*   Saber como encontrar o melhor formato de prompt para diferentes casos de uso no Amazon Bedrock.
+
 ## Links
 
 1 - What Are Foundation Models?
