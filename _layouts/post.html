@@ -7,6 +7,10 @@
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <style>
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
       body {
         font-family: system-ui, sans-serif;
         margin: 0;
@@ -69,6 +73,9 @@
         padding: 2rem;
         border-radius: 0.5rem;
         box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
       }
 
       /* Desktop responsivo */
@@ -131,7 +138,6 @@
           return;
         }
 
-        // Gera o HTML do índice
         let html = "<strong style='display:block; margin-bottom: .5rem;'>Índice</strong><ul style='list-style: none; padding: 0; margin: 0;'>";
         headings.forEach(h => {
           const id = h.id || h.textContent.trim().toLowerCase().replace(/[^\w]+/g, "-");
@@ -143,7 +149,6 @@
         html += "</ul>";
         toc.innerHTML = html;
 
-        // Toggle para mobile
         if (tocToggle) {
           tocToggle.addEventListener("click", () => {
             toc.classList.toggle("open");
