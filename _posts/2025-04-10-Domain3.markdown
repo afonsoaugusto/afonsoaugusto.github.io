@@ -204,3 +204,41 @@ Aqui estão os principais pontos do texto:
 *   **Tradeoffs de Custo:** O texto enfatiza a importância de entender os tradeoffs de custo das diferentes abordagens para personalização de modelos de fundação (pré-treinamento, fine-tuning, aprendizado in-context e RAG) para o exame.
 
 Em resumo, o texto estabelece as bases para entender como interagir com modelos de fundação através da inferência, destacando o papel crucial dos parâmetros e prompts. Ele também introduz o conceito avançado de RAG e a infraestrutura subjacente dos bancos de dados vetoriais, enfatizando a importância de considerar diferentes abordagens e seus respectivos custos. A próxima lição se aprofundará no RAG.
+
+## Links
+
+1 - What Are Foundation Models?
+<https://aws.amazon.com/what-is/foundation-models/>
+
+2 - Inference Parameters
+<https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html>
+
+3 - Knowledge Bases for Amazon Bedrock
+<https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html>
+
+4 - Agents for Amazon Bedrock
+<https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html>
+
+5 - Amazon OpenSearch Service’s Vector Database Capabilities Explained
+<https://aws.amazon.com/blogs/big-data/amazon-opensearch-services-vector-database-capabilities-explained/>
+
+6 - The Role of Vector Datastores in Generative AI Applications
+<https://aws.amazon.com/blogs/database/the-role-of-vector-datastores-in-generative-ai-applications/>
+
+7 - Vector Engine for Amazon OpenSearch Serverless
+<https://aws.amazon.com/opensearch-service/serverless-vector-engine/>
+
+8 - What Is Prompt Engineering?
+<https://aws.amazon.com/what-is/prompt-engineering/>
+
+9 - Domain-Adaptation Fine-Tuning of Foundation Models in Amazon SageMaker JumpStart on Financial Data
+<https://aws.amazon.com/blogs/machine-learning/domain-adaptation-fine-tuning-of-foundation-models-in-amazon-sagemaker-jumpstart-on-financial-data/>
+
+10 - Metric: bleu
+<https://huggingface.co/spaces/evaluate-metric/bleu>
+
+11 - Metric: rouge
+<https://huggingface.co/spaces/evaluate-metric/rouge>
+
+12 - ReFT: Representation Fine-Tuning for Language Models
+<https://huggingface.co/papers/2404.03592>
