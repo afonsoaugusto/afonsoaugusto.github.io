@@ -390,6 +390,74 @@ O texto menciona diversas técnicas de prompt engineering:
 *   Entender as diretrizes para fornecer informações e ferramentas necessárias nos prompts.
 *   Saber como encontrar o melhor formato de prompt para diferentes casos de uso no Amazon Bedrock.
 
+## Task Statement 3.2 Lesson 2
+
+Com base no texto fornecido, aqui estão alguns pontos sobre ele:
+
+* **Continuação de um tópico:** O texto retoma a discussão sobre o prompt engineering, especificamente a partir da tarefa 3.2, e começa respondendo a uma pergunta da lição anterior sobre a relação entre o espaço latente e o prompting de modelos de linguagem.
+
+* **Explicação do espaço latente e o prompting:** O texto explica que quando um prompt é inserido, o modelo de linguagem o compara com as informações armazenadas em seu "espaço latente" (derivado de grandes bases de dados de texto). A resposta gerada é baseada em probabilidades estatísticas dessas informações.
+
+* **Limitações do espaço latente:** O texto destaca que se o espaço latente do modelo não contiver informações suficientes sobre o tópico do prompt, o modelo pode "alucinar" ou fornecer respostas que são estatisticamente plausíveis, mas factualmente incorretas.
+
+* **Importância do prompt engineering:** O texto enfatiza que o prompt engineering é crucial para obter os melhores resultados de modelos de linguagem generativa, pois guia o modelo a aplicar seu vasto conhecimento de forma direcionada.
+
+* **Técnicas de prompt engineering:** O texto lista várias técnicas importantes para um prompt engineering eficaz, incluindo ser específico, fornecer exemplos, experimentar, conhecer as limitações do modelo, equilibrar simplicidade e complexidade, usar comentários e adicionar "guardrails".
+
+* **Riscos e limitações do prompt engineering:** O texto introduz a ideia de riscos associados ao prompt engineering, como exposição, envenenamento (poisoning), sequestro (hijacking) e quebra de barreiras de segurança (jailbreaking).
+
+* **Explicação de conceitos de segurança:** O texto define "prompt injection" como ataques de manipulação de prompts e "jailbreaking" como tentativas de burlar as medidas de segurança ("guardrails") estabelecidas.
+
+* **Exemplos de serviços da AWS:** O texto menciona os serviços Amazon Bedrock e Amazon Titan como plataformas que oferecem modelos de linguagem pré-treinados e ferramentas para prompt engineering, além de recursos de monitoramento e análise.
+
+* **Transição para o próximo tópico:** O texto indica que a próxima lição abordará a tarefa 3.3.
+
+Em resumo, o texto fornece uma explicação concisa e informativa sobre a relação entre o espaço latente e o prompting, a importância do prompt engineering, suas técnicas e os potenciais riscos e medidas de segurança associados.
+
+### Topicos 3.2.2
+
+**1. Relação entre Espaço Latente e Prompting:**
+    * Como prompts interagem com o espaço latente de um modelo de linguagem.
+    * O espaço latente como base de conhecimento estatístico do modelo.
+    * Processo de geração de texto a partir do espaço latente.
+
+**2. Limitações do Espaço Latente:**
+    * Insuficiência de informação no espaço latente e suas consequências.
+    * O fenômeno da "alucinação" em modelos de linguagem.
+    * Distinção entre correção estatística e factual.
+
+**3. Importância do Prompt Engineering:**
+    * O papel do prompt engineering para otimizar a saída de modelos generativos.
+    * A diferença entre resultados medianos e excelentes com prompts eficazes.
+
+**4. Técnicas de Prompt Engineering:**
+    * Ser específico e fornecer instruções claras (formato, exemplos, tom, etc.).
+    * Inclusão de exemplos de comportamento desejado (textos, dados, templates, etc.).
+    * A importância da experimentação e do processo iterativo.
+    * Conhecer os pontos fortes e fracos do modelo utilizado.
+    * Equilíbrio entre simplicidade e complexidade nos prompts.
+    * Uso de comentários para contexto adicional (para engenheiros de prompt).
+    * Implementação de "guardrails" para segurança e controle.
+
+**5. Riscos e Limitações do Prompt Engineering:**
+    * Identificação de riscos potenciais: exposição, envenenamento (poisoning), sequestro (hijacking), quebra de barreiras (jailbreaking).
+
+**6. Conceitos de Segurança em Prompt Engineering:**
+    * **Prompt Injection:** Ataques de manipulação de prompts.
+    * **Jailbreaking:** Tentativas de burlar as medidas de segurança (guardrails).
+    * **Hijacking:** Tentativas de alterar ou manipular o prompt original.
+    * **Poisoning:** Incorporação de instruções maliciosas em conteúdos.
+
+**7. Guardrails:**
+    * Função dos guardrails para segurança e privacidade.
+    * Configuração de tópicos indesejados, palavras bloqueadas e filtros.
+    * Proteção contra jailbreak, prompt injection e dados sensíveis.
+
+**8. Serviços da AWS para Prompt Engineering:**
+    * Amazon Bedrock e Amazon Titan como plataformas com modelos personalizáveis.
+    * APIs e ferramentas para construção, refinamento, monitoramento e análise de prompts.
+    * Casos de uso: criação de conteúdo, sumarização, Q&A e chatbots.
+
 ## Links
 
 1 - What Are Foundation Models?
