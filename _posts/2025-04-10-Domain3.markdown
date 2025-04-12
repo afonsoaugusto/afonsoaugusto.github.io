@@ -641,6 +641,90 @@ O texto fornece uma visão geral concisa do processo de fine-tuning de LLMs, com
 *   **Exemplos em AWS:** Pre-treinamento contínuo no Amazon Bedrock (Amazon Titan Text Express e Lite).
 *   **Personalização com Dados Não Rotulados:** Uso dos próprios dados em ambiente seguro e gerenciado.
 
+## Task Statement 3.4 Lesson 1
+
+O texto aborda a **avaliação do desempenho de modelos fundacionais**, com foco em como integrar esses modelos em aplicações práticas. Ele destaca considerações importantes e métodos para essa avaliação.
+
+Aqui estão os principais pontos do texto:
+
+**Integração de Modelos em Aplicações e Desafios:**
+
+* **Considerações Iniciais:** Ao integrar um modelo, é crucial pensar na velocidade de geração, orçamento computacional disponível e a disposição para trocar performance por velocidade ou armazenamento.
+* **Desafios de Inferência:** A implantação (on-premises, nuvem ou dispositivos de ponta) pode apresentar desafios relacionados a computação, armazenamento e baixa latência para os usuários.
+* **Otimização para Desempenho:**
+    * **Redução do Tamanho do Modelo:** Diminuir o tamanho pode reduzir a latência, mas pode impactar a performance.
+    * **Otimização de Prompts:** Tornar os prompts mais concisos.
+    * **Redução de Snippets Recuperados:** Diminuir o tamanho e o número de trechos relevantes.
+    * **Controle de Geração:** Ajustar parâmetros de inferência e o próprio prompt.
+* **Trade-offs:** Muitas vezes, há uma troca entre acurácia e performance.
+
+**Métricas de Avaliação:**
+
+* **Dificuldade na Avaliação de Modelos Generativos:** A natureza não determinística da saída de modelos generativos torna a avaliação mais complexa em comparação com modelos com previsões determinísticas (onde métricas como acurácia e RMSE são mais diretas).
+* **Métricas Específicas por Tarefa:** A avaliação de modelos generativos geralmente depende da tarefa específica. Exemplos incluem:
+    * **ROUGE (Recall Oriented Understudy for Gisting Evaluation):** Usado para avaliação de sumarização automática e tradução automática, comparando o input com o output gerado.
+    * **BLEU (Bilingual Evaluation Understudy):** Algoritmo para avaliar a qualidade de traduções automáticas entre línguas naturais.
+
+**Benchmarks e Datasets para Avaliação Genérica de LLMs:**
+
+* **Objetivo:** Avaliar e comparar LLMs sem um foco específico em uma única tarefa.
+* **Exemplos:**
+    * **GLUE (General Language Understanding Evaluation):** Coleção de tarefas de linguagem natural (análise de sentimento, resposta a perguntas) para avaliar a capacidade de generalização entre tarefas. Possui um ranking para comparar modelos.
+    * **SuperGlue:** Introduzido posteriormente, adiciona tarefas mais complexas como raciocínio multi-sentença e compreensão de leitura. Também possui um ranking.
+    * **MMLU (Massive Multitask Language Understanding):** Avalia o conhecimento e a capacidade de resolução de problemas, abrangendo diversas áreas como história, matemática e ciência da computação.
+    * **BIG-bench (Beyond the Imitation Game Benchmark):** Foca em tarefas que desafiam as capacidades dos modelos de linguagem atuais, incluindo matemática, biologia, física, vieses, linguística, raciocínio, etc.
+    * **HELM (Holistic Evaluation of Language Models):** Visa melhorar a transparência dos modelos, oferecendo métricas para diversas tarefas (sumarização, QA, análise de sentimento, detecção de vieses) e auxiliando na escolha do modelo adequado para uma dada tarefa.
+
+**Outras Formas de Avaliação:**
+
+* **Avaliação Humana:** Utilização de trabalhadores humanos para avaliar manualmente as respostas dos modelos e comparar diferentes modelos.
+* **Amazon SageMaker Clarify:** Ferramenta para avaliar LLMs e criar trabalhos de avaliação de modelos.
+* **Amazon Bedrock:** Oferece um módulo de avaliação que compara automaticamente as respostas geradas com referências humanas, calculando uma pontuação de similaridade semântica (BERTscore) e sendo útil para avaliar fidelidade e alucinações em tarefas de geração de texto.
+
+O texto conclui indicando que a discussão sobre a avaliação continuará na próxima lição.
+
+### Topicos 3.4.1
+
+**Integração e Desafios em Aplicações:**
+
+*   Considerações iniciais para integração (velocidade, orçamento, trade-offs).
+*   Desafios de inferência em diferentes ambientes (on-premises, nuvem, edge).
+*   Técnicas de otimização para desempenho:
+    *   Redução do tamanho do modelo (e suas implicações).
+    *   Otimização de prompts.
+    *   Redução de snippets recuperados.
+    *   Controle de geração via parâmetros e prompt.
+*   Entendimento dos trade-offs entre acurácia e performance.
+
+**Métricas de Avaliação:**
+
+*   A complexidade da avaliação de modelos generativos (saídas não determinísticas).
+*   Métricas específicas por tarefa:
+    *   ROUGE (para sumarização e tradução).
+    *   BLEU (para tradução).
+*   Compreensão do que cada métrica avalia e suas limitações.
+
+**Benchmarks e Datasets para Avaliação Genérica de LLMs:**
+
+*   Objetivo dos benchmarks: avaliação e comparação sem foco em uma tarefa específica.
+*   Características e foco de cada benchmark:
+    *   GLUE (generalização entre tarefas).
+    *   SuperGlue (tarefas mais complexas e raciocínio).
+    *   MMLU (conhecimento e resolução de problemas).
+    *   BIG-bench (desafios além das capacidades atuais).
+    *   HELM (transparência e guia para escolha de modelos).
+*   A importância dos rankings (leaderboards) em GLUE e SuperGlue.
+
+**Outras Formas de Avaliação:**
+
+*   Avaliação humana (vantagens e desvantagens).
+*   Utilização do Amazon SageMaker Clarify para avaliação de LLMs.
+*   Utilização do módulo de avaliação do Amazon Bedrock (BERTscore, fidelidade e alucinações).
+
+**Próximos Passos:**
+
+*   Consciência de que a avaliação de modelos continuará sendo abordada na próxima lição.
+
 ## Links
 
 1 - What Are Foundation Models?
