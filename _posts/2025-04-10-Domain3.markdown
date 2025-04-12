@@ -558,6 +558,88 @@ A pergunta final do trecho ("What fine-tuning process modifies the weights of th
 
 Este resumo em tópicos fornece uma estrutura clara para revisar os principais conceitos e diferenças apresentados no texto sobre o treinamento e o processo de fine-tuning de modelos de fundação.
 
+## Task Statement 3.3 Lesson 2
+
+O texto aborda a importância da preparação de dados para o processo de fine-tuning de modelos de linguagem fundacionais (Foundation Models - FMs), especialmente no contexto da Amazon Web Services (AWS). Ele detalha os passos envolvidos no fine-tuning e, em seguida, explora as opções oferecidas pela AWS para a preparação desses dados.
+
+**Principais Pontos do Texto:**
+
+* **Processo de Fine-tuning:**
+    * Preparação do dataset de instruções, muitas vezes utilizando datasets públicos e bibliotecas de templates de prompts.
+    * Divisão do dataset em treino, validação e teste.
+    * Seleção de prompts do dataset de treino e envio para o LLM gerar conclusões.
+    * Comparação da distribuição das conclusões com o rótulo de treino para calcular a perda.
+    * Utilização da perda para atualizar os pesos do modelo em várias iterações.
+    * Avaliação do desempenho utilizando o dataset de validação e, finalmente, o dataset de teste.
+
+* **Importância da Preparação de Dados:** O texto enfatiza que a preparação de dados (coleta, pré-processamento e organização dos dados brutos) é fundamental em machine learning para garantir a qualidade e eficácia do modelo.
+
+* **Opções de Preparação de Dados em AWS:** O texto apresenta diversas ferramentas e serviços da AWS para auxiliar na preparação dos dados, categorizando-os por diferentes necessidades:
+    * **Low-code:** Amazon SageMaker Canvas para criação de data flows com pouco ou nenhum código.
+    * **Escalabilidade:** Frameworks open source como Apache Spark, Apache Hive e Presto, com integração do Amazon EMR no SageMaker Studio Classic.
+    * **Serverless:** AWS Glue interactive sessions (com Apache Spark) para agregar, transformar e preparar dados no SageMaker Studio Classic.
+    * **SQL:** Utilização de Jupyter Lab no SageMaker Studio para preparação de dados via Structured Query Language.
+    * **Feature Discovery e Storage:** Amazon SageMaker Feature Store para buscar, descobrir, recuperar e armazenar features em formato padronizado.
+    * **Detecção de Bias:** Amazon SageMaker Clarify para analisar dados e identificar potenciais vieses (e.g., representação desbalanceada entre grupos).
+    * **Labeling de Dados:** Amazon SageMaker Ground Truth para gerenciar workflows de rotulagem de dados para treinamento.
+
+* **Continuous Pre-training:** O texto também aborda a importância do pre-treinamento contínuo para modelos generativos de IA, destacando:
+    * A dificuldade de validação devido à natureza não determinística das saídas.
+    * A necessidade de escolher métricas, benchmarks e datasets adequados para avaliar capacidades e garantir a não geração de conteúdo prejudicial.
+    * O aumento do poder dos modelos ao serem continuamente pre-treinados com dados de diferentes tópicos, gêneros e contextos, levando a melhor adaptação e acumulação de conhecimento.
+    * Exemplos como o pre-treinamento contínuo no Amazon Bedrock para os modelos Amazon Titan Text Express e Lite, que podem ser personalizados com dados não rotulados dos usuários em um ambiente seguro.
+
+**Em Resumo:**
+
+O texto fornece uma visão geral concisa do processo de fine-tuning de LLMs, com um foco especial na etapa crucial de preparação dos dados. Ele destaca a variedade de ferramentas e serviços oferecidos pela AWS para lidar com diferentes aspectos da preparação de dados, desde abordagens low-code até soluções escaláveis e serverless, além de ferramentas para tarefas específicas como descoberta de features, detecção de bias e rotulagem. Finalmente, introduz o conceito de pre-treinamento contínuo e sua relevância para aprimorar e adaptar modelos generativos de IA.
+
+### Topicos 3.3.2
+
+**I. Fundamentos do Fine-tuning:**
+
+*   **Definição e Objetivo do Fine-tuning:** Adaptação de modelos fundacionais para tarefas específicas.
+*   **Processo de Fine-tuning:**
+    *   Preparação do Dataset de Instruções.
+    *   Divisão do Dataset (Treino, Validação, Teste).
+    *   Seleção de Prompts e Geração de Conclusões.
+    *   Cálculo da Perda (Comparação com Rótulos).
+    *   Atualização dos Pesos do Modelo.
+    *   Avaliação com Datasets de Validação e Teste (Acurácia).
+
+**II. A Importância da Preparação de Dados em ML:**
+
+*   **Definição de Preparação de Dados:** Coleta, pré-processamento e organização de dados brutos.
+*   **Impacto da Qualidade dos Dados no Modelo:** Dados bem preparados levam a modelos mais eficazes.
+
+**III. Opções de Preparação de Dados em AWS:**
+
+*   **Low-code:**
+    *   Amazon SageMaker Canvas: Criação de data flows visuais (feature engineering sem código).
+*   **Escalabilidade:**
+    *   Frameworks Open Source (Apache Spark, Hive, Presto).
+    *   Integração com Amazon EMR no SageMaker Studio Classic.
+*   **Serverless:**
+    *   AWS Glue Interactive Sessions: Motor Spark serverless no SageMaker Studio Classic (agregação e transformação).
+*   **SQL:**
+    *   Jupyter Lab no SageMaker Studio: Preparação de dados usando Structured Query Language.
+*   **Feature Discovery e Storage:**
+    *   Amazon SageMaker Feature Store: Busca, descoberta, recuperação e armazenamento centralizado de features.
+*   **Detecção de Bias:**
+    *   Amazon SageMaker Clarify: Análise e detecção de potenciais vieses nos dados.
+*   **Labeling de Dados:**
+    *   Amazon SageMaker Ground Truth: Gerenciamento de workflows de rotulagem para datasets de treinamento.
+
+**IV. Continuous Pre-training para Modelos Generativos:**
+
+*   **Definição e Propósito:** Pre-treinamento contínuo em dados diversos.
+*   **Desafios de Validação:** Natureza não determinística das saídas.
+*   **Importância de Métricas e Benchmarks:** Avaliação adequada e garantia de saídas não prejudiciais.
+*   **Benefícios do Pre-treinamento Contínuo:**
+    *   Aumento do poder e adaptabilidade dos modelos.
+    *   Melhor uso de dados fora do domínio original.
+    *   Acúmulo de conhecimento mais amplo.
+*   **Exemplos em AWS:** Pre-treinamento contínuo no Amazon Bedrock (Amazon Titan Text Express e Lite).
+*   **Personalização com Dados Não Rotulados:** Uso dos próprios dados em ambiente seguro e gerenciado.
 
 ## Links
 
