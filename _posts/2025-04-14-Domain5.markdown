@@ -1,0 +1,32 @@
+---
+layout: post
+title: "Domain 5: Security, Compliance, and Governance for AI Solutions (Standard AIF)"
+date: 2025-04-14 00:00:00 +0000
+categories: article
+---
+
+## Domain 5 Introduction
+
+O texto apresenta o Domínio 5 de um curso ou material de estudo, focado em **segurança, conformidade e governança para soluções de Inteligência Artificial (IA)**. Este domínio é dividido em duas tarefas principais:
+
+**Tarefa 5.1: "Explicar métodos para proteger sistemas de IA."**
+
+Para esta tarefa, o estudante precisará entender:
+
+*   **Fundamentos de gerenciamento de identidade e acesso (IAM) na AWS.**
+*   **O modelo de responsabilidade compartilhada entre a AWS e o cliente na segurança de aplicações e dados de IA.**
+*   **As vulnerabilidades de sistemas de IA a ataques e roubo.**
+*   **As melhores práticas para mitigar essas vulnerabilidades.**
+
+**Tarefa 5.2: "Reconhecer regulamentações de governança e conformidade para sistemas de IA."**
+
+Para esta tarefa, o estudante precisará ser capaz de:
+
+*   **Compreender os padrões de conformidade regulatória para sistemas de IA.**
+*   **Identificar os serviços, estratégias e processos da AWS utilizados para atender a esses padrões.**
+
+O texto informa que as próximas lições e vídeos abordarão cada uma dessas tarefas individualmente, detalhando os objetivos de aprendizado. A próxima etapa mencionada é uma avaliação da prontidão do estudante para o exame, começando pela Tarefa 5.1.
+
+**Em resumo, o texto serve como uma introdução ao Domínio 5, delineando os tópicos cruciais que serão cobertos e preparando o terreno para o estudo aprofundado da segurança, conformidade e governança em soluções de IA, com um foco específico na plataforma AWS.**
+
+## Links
