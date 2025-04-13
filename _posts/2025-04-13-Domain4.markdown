@@ -1,0 +1,56 @@
+---
+layout: post
+title: "Domain 4: Guidelines for Responsible AI (Standard AIF)"
+date: 2025-04-10 00:00:00 +0000
+categories: article
+---
+
+## Domain 4 Introduction
+
+O texto apresenta o **Domínio 4** de um material de estudo, focado nas **diretrizes para Inteligência Artificial Responsável (Responsible AI)**. Este domínio é dividido em duas declarações de tarefa principais:
+
+**Declaração de Tarefa 4.1: Explicar o desenvolvimento de sistemas de IA responsáveis.**
+
+Para cumprir esta tarefa, o estudante precisará:
+
+*   **Compreender o conceito de IA responsável.**
+*   **Identificar as características e propriedades de sistemas de IA responsáveis.**
+*   **Saber usar ferramentas que auxiliam no desenvolvimento de IA responsável.**
+*   **Entender como os princípios da IA responsável influenciam:**
+    *   **Seleção de modelos.**
+    *   **Avaliações de risco.**
+    *   **Características do conjunto de dados.**
+*   **Compreender os conceitos de viés (bias) e variância no contexto da IA responsável.**
+*   **Saber usar ferramentas para monitorar e detectar viés.**
+*   **Ser capaz de avaliar a confiabilidade (trustworthiness) e a veracidade (truthfulness) de um modelo.**
+
+**Declaração de Tarefa 4.2: Reconhecer a importância de modelos transparentes e explicáveis.**
+
+Para cumprir esta tarefa, o estudante precisará:
+
+*   **Compreender o grande desafio da IA responsável relacionado à transparência e explicabilidade da inferência de um modelo.**
+*   **Entender o que torna um modelo transparente ou explicável.**
+*   **Conhecer ferramentas que podem ajudar a explicar a saída de um modelo.**
+*   **Ser capaz de identificar as compensações (tradeoffs) entre a segurança de um modelo e sua transparência.**
+*   **Entender como o design centrado no ser humano pode ajudar a criar IA mais explicável.**
+
+O texto informa que as próximas lições abordarão cada uma dessas declarações de tarefa individualmente, detalhando cada objetivo. A próxima lição se concentrará na primeira declaração de tarefa (4.1), e antes disso, haverá uma avaliação da prontidão do estudante para o exame.
+
+**Em resumo, o texto estabelece o escopo do Domínio 4 sobre IA Responsável, delineando os principais conceitos e habilidades que o estudante precisará adquirir para o exame, divididos em duas áreas focais: desenvolvimento de sistemas responsáveis e a importância da transparência e explicabilidade dos modelos.**
+
+## Links
+
+1 - Responsible AI in the Generative Era
+<https://www.amazon.science/blog/responsible-ai-in-the-generative-era>
+
+2 - Transform Responsible AI from Theory into Practice
+<https://aws.amazon.com/machine-learning/responsible-ai/>
+
+3 - Tools and Resources to Build AI Responsibly
+<https://aws.amazon.com/machine-learning/responsible-ai/resources/>
+
+4 - What Is RLHF?
+<https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/>
+
+5 - Responsible AI Best Practices: Promoting Responsible and Trustworthy AI Systems
+<https://aws.amazon.com/blogs/enterprise-strategy/responsible-ai-best-practices-promoting-responsible-and-trustworthy-ai-systems/>
