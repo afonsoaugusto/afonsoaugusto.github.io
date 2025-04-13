@@ -182,6 +182,96 @@ Okay, aqui estão os tópicos chave do texto, com descrições detalhadas para e
 
 Estes tópicos cobrem os conceitos, a ferramenta SageMaker Clarify, seu funcionamento e as métricas específicas discutidas no texto para avaliar e mitigar viés, contribuindo para uma IA mais responsável.
 
+## Task Statement 4.1 Lesson 3
+
+O texto aborda os desafios e riscos associados ao uso de modelos de Inteligência Artificial (IA) generativa, dando continuidade a uma discussão sobre o desenvolvimento de sistemas de IA responsáveis. Os principais riscos destacados são:
+
+1.  **Alucinação:** A IA gera informações que parecem factuais, mas são fictícias, devido a lacunas nos dados de treinamento. Um exemplo real é o caso de advogados que usaram citações falsas geradas por IA em tribunal.
+2.  **Propriedade Intelectual:** Obras geradas por IA não podem ser protegidas por direitos autorais, mas os modelos podem ser treinados com dados protegidos (direitos autorais, patentes, marcas registradas) e incluí-los nos resultados. Além disso, a IA pode criar derivados não licenciados de obras protegidas inseridas pelo usuário. O caso da Getty Images contra os criadores do Stable Diffusion é citado como exemplo.
+3.  **Viés e Discriminação:** Resultados enviesados podem levar a tratamento injusto, como no caso de um programa de contratação por IA que discriminava candidatos mais velhos, resultando em ações legais (EEOC).
+4.  **Conteúdo Tóxico:** Modelos podem gerar conteúdo ofensivo, perturbador ou obsceno se expostos a ele durante o treinamento, causando danos à saúde mental e emocional dos usuários ou incitando violência.
+5.  **Privacidade de Dados:** Dados sensíveis (PII, propriedade intelectual, segredos comerciais, registros de saúde) presentes nos dados de treinamento ou inseridos como prompts podem vazar nos resultados do modelo. É difícil fazer um modelo "esquecer" dados após o treinamento.
+
+Esses riscos podem levar à perda de confiança do cliente e danos à reputação.
+
+O texto então apresenta soluções dentro do ecossistema da Amazon Web Services (AWS):
+
+*   **Amazon Bedrock Guardrails:** Permitem configurar filtros para bloquear conteúdo inapropriado (ódio, insultos, sexual, violência) e tópicos específicos, tanto nos prompts dos usuários quanto nas respostas do modelo.
+*   **SageMaker Clarify / Avaliação no Bedrock:** Oferecem ferramentas para avaliar LLMs em tarefas como geração de texto, classificação, Q&A e sumarização. A avaliação cobre dimensões como: estereotipagem em prompts, toxicidade, conhecimento factual, robustez semântica (resistência a erros de digitação/formatação) e precisão. A avaliação pode usar datasets prontos, personalizados ou feedback humano.
+
+**Análise do Texto**
+
+*   **Propósito:** O texto visa educar sobre os riscos inerentes aos modelos de IA generativa e, simultaneamente, promover as ferramentas da AWS (Bedrock Guardrails, SageMaker Clarify) como soluções para mitigar esses riscos.
+*   **Estrutura:** O texto é bem estruturado. Começa definindo os problemas/riscos com exemplos concretos e preocupantes, o que justifica a necessidade de soluções. Em seguida, apresenta as soluções específicas oferecidas pela plataforma AWS.
+*   **Pontos Fortes:**
+    *   Identifica claramente os principais riscos da IA generativa de forma categorizada.
+    *   Usa exemplos reais e impactantes (caso dos advogados, Getty Images, EEOC) para ilustrar a gravidade dos riscos.
+    *   Conecta os riscos a consequências de negócios tangíveis (perda de confiança, reputação).
+    *   Apresenta soluções práticas (Guardrails, Clarify), embora específicas da AWS.
+*   **Limitações (Contextuais):**
+    *   O foco está fortemente nas soluções da AWS. Embora úteis para usuários dessa plataforma, não oferece uma visão geral de outras abordagens ou ferramentas da indústria.
+    *   A discussão sobre o "desenvolvimento de sistemas de IA responsáveis" (mencionado no início) não é aprofundada; o foco maior está no *gerenciamento* dos riscos de modelos já existentes ou em treinamento.
+    *   Embora mencione a dificuldade de fazer um modelo "esquecer" dados, não explora potenciais soluções ou pesquisas nessa área específica.
+*   **Público-Alvo:** Provavelmente desenvolvedores, cientistas de dados, gerentes de produto ou decisores técnicos que estão usando ou considerando usar os serviços de IA generativa da AWS.
+
+Em suma, é um texto informativo que efetivamente destaca os perigos da IA generativa e posiciona as ferramentas da AWS como parte da solução para um uso mais seguro e responsável.
+
+### Topicos 4.1.3
+
+**Resumo para Estudo: Riscos e Soluções em IA Generativa (Baseado no Texto)**
+
+**I. Contexto:**
+*   Foco no desenvolvimento de sistemas de IA **responsáveis**.
+
+**II. Riscos e Desafios da IA Generativa:**
+
+*   **Alucinação:**
+    *   **O que é:** IA gera informações *fictícias* (parecem factuais).
+    *   **Causa:** Tentativa de preencher *lacunas nos dados de treinamento*.
+    *   **Impacto:** Potencialmente desastroso (Ex: Citações legais falsas em tribunal).
+*   **Propriedade Intelectual (PI) / Direitos Autorais:**
+    *   **Problema 1:** Obras geradas por IA *não* são protegidas por copyright (não são humanas).
+    *   **Problema 2:** Modelo pode ter sido treinado com dados protegidos (copyright, patentes, marcas) e incluí-los nos resultados.
+    *   **Problema 3:** IA pode criar *derivados não licenciados* a partir de inputs protegidos do usuário.
+    *   **Exemplo:** Processo Getty Images vs. Stable Diffusion (uso de milhões de fotos).
+*   **Viés e Discriminação:**
+    *   **O que é:** Resultados do modelo refletem ou amplificam vieses.
+    *   **Impacto:** Tratamento injusto ou discriminatório de indivíduos/grupos.
+    *   **Risco:** Ações legais (Ex: EEOC vs. empresas por IA de contratação discriminatória por idade/gênero).
+*   **Conteúdo Tóxico:**
+    *   **O que é:** Geração de conteúdo ofensivo, perturbador, obsceno.
+    *   **Causa:** Presença desse tipo de conteúdo nos *dados de treinamento*.
+    *   **Impacto:** Danos à saúde mental/emocional dos usuários; incitação à violência.
+*   **Privacidade de Dados:**
+    *   **Risco:** Vazamento de dados sensíveis (PII, PI, segredos comerciais, dados de saúde).
+    *   **Origem:** Dados presentes no *treinamento* ou inseridos como *prompts* pelo usuário.
+    *   **Desafio:** Dificuldade em fazer o modelo "esquecer" dados após exposição.
+
+**III. Consequências Gerais dos Riscos:**
+
+*   Perda de **confiança do cliente**.
+*   Danos à **reputação** da empresa.
+
+**IV. Soluções Apresentadas (Foco AWS):**
+
+*   **Amazon Bedrock Guardrails:**
+    *   **Função:** *Filtrar e bloquear* conteúdo/tópicos inadequados.
+    *   **Configuração:** Definir limiares para filtros (ódio, insultos, sexual, violência); bloquear tópicos específicos por descrição.
+    *   **Aplicação:** Atua *antes* do prompt chegar ao modelo e *após* a resposta ser gerada pelo modelo.
+*   **Avaliação de Modelos (SageMaker Clarify / Bedrock Console):**
+    *   **Função:** *Comparar e avaliar* o desempenho de LLMs.
+    *   **Tarefas Avaliadas:** Geração de texto, Classificação de texto, Q&A, Sumarização de texto.
+    *   **Dimensões de Avaliação:**
+        *   **Estereotipagem em Prompts:** Tendência a respostas com viés (raça, gênero, etc.).
+        *   **Toxicidade:** Presença de conteúdo agressivo, rude, ofensivo, etc.
+        *   **Conhecimento Factual:** Veracidade das respostas.
+        *   **Robustez Semântica:** Consistência da resposta apesar de pequenas alterações no input (erros de digitação, espaços).
+        *   **Precisão:** Comparação com respostas esperadas (ex: classificação correta).
+    *   **Recursos:** Uso de datasets prontos, personalizados ou feedback humano (SMEs, funcionários).
+
+**V. Próximos Passos (no contexto da aula original):**
+*   Avançar para a tarefa 4.2.
+
 ## Links
 
 1 - Responsible AI in the Generative Era
