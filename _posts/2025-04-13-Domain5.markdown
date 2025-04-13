@@ -29,4 +29,107 @@ O texto informa que as próximas lições e vídeos abordarão cada uma dessas t
 
 **Em resumo, o texto serve como uma introdução ao Domínio 5, delineando os tópicos cruciais que serão cobertos e preparando o terreno para o estudo aprofundado da segurança, conformidade e governança em soluções de IA, com um foco específico na plataforma AWS.**
 
+## Task Statement 5.1 Lesson 1
+
+### Protegendo Sistemas de IA na AWS - Parte 1
+
+Este resumo detalha a primeira parte da lição sobre métodos para proteger sistemas de Inteligência Artificial (IA) na AWS, com foco no Modelo de Responsabilidade Compartilhada da AWS e no AWS Identity and Access Management (IAM).
+
+**1. Modelo de Responsabilidade Compartilhada da AWS:**
+
+*   A segurança e a conformidade na AWS são uma **responsabilidade compartilhada** entre a AWS e o cliente.
+*   Este modelo divide as responsabilidades em duas categorias principais:
+    *   **Segurança *da* Nuvem (Responsabilidade da AWS):** Refere-se à segurança da infraestrutura subjacente que executa todos os serviços da AWS. Isso inclui a nuvem em si, os data centers, a rede e o hardware físico. A AWS protege a infraestrutura global, incluindo Regiões da AWS, Zonas de Disponibilidade e data centers (até a segurança física dos edifícios). A AWS gerencia o hardware, software e componentes de rede que executam os serviços da AWS, como servidores físicos, sistemas operacionais host, camadas de virtualização e componentes de rede da AWS.
+    *   **Segurança *na* Nuvem (Responsabilidade do Cliente):** Refere-se à segurança dos dados e aplicações que o cliente implementa na AWS. Os clientes são responsáveis por usar os serviços da AWS de forma segura, limitando o acesso, usando criptografia e seguindo as melhores práticas recomendadas.
+
+**2. Nível de Responsabilidade do Cliente:**
+
+*   O nível de responsabilidade do cliente varia dependendo do serviço da AWS utilizado.
+*   **Exemplo 1: Amazon EC2:** Ao implantar modelos de IA no Amazon EC2, o cliente é responsável por:
+    *   Sistema operacional da instância.
+    *   Patches de segurança.
+    *   Escalonamento.
+    *   Segurança das aplicações em execução na instância.
+*   **Exemplo 2: SageMaker Serverless Inference:** Este serviço totalmente gerenciado exige pouca gestão por parte do cliente. A AWS gerencia toda a infraestrutura subjacente, eliminando a necessidade de gerenciar instâncias ou políticas de escalonamento.
+
+**3. AWS Identity and Access Management (IAM):**
+
+*   O IAM é um serviço web que ajuda a **gerenciar e proteger o acesso** às contas e recursos da AWS.
+*   **Funcionalidades principais do IAM:**
+    *   **Gerenciamento de Usuários:** Permite criar e gerenciar usuários da AWS.
+    *   **Controle de Acesso:** Permite conceder permissões aos usuários para usar serviços na conta.
+    *   **Políticas de Permissão:** Definem quais ações um usuário pode realizar em um determinado recurso. São atribuídas aos usuários para controlar seu acesso.
+    *   **Recurso Global:** O IAM é um recurso global e não específico de uma região da AWS. No entanto, é possível usar o IAM para restringir as permissões de um usuário a regiões específicas.
+    *   **Integração com Serviços AWS:** O IAM é integrado a diversos serviços da AWS, permitindo o gerenciamento de ações que os usuários podem realizar nesses serviços.
+    *   **Delegação de Acesso:** Permite conceder a outras pessoas permissões para administrar e usar recursos na conta da AWS sem a necessidade de compartilhar a senha e as chaves de acesso da conta raiz.
+    *   **Autenticação Multifator (MFA):** Suporta a adição de uma camada extra de segurança à conta e a usuários individuais, exigindo um código gerado por um dispositivo físico ou virtual além da senha.
+    *   **Federação de Identidade:** Permite que usuários com credenciais existentes (por exemplo, em redes corporativas ou provedores de identidade da internet) obtenham acesso temporário à conta da AWS.
+    *   **Sem Custo Adicional:** O IAM é um recurso da conta da AWS oferecido sem custo adicional. As cobranças ocorrem apenas quando os usuários do IAM acessam outros serviços da AWS.
+
+**4. Usuário Root da AWS:**
+
+*   Ao criar uma conta AWS, uma única identidade com acesso completo a todos os serviços e recursos é criada: o **usuário root**.
+*   O acesso ao usuário root é feito com o e-mail e a senha usados para criar a conta.
+*   **Precauções com o Usuário Root:**
+    *   As permissões do usuário root não podem ser restringidas, tornando suas credenciais extremamente sensíveis.
+    *   É crucial escolher uma senha forte e habilitar o MFA para o usuário root imediatamente após a criação da conta.
+    *   **Nunca** compartilhar a senha e as chaves de acesso do usuário root com ninguém.
+    *   É recomendado **desabilitar ou excluir as chaves de acesso** associadas ao usuário root, pois elas não serão necessárias após a criação de outros usuários.
+    *   **Melhor prática:** Evitar o uso do usuário root para tarefas cotidianas. Utilizá-lo apenas para tarefas específicas que exigem seus privilégios, como o gerenciamento de informações de faturamento da conta.
+
+**5. Usuários IAM:**
+
+*   Para tarefas diárias, a melhor prática é criar **usuários IAM individuais** para cada pessoa que precisa acessar a AWS.
+*   Cada usuário IAM possui um nome e credenciais de segurança exclusivas.
+*   **Benefícios de Usuários IAM Individuais:**
+    *   Melhor visibilidade das ações realizadas na conta (rastreamento por usuário).
+    *   Maior segurança, pois as credenciais não são compartilhadas.
+*   **Permissões de Usuários IAM:**
+    *   Por padrão, novos usuários IAM não possuem permissões.
+    *   As permissões necessárias para realizar ações específicas na AWS devem ser explicitamente concedidas ao usuário IAM através da atribuição de políticas de permissão.
+    *   É possível atribuir uma política de permissões de acesso administrativo a um usuário IAM para conceder todas as permissões necessárias para tarefas comuns.
+
+**6. Autenticação de Fator Único vs. Multifator (MFA):**
+
+*   A autenticação com nome de usuário e senha é uma **autenticação de fator único**.
+*   Mesmo com senhas fortes, a autenticação de fator único é considerada um risco (phishing, bots, scripts).
+*   A **Autenticação Multifator (MFA)** adiciona uma camada extra de segurança. Além da senha, um código gerado por um dispositivo MFA (físico ou virtual) é necessário para acessar a conta.
+*   **Benefícios do MFA:** Mesmo que a senha seja comprometida, um invasor não conseguirá acessar a conta sem o código MFA.
+*   **Recomendação da AWS:** Habilitar o MFA imediatamente após a criação da conta AWS.
+
+Este resumo fornece uma base sólida sobre o modelo de responsabilidade compartilhada e a importância do IAM para proteger sistemas de IA na AWS. A próxima parte da lição provavelmente aprofundará outros aspectos da segurança de sistemas de IA, construindo sobre esses conceitos fundamentais.
+
 ## Links
+
+1 - Shared Responsibility Model
+<https://aws.amazon.com/compliance/shared-responsibility-model/>
+
+2 - Securing Generative AI: Applying Relevant Security Controls
+<https://aws.amazon.com/blogs/security/securing-generative-ai-applying-relevant-security-controls/>
+
+3 - AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI
+<https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html>
+
+4 - AWS Compliance
+<https://aws.amazon.com/compliance/customer-center/>
+
+5 - Customer Compliance Center
+<https://aws.amazon.com/compliance/customer-center/>
+
+6 - NIST Artificial Intelligence Risk Management Framework
+<https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf>
+
+7 - ISO 42001: A New Foundational Global Standard to Advance Responsible AI
+<https://aws.amazon.com/blogs/machine-learning/iso-42001-a-new-foundational-global-standard-to-advance-responsible-ai/>
+
+8 - The EU Artificial Intelligence Act
+<https://artificialintelligenceact.eu/>
+
+9 - Learn How to Assess the Risk of AI Systems
+<https://aws.amazon.com/blogs/machine-learning/learn-how-to-assess-risk-of-ai-systems/>
+
+10 - What Is Data Governance?
+<https://aws.amazon.com/what-is/data-governance/>
+
+11 - Data Governance in the Age of Generative AI
+<https://aws.amazon.com/blogs/big-data/data-governance-in-the-age-of-generative-ai/>
