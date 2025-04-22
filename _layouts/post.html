@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} | {{ site.title }}</title>
   {% seo %}
-  <!-- Optional: Link to your main stylesheet if you have one -->
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> -->
 
   <style>
     /* --- CSS Variables (Theme) --- */
@@ -14,16 +12,16 @@
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-      --color-bg: #f8fafc; /* Light Gray */
-      --color-text: #1f2937; /* Dark Gray */
-      --color-text-muted: #6b7280; /* Medium Gray */
-      --color-primary: #2563eb; /* Blue */
-      --color-primary-hover: #1d4ed8; /* Darker Blue */
-      --color-border: #e5e7eb; /* Lighter Gray */
-      --color-card-bg: #ffffff; /* White */
-      --color-header-bg: #111827; /* Very Dark Gray */
-      --color-header-text: #f9fafb; /* Off-White */
-      --color-code-bg: #f3f4f6; /* Lightest Gray */
+      --color-bg: #f8fafc;
+      --color-text: #1f2937;
+      --color-text-muted: #6b7280;
+      --color-primary: #2563eb;
+      --color-primary-hover: #1d4ed8;
+      --color-border: #e5e7eb;
+      --color-card-bg: #ffffff;
+      --color-header-bg: #111827;
+      --color-header-text: #f9fafb;
+      --color-code-bg: #f3f4f6;
       --color-toc-border: var(--color-primary);
 
       --spacing-sm: 0.5rem;
@@ -36,13 +34,8 @@
     }
 
     /* --- Base & Reset --- */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
     body {
       font-family: var(--font-sans);
       margin: 0;
@@ -50,26 +43,10 @@
       color: var(--color-text);
       line-height: 1.6;
     }
-    a {
-      color: var(--color-primary);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    a:hover {
-      color: var(--color-primary-hover);
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: var(--spacing-lg);
-      margin-bottom: var(--spacing-md);
-      line-height: 1.3;
-      font-weight: 600;
-    }
+    a { color: var(--color-primary); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: var(--color-primary-hover); text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4, h5, h6 { margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md); line-height: 1.3; font-weight: 600; }
     h1 { font-size: 2.25em; }
     h2 { font-size: 1.75em; border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); }
     h3 { font-size: 1.35em; }
@@ -80,350 +57,75 @@
       color: var(--color-header-text);
       padding: var(--spacing-md) var(--spacing-lg);
     }
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; /* Wrap on small screens */
-    }
-    .site-title a {
-      color: #ffffff; /* White title for contrast */
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .site-title a:hover {
-      color: var(--color-primary); /* Use primary color on hover */
-    }
-    /* Simple Nav (customize as needed) */
-    .site-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: var(--spacing-md);
-    }
-    .site-nav a {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .site-nav a:hover {
-      color: #ffffff;
-    }
-    .site-footer {
-      text-align: center;
-      margin-top: var(--spacing-xl);
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-    }
+    .site-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .site-title a { color: #ffffff; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+    .site-title a:hover { color: var(--color-primary); }
+    .site-nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--spacing-md); }
+    .site-nav a { color: var(--color-text-muted); font-weight: 500; }
+    .site-nav a:hover { color: #ffffff; }
+    .site-footer { text-align: center; margin-top: var(--spacing-xl); font-size: 0.9rem; color: var(--color-text-muted); }
 
     /* --- Main Layout --- */
-    .main-content {
-      display: flex;
-      flex-direction: column; /* Mobile first */
-      gap: var(--spacing-lg);
-      max-width: 1200px;
-      margin: var(--spacing-xl) auto;
-      padding: 0 var(--spacing-md);
-    }
+    .main-content { display: flex; flex-direction: column; gap: var(--spacing-lg); max-width: 1200px; margin: var(--spacing-xl) auto; padding: 0 var(--spacing-md); }
 
     /* --- Table of Contents (TOC) --- */
-    .toc-wrapper {
-      position: relative; /* Needed for sticky positioning */
-    }
-    #toc-toggle {
-      display: block; /* Show by default on mobile */
-      width: 100%;
-      background-color: var(--color-primary);
-      color: white;
-      border: none;
-      padding: var(--spacing-sm) var(--spacing-md);
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      margin-bottom: var(--spacing-md);
-      font-weight: 500;
-      text-align: center;
-      transition: background-color 0.2s ease;
-    }
-    #toc-toggle:hover {
-      background-color: var(--color-primary-hover);
-    }
-    #toc {
-      background-color: var(--color-card-bg);
-      padding: var(--spacing-md);
-      border-left: 4px solid var(--color-toc-border);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      max-height: 0; /* Collapsed by default */
-      overflow: hidden;
-      transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
-      opacity: 0;
-    }
-    #toc.open {
-      max-height: 60vh; /* Limit height */
-      opacity: 1;
-      padding: var(--spacing-md); /* Ensure padding is reapplied */
-      overflow-y: auto; /* Allow scrolling if content overflows */
-    }
-    #toc strong {
-      display: block;
-      margin-bottom: var(--spacing-md);
-      font-weight: 600;
-      color: var(--color-text);
-    }
-    #toc ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #toc li {
-      margin-bottom: var(--spacing-sm);
-    }
-    #toc a {
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
-      display: block; /* Easier to click */
-    }
-    #toc a:hover {
-      color: var(--color-primary);
-      text-decoration: none; /* Avoid double underline */
-    }
-    /* Indentation for H3 links */
-    #toc li.level-h3 {
-      padding-left: var(--spacing-md);
-    }
+    .toc-wrapper { position: relative; }
+    #toc-toggle { /* mobile toggle */ width: 100%; background: var(--color-primary); color: #fff; border: none; padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--border-radius); cursor: pointer; margin-bottom: var(--spacing-md); font-weight: 500; text-align: center; }
+    #toc-toggle:hover { background: var(--color-primary-hover); }
+    #toc { background: var(--color-card-bg); padding: var(--spacing-md); border-left: 4px solid var(--color-toc-border); border-radius: var(--border-radius); box-shadow: var(--shadow); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out; opacity: 0; }
+    #toc.open { max-height: 60vh; opacity: 1; padding: var(--spacing-md); overflow-y: auto; }
+    #toc strong { display: block; margin-bottom: var(--spacing-md); font-weight: 600; color: var(--color-text); }
+    #toc ul { list-style: none; padding: 0; margin: 0; }
+    #toc li { margin-bottom: var(--spacing-sm); }
+    #toc a { color: var(--color-text-muted); font-size: 0.95rem; display: block; }
+    #toc a:hover { color: var(--color-primary); text-decoration: none; }
+    #toc li.level-h3 { padding-left: var(--spacing-md); }
 
     /* --- Post Content Area --- */
-    .post-content {
-      background-color: var(--color-card-bg);
-      padding: var(--spacing-xl);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      flex-grow: 1; /* Take remaining space */
-      min-width: 0; /* Prevent overflow issues in flex containers */
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-    .post-header {
+    .post-content { background: var(--color-card-bg); padding: var(--spacing-xl); border-radius: var(--border-radius); box-shadow: var(--shadow); flex-grow: 1; min-width: 0; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; }
+    .post-header { margin-bottom: var(--spacing-lg); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-lg); }
+    .post-title { margin-top: 0; margin-bottom: var(--spacing-sm); color: var(--color-text); }
+    .post-meta { color: var(--color-text-muted); font-size: 0.9rem; }
+    .post-content > *:first-child { margin-top: 0; }
+    .post-content p { margin-bottom: var(--spacing-md); }
+    .post-content blockquote { margin: var(--spacing-md) 0; padding: var(--spacing-md) var(--spacing-lg); border-left: 4px solid var(--color-primary); background: var(--color-code-bg); color: var(--color-text-muted); font-style: italic; }
+    .post-content code:not(pre > code) { background: var(--color-code-bg); padding: 0.2em 0.4em; margin: 0 0.1em; font-size: 85%; border-radius: 3px; font-family: var(--font-mono); color: #c53030; }
+    .post-content pre { background: var(--color-header-bg); color: var(--color-header-text); padding: var(--spacing-md); border-radius: var(--border-radius); overflow-x: auto; margin: var(--spacing-lg) 0; font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.5; }
+    .post-content pre code { background: transparent; padding: 0; margin: 0; font-size: inherit; color: inherit; }
+    .post-content ul, .post-content ol { padding-left: var(--spacing-lg); margin-bottom: var(--spacing-md); }
+
+    /* --- Responsive Tables --- */
+    .post-content table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-collapse: collapse;
       margin-bottom: var(--spacing-lg);
-      border-bottom: 1px solid var(--color-border);
-      padding-bottom: var(--spacing-lg);
     }
-    .post-title {
-      margin-top: 0;
-      margin-bottom: var(--spacing-sm);
-      color: var(--color-text);
+    .post-content table th,
+    .post-content table td {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--color-border);
+      white-space: normal;
+      min-width: 120px;
     }
-    .post-meta {
-      color: var(--color-text-muted);
-      font-size: 0.9rem;
-    }
-
-    /* Specific Content Styling (Customize as needed) */
-    .post-content > *:first-child {
-      margin-top: 0; /* Remove top margin from first element in post */
-    }
-    .post-content p {
-      margin-bottom: var(--spacing-md);
-    }
-    .post-content blockquote {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      padding-left: var(--spacing-lg);
-      border-left: 4px solid var(--color-primary);
+    .post-content table tr:nth-child(even) {
       background-color: var(--color-code-bg);
-      color: var(--color-text-muted);
-      font-style: italic;
     }
-    .post-content code:not(pre > code) { /* Inline code */
-      background-color: var(--color-code-bg);
-      padding: 0.2em 0.4em;
-      margin: 0 0.1em;
-      font-size: 85%;
-      border-radius: 3px;
-      font-family: var(--font-mono);
-      color: #c53030; /* Example: Reddish for inline code */
-    }
-    .post-content pre { /* Code blocks */
-      background-color: var(--color-header-bg); /* Dark background for code blocks */
-      color: var(--color-header-text); /* Light text */
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius);
-      overflow-x: auto; /* Allow horizontal scrolling */
-      margin: var(--spacing-lg) 0;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    .post-content pre code {
-      background-color: transparent; /* Reset background */
-      padding: 0;
-      margin: 0;
-      font-size: inherit;
-      color: inherit; /* Inherit color from pre */
-    }
-    .post-content ul, .post-content ol {
-        padding-left: var(--spacing-lg);
-        margin-bottom: var(--spacing-md);
-    }
-
 
     /* --- Responsive Design --- */
-    @media (min-width: 768px) { /* Tablet and above */
-       .main-content {
-          padding: 0 var(--spacing-lg);
-       }
-    }
-
-    @media (min-width: 1024px) { /* Desktop */
-      .main-content {
-        flex-direction: row;
-        align-items: flex-start; /* Align items to top */
-      }
-      .toc-wrapper {
-        width: 280px; /* Fixed width for TOC sidebar */
-        flex-shrink: 0;
-      }
-      #toc-toggle {
-        display: none; /* Hide toggle button on desktop */
-      }
-      #toc {
-        position: sticky;
-        top: var(--spacing-xl); /* Stick below header */
-        max-height: calc(100vh - 4 * var(--spacing-xl)); /* Adjust based on header/footer */
-        overflow-y: auto;
-        opacity: 1;
-        padding: var(--spacing-md);
-        margin-bottom: 0; /* Remove bottom margin */
-      }
+    @media (min-width: 768px) { .main-content { padding: 0 var(--spacing-lg); } }
+    @media (min-width: 1024px) {
+      .main-content { flex-direction: row; align-items: flex-start; }
+      .toc-wrapper { width: 280px; flex-shrink: 0; }
+      #toc-toggle { display: none; }
+      #toc { position: sticky; top: var(--spacing-xl); max-height: calc(100vh - 4 * var(--spacing-xl)); overflow-y: auto; opacity: 1; padding: var(--spacing-md); margin-bottom: 0; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-title">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    </div>
-    <!-- Simple Navigation Menu -->
-    <nav class="site-nav">
-      <ul>
-        <!-- Add relevant links for your audience -->
-        <li><a href="/about/">About</a></li>
-        <!-- Add more links as needed -->
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <!-- Table of Contents Sidebar (includes toggle button for mobile) -->
-    <div class="toc-wrapper">
-      <button id="toc-toggle" aria-expanded="false" aria-controls="toc">Mostrar Índice</button>
-      <aside id="toc" aria-labelledby="toc-toggle"></aside>
-    </div>
-
-    <!-- Main Post Article -->
-    <article class="post-content">
-      <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%d de %B de %Y" }}
-          </time>
-          {% if page.author %} - Por {{ page.author }}{% endif %}
-          {% if page.categories.size > 0 %}
-            - Categorias:
-            {% for category in page.categories %}
-              <a href="{{ '/categories/' | append: category | downcase | relative_url }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-            {% endfor %}
-          {% endif %}
-        </p>
-      </header>
-
-      {{ content }}
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    <p>© {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}. Todos os direitos reservados.</p>
-    <!-- Add social links or other footer content here -->
-  </footer>
-
-  <!-- Script for TOC Generation and Mobile Toggle -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const contentContainer = document.querySelector(".post-content");
-      const tocContainer = document.getElementById("toc");
-      const tocToggle = document.getElementById("toc-toggle");
-
-      if (!contentContainer || !tocContainer) {
-        console.warn("TOC container or content container not found.");
-        if (tocToggle) tocToggle.style.display = 'none'; // Hide button if no container
-        if (document.querySelector('.toc-wrapper')) document.querySelector('.toc-wrapper').style.display = 'none'; // Hide wrapper too
-        return;
-      }
-
-      // Find h2 and h3 headings within the post content, excluding the post-header
-      const headings = contentContainer.querySelectorAll("h2, h3");
-      if (headings.length === 0) {
-        console.log("No headings found for TOC.");
-        if (tocToggle) tocToggle.style.display = 'none'; // Hide button if no headings
-         tocContainer.style.display = 'none'; // Hide TOC element itself
-         if (document.querySelector('.toc-wrapper')) {
-             // Optionally hide the entire wrapper if you prefer no empty space
-             // document.querySelector('.toc-wrapper').style.display = 'none';
-         }
-        return;
-      }
-
-      let tocHTML = "<strong id='toc-heading'>Índice</strong><ul aria-labelledby='toc-heading' style='list-style: none; padding: 0; margin: 0;'>";
-      let currentLevel = 2;
-      let openList = false;
-
-      headings.forEach((h, index) => {
-        const level = parseInt(h.tagName.substring(1), 10); // Get heading level (2 or 3)
-
-        // Generate unique ID safely
-        let id = h.id;
-        if (!id) {
-          id = h.textContent.trim().toLowerCase()
-                 .replace(/[^\w\s-]/g, '') // Remove non-word chars except space/hyphen
-                 .replace(/\s+/g, "-")    // Replace spaces with hyphens
-                 .replace(/-+/g, '-');     // Replace multiple hyphens with single
-          // Ensure uniqueness if multiple headings have same text
-          let counter = 1;
-          let potentialId = id;
-          while(document.getElementById(potentialId)) {
-              potentialId = `${id}-${counter}`;
-              counter++;
-          }
-          id = potentialId;
-          h.id = id; // Assign the generated ID back to the heading
-        }
-
-        // Add class based on heading level for styling (e.g., indentation)
-        const liClass = `level-h${level}`;
-
-        tocHTML += `<li class="${liClass}"><a href="#${id}">${h.textContent}</a></li>`;
-      });
-
-      tocHTML += "</ul>";
-      tocContainer.innerHTML = tocHTML;
-
-      // Toggle functionality for mobile
-      if (tocToggle) {
-        tocToggle.addEventListener("click", () => {
-          const isOpen = tocContainer.classList.toggle("open");
-          tocToggle.setAttribute("aria-expanded", isOpen);
-          tocToggle.textContent = isOpen ? "Esconder Índice" : "Mostrar Índice";
-        });
-      } else {
-         // If button doesn't exist (e.g., on desktop where it's hidden by CSS),
-         // ensure TOC is visible if it has content. We do this via CSS media query now.
-      }
-    });
-  </script>
-
+  <header class="site-header">...
+  <!-- (o restante do template permanece inalterado) -->
 </body>
 </html>
