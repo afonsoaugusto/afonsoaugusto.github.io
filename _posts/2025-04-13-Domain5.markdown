@@ -99,6 +99,89 @@ Este resumo detalha a primeira parte da lição sobre métodos para proteger sis
 
 Este resumo fornece uma base sólida sobre o modelo de responsabilidade compartilhada e a importância do IAM para proteger sistemas de IA na AWS. A próxima parte da lição provavelmente aprofundará outros aspectos da segurança de sistemas de IA, construindo sobre esses conceitos fundamentais.
 
+## Task Statement 5.1 Lesson 2
+
+O texto introduz o conceito de **Políticas IAM (IAM Policies)** na AWS, que são documentos no formato JSON usados para definir permissões (permitir ou negar acesso) a serviços e recursos da AWS. O objetivo principal dessas políticas é permitir a personalização fina do nível de acesso dos usuários. É fortemente recomendada a adesão ao **princípio de menor privilégio**, concedendo apenas as permissões estritamente necessárias para que um usuário execute suas tarefas. Um exemplo prático fornecido é uma política que permite a um usuário específico iniciar e parar instâncias EC2.
+
+O texto aborda o desafio de gerenciar permissões em contas com um grande número de usuários (menciona 3.000 como exemplo). Atribuir e gerenciar políticas individualmente para cada usuário torna-se complexo e ineficiente.
+
+Para solucionar esse problema de escalabilidade, a AWS introduziu os **Grupos IAM (IAM Groups)**. Um Grupo IAM é essencialmente uma coleção de usuários IAM. A vantagem é que, ao anexar uma Política IAM a um grupo, todos os usuários pertencentes a esse grupo herdam automaticamente as permissões definidas na política. Uma prática recomendada para gerenciar grupos é organizá-los com base nas **funções de trabalho** (ex: grupo de desenvolvedores, grupo de QA, grupo de administradores). Políticas específicas podem então ser criadas e atribuídas a esses grupos, simplificando a administração. É importante notar que:
+*   Grupos podem conter muitos usuários.
+*   Usuários podem pertencer a múltiplos grupos.
+*   Grupos **não podem** ser aninhados (um grupo não pode conter outro grupo).
+A melhor prática geral é anexar políticas primariamente a grupos, e apenas anexar políticas diretamente a usuários para permissões únicas ou exceções.
+
+Um ponto crucial de segurança é levantado: as permissões associadas a **usuários e grupos** utilizam **credenciais de longa duração**. Se essas credenciais forem comprometidas (por exemplo, um desenvolvedor acidentalmente as inclui no código-fonte compartilhado), elas podem ser usadas indevidamente por terceiros.
+
+Como uma alternativa mais segura, o texto apresenta as **Funções IAM (IAM Roles)**. Uma Função IAM é uma identidade que pode ser **assumida** temporariamente por uma entidade (seja um usuário IAM, um serviço da AWS ou um usuário autenticado por um provedor de identidade externo) para obter acesso a recursos ou serviços da AWS. A principal vantagem de segurança das funções é que, ao assumi-las, a entidade recebe **credenciais de segurança temporárias** para a sessão, que expiram automaticamente após um período definido. Isso mitiga significativamente o risco associado às credenciais de longa duração. Cada Função IAM possui uma **Política de Confiança (Trust Policy)** associada, que especifica quais entidades têm permissão para assumir essa função.
+
+O texto diferencia dois tipos principais de políticas de permissão:
+1.  **Políticas Baseadas em Identidade (Identity-Based Policies):** São as políticas anexadas a identidades IAM (usuários, grupos ou funções).
+2.  **Políticas Baseadas em Recurso (Resource-Based Policies):** São políticas anexadas diretamente aos próprios recursos da AWS (como um bucket S3). Elas definem quem (quais principais, incluindo usuários, funções, ou até mesmo outras contas AWS) pode acessar aquele recurso específico.
+
+Finalmente, o texto explica como as permissões são avaliadas quando ambos os tipos de políticas podem se aplicar:
+*   **Permissão Resultante:** É a soma total das permissões concedidas pelas políticas baseadas em identidade e pelas políticas baseadas em recurso.
+*   **Lógica de Permissão (Allow):** Uma ação é permitida pela AWS se for explicitamente permitida por uma política baseada em identidade, por uma política baseada em recurso, ou por ambas.
+*   **Precedência da Negação (Deny):** Uma negação explícita (`Explicit Deny`) em *qualquer* uma das políticas (seja baseada em identidade ou em recurso) **sempre se sobrepõe** a qualquer permissão de `Allow`.
+
+O texto conclui informando que a lição sobre o "task statement 5.1" será continuada posteriormente.
+
+### Topicos 5.1.2
+
+**1. Políticas IAM (IAM Policies)**
+
+*   **Definição:** Documentos JSON que definem permissões (permitir ou negar) para serviços e recursos da AWS.
+*   **Propósito:** Customizar os níveis de acesso dos usuários aos recursos.
+*   **Melhor Prática:** Seguir o princípio de **menor privilégio** (Least Privilege), concedendo apenas as permissões estritamente necessárias para realizar uma tarefa.
+*   **Exemplo:** Uma política que permite a um usuário iniciar (Start) e parar (Stop) instâncias EC2.
+
+**2. Desafio de Gerenciamento em Escala**
+
+*   **Problema:** Gerenciar permissões individualmente para um grande número de usuários (ex: 3.000) torna-se complexo e ineficiente.
+
+**3. Grupos IAM (IAM Groups)**
+
+*   **Solução:** Coleções de usuários IAM criadas para simplificar o gerenciamento de permissões.
+*   **Funcionamento:** Ao anexar uma Política IAM a um grupo, **todos os usuários** dentro desse grupo herdam as permissões especificadas na política.
+*   **Organização Recomendada:** Estruturar grupos por **funções de trabalho** (ex: grupo `developers`, grupo `QA`, grupo `admins`).
+*   **Flexibilidade:**
+    *   Grupos podem conter muitos usuários.
+    *   Usuários podem pertencer a múltiplos grupos.
+*   **Limitação:** Grupos **não podem** ser aninhados (um grupo não pode conter outro grupo).
+*   **Melhor Prática:** Anexar políticas primariamente a grupos. Anexar políticas diretamente a usuários apenas para permissões únicas ou exceções.
+
+**4. Credenciais e Riscos Associados a Usuários/Grupos**
+
+*   **Tipo de Credencial:** Permissões associadas a usuários e grupos utilizam **credenciais de longa duração**.
+*   **Risco de Segurança:** Se essas credenciais forem comprometidas (ex: acidentalmente incluídas em código compartilhado), podem ser usadas por terceiros não autorizados.
+
+**5. Funções IAM (IAM Roles) - Uma Alternativa Mais Segura**
+
+*   **Definição:** Uma identidade IAM que pode ser **assumida** temporariamente por uma entidade confiável.
+*   **Mecanismo de Acesso:** Ao assumir uma role, a entidade obtém **credenciais de segurança temporárias** para a sessão.
+*   **Vantagem de Segurança:** As credenciais temporárias **expiram automaticamente**, reduzindo significativamente o risco de comprometimento de longo prazo.
+*   **Quem Pode Assumir Roles:**
+    *   Usuários IAM.
+    *   Serviços da AWS (ex: EC2 precisa acessar S3).
+    *   Usuários autenticados por um provedor de identidade externo (federação).
+*   **Política de Confiança (Trust Policy):** Cada role tem uma política associada que define quais entidades (principais) têm permissão para assumi-la.
+
+**6. Tipos de Políticas de Permissão**
+
+*   **Políticas Baseadas em Identidade (Identity-Based Policies):** Anexadas a identidades IAM (usuários, grupos ou funções). Controlam o que *essa identidade* pode fazer.
+*   **Políticas Baseadas em Recurso (Resource-Based Policies):** Anexadas diretamente a recursos da AWS (ex: bucket S3, tópico SNS). Controlam *quem* pode acessar *aquele recurso específico*.
+
+**7. Avaliação de Permissões (Como as Políticas Interagem)**
+
+*   **Permissão Efetiva:** Resulta da combinação das políticas baseadas em identidade e baseadas em recurso aplicáveis.
+*   **Lógica de Permissão (Allow):** Uma ação é permitida se for explicitamente autorizada (`Allow`) por uma política de identidade, OU por uma política de recurso, OU por ambas.
+*   **Precedência da Negação (Deny):** Uma negação explícita (`Explicit Deny`) em **qualquer** das políticas (seja de identidade ou de recurso) **sempre se sobrepõe** a qualquer permissão `Allow`.
+
+**8. Contexto da Lição**
+
+*   O conteúdo faz parte do "task statement 5.1".
+*   A discussão sobre este tópico continuará na próxima lição.
+
 ## Links
 
 1 - Shared Responsibility Model
