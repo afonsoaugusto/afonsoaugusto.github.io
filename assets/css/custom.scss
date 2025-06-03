@@ -50,3 +50,38 @@ p {
   max-width: 800px;
   margin: 0 auto;
 }
+
+/* Highlighted link styles */
+.post-list a, .pagination a {
+  color: #1e40af; /* Blue color for links */
+  font-weight: 600; /* Bold for emphasis */
+  text-decoration: underline; /* Underline for visibility */
+  transition: color 0.2s ease; /* Smooth hover transition */
+}
+
+.post-list a:hover, .pagination a:hover {
+  color: #3b82f6; /* Lighter blue on hover */
+  text-decoration: underline;
+}
+
+/* Pagination button styles */
+.pagination a, .pagination span {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.pagination a {
+  background-color: #1e40af; /* Blue background for buttons */
+  color: white;
+}
+
+.pagination a:hover {
+  background-color: #3b82f6; /* Lighter blue on hover */
+}
+
+.pagination span {
+  background-color: #d1d5db; /* Gray for disabled buttons */
+  color: #4b5563;
+  cursor: not-allowed;
+}

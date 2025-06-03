@@ -66,3 +66,14 @@ disqus:
   shortname: afonsoaugusto-github-io
 
 google_analytics: G-8TFSN8203P
+
+# Pagination settings
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /page/:num/
+  title: ':title - Página :num'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
