@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2.2"
+gem "jekyll", "~> 4.3" # ou a versão do seu Jekyll
 
 # Tema padrão
 gem "minima", ">= 2.5.1"
