@@ -44,3 +44,9 @@ p {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+
+/* Consistent content styling */
+.post-list, .post-content {
+  max-width: 800px;
+  margin: 0 auto;
+}

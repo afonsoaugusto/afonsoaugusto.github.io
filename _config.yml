@@ -48,11 +48,17 @@ minima:
 defaults:
   - scope:
       path: ""
+      type: pages
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: posts
     values:
       layout: "default"
       image: /assets/images/default.jpg
       og:
-        type: website
+        type: article
 
 comments:
   provider: disqus
