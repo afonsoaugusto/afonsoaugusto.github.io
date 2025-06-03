@@ -27,7 +27,7 @@ permalink: /
         Itera sobre todos os posts do site, ordenados por data (mais recente primeiro).
         Removido 'paginator.posts' para listar todos.
       {% endcomment %}
-      {% for post in site.posts reversed %}
+      {% for post in site.posts %}
         <article class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
           <h3 class="text-2xl font-semibold text-blue-700 hover:text-blue-800 mb-2">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
