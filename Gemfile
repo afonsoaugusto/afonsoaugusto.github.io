@@ -13,7 +13,7 @@ gem "jekyll-redirect-from", "~> 0.16.0"
 gem "jekyll-remote-theme", "~> 0.4.3"
 gem "jekyll-remote-include", "~> 1.0.2"
 gem "jekyll-include-cache"       # Melhor performance de includes
-gem "jekyll-paginate-v2"         # Paginação avançada
+gem "jekyll-paginate"         # Paginação avançada
 gem "jekyll-toc"
 
 # Markdown e syntax highlighting

@@ -27,7 +27,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-toc
   - kramdown
   - rouge
