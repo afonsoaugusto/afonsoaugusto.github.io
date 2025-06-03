@@ -1,1 +1,46 @@
-<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+/* Custom styles for responsiveness */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure nav menu is sticky and visible */
+nav {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+  #nav-menu {
+    display: none;
+  }
+  #mobile-menu {
+    display: none;
+  }
+  #mobile-menu:not(.hidden) {
+    display: block;
+  }
+}
+
+/* Content padding for small screens */
+main {
+  padding: 1rem;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typography adjustments for mobile */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

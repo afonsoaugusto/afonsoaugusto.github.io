@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'pt-BR' }}">
+<head>
+  <meta charset="{{ site.encoding | default: 'utf-8' }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <title>{{ page.title | default: site.title }}</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944065967644535" crossorigin="anonymous"></script>
+  <!-- Jekyll SEO Tag -->
+  {% seo %}
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="{{ site.url }}" class="text-xl font-bold">{{ site.title }}</a>
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-4">
+        <li><a href="{{ site.url }}" class="hover:underline">Home</a></li>
+        <li><a href="{{ site.url }}/about" class="hover:underline">Sobre</a></li>
+        <li><a href="{{ site.url }}/blog" class="hover:underline">Blog</a></li>
+        {% for link in site.minima.social_links %}
+          {% if link.twitter %}
+            <li><a href="https://twitter.com/{{ link.twitter }}" class="hover:underline">Twitter</a></li>
+          {% endif %}
+          {% if link.github %}
+            <li><a href="https://github.com/{{ link.github }}" class="hover:underline">GitHub</a></li>
+          {% endif %}
+          {% if link.linkedin %}
+            <li><a href="https://linkedin.com/{{ link.linkedin }}" class="hover:underline">LinkedIn</a></li>
+          {% endif %}
+          {% if link.instagram %}
+            <li><a href="https://instagram.com/{{ link.instagram }}" class="hover:underline">Instagram</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
+      <li><a href="{{ site.url }}" class="block py-2 hover:underline">Home</a></li>
+      <li><a href="{{ site.url }}/about" class="block py-2 hover:underline">Sobre</a></li>
+      <li><a href="{{ site.url }}/blog" class="block py-2 hover:underline">Blog</a></li>
+      {% for link in site.minima.social_links %}
+        {% if link.twitter %}
+          <li><a href="https://twitter.com/{{ link.twitter }}" class="block py-2 hover:underline">Twitter</a></li>
+        {% endif %}
+        {% if link.github %}
+          <li><a href="https://github.com/{{ link.github }}" class="block py-2 hover:underline">GitHub</a></li>
+        {% endif %}
+        {% if link.linkedin %}
+          <li><a href="https://linkedin.com/{{ link.linkedin }}" class="block py-2 hover:underline">LinkedIn</a></li>
+        {% endif %}
+        {% if link.instagram %}
+          <li><a href="https://instagram.com/{{ link.instagram }}" class="block py-2 hover:underline">Instagram</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-4">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-4 text-center">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

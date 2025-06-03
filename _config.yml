@@ -2,9 +2,8 @@ title: Afonso Rodrigues blog's
 email: afonsoaugustoventura@gmail.com
 description: >-
   Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS
-baseurl: "" # subcaminho, se necessário (ex: /blog)
-url: "https://afonsorodrigues.com" # URL principal do site
-
+baseurl: ""
+url: "https://afonsorodrigues.com"
 lang: "pt-BR"
 encoding: "utf-8"
 
@@ -22,16 +21,12 @@ seo:
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
-remote_theme: jekyll/minima
-
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
-  - jekyll-remote-theme
-  - jekyll-remote-include
-  - jekyll-include-cache
   - jekyll-paginate-v2
   - jekyll-toc
   - kramdown
@@ -54,7 +49,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "post"
+      layout: "default"
       image: /assets/images/default.jpg
       og:
         type: website
