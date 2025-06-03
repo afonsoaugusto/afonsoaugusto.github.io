@@ -3,54 +3,54 @@ layout: default
 title: Afonso Rodrigues blog's
 description: Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS
 permalink: /
-paginate: true # <--- ADICIONE ESTA LINHA
 ---
 
+<main class="container mx-auto px-4 py-8 max-w-4xl">
+  <!-- Seção de Boas-vindas/Hero -->
+  <header class="text-center mb-12">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+      Bem-vindo ao <span class="text-blue-600">{{ site.title }}</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
+      {{ site.description }}
+    </p>
+  </header>
 
-<div class="post-list">
-  <h1 class="text-3xl font-bold mb-6">Bem-vindo ao {{ site.title }}</h1>
-  <p class="mb-6">{{ site.description }}</p>
-  <h2 class="text-2xl font-semibold mb-4">Todos os Posts</h2>
-  <ul>
-    {% for post in paginator.posts %}
-      <li class="mb-4">
-        <a href="{{ post.url | relative_url }}" class="text-lg">
-          {{ post.title }}
-        </a>
-        <p class="text-gray-600 text-sm">{{ post.date | date: "%d/%m/%Y" }}</p>
-        <p class="text-gray-700">{{ post.excerpt | strip_html | truncate: 150 }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+  <!-- Seção de Posts -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-gray-200 pb-2">
+      Todos os Posts
+    </h2>
 
-  <!-- Pagination Controls -->
-  {% if paginator.total_pages > 1 %}
-    <div class="pagination flex justify-between mt-8">
-      <div>
-        {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | relative_url }}" class="px-4 py-2">
-            Anterior
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {% comment %}
+        Itera sobre todos os posts do site, ordenados por data (mais recente primeiro).
+        Removido 'paginator.posts' para listar todos.
+      {% endcomment %}
+      {% for post in site.posts reversed %} {# 'reversed' para os mais recentes primeiro #}
+        <article class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+          <h3 class="text-2xl font-semibold text-blue-700 hover:text-blue-800 mb-2">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="text-sm text-gray-500 mb-3">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+          </p>
+          <p class="text-gray-700 leading-relaxed">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+          <a href="{{ post.url | relative_url }}" class="mt-4 inline-block text-blue-600 hover:underline">
+            Leia mais →
           </a>
-        {% else %}
-          <span class="px-4 py-2">
-            Anterior
-          </span>
-        {% endif %}
-      </div>
-      <div>
-        {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | relative_url }}" class="px-4 py-2">
-            Próximo
-          </a>
-        {% else %}
-          <span class="px-4 py-2">
-            Próximo
-          </span>
-        {% endif %}
-      </div>
+        </article>
+      {% endfor %}
     </div>
-    <div class="text-center mt-4">
-      <p>Página {{ paginator.page }} de {{ paginator.total_pages }}</p>
-    </div>
-  {% endif %}
-</div>
+
+    {% if site.posts.size == 0 %}
+      <p class="text-center text-gray-600 mt-10">Nenhum post encontrado ainda. Volte em breve!</p>
+    {% endif %}
+  </section>
+
+  <!-- Seção opcional (ex: sobre, contato, etc.) -->
+  <section class="text-center py-8 border-t border-gray-200 mt-12">
+    <p class="text-gray-600">Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS.</p>
+    <p class="text-gray-600 text-sm mt-2">© {{ 'now' | date: "%Y" }} Afonso Rodrigues. Todos os direitos reservados.</p>
+  </section>
+</main>
