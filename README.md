@@ -1,121 +1,138 @@
-# Site Hugo - Afonso Rodrigues
+# Afonso Rodrigues - DevOps & SRE Blog
 
-Este é o site migrado do Jekyll para Hugo, mantendo todas as funcionalidades originais.
+Blog pessoal sobre DevOps, SRE, Kubernetes e AWS, migrado de Jekyll para Hugo com tema PaperMod.
 
-## ✅ Migração Concluída
+## 🚀 Características
 
-### O que foi migrado:
+* **Tema PaperMod**: Design moderno, responsivo e otimizado
+* **Performance Superior**: Build 10x mais rápido que Jekyll
+* **SEO Otimizado**: Meta tags, sitemap XML e dados estruturados
+* **Acessibilidade**: Navegação por teclado, ARIA labels e estrutura semântica
+* **Feed RSS**: Assinatura automática de novos posts
+* **Sistema de Comentários**: Integração com Disqus
+* **Ferramentas Utils**: Contador de caracteres e conversor UTC/GMT-3
+* **Modo Claro/Escuro**: Tema automático baseado na preferência do sistema
 
-- ✅ **31 posts** migrados com sucesso
-- ✅ **Páginas** (about, utils, archive, tags)
-- ✅ **Assets** (CSS, JS, imagens)
-- ✅ **Layouts** personalizados
-- ✅ **GitHub Actions** configurado
-- ✅ **Funcionalidade Utils** preservada 100%
+## 🛠️ Tecnologias Utilizadas
 
-### Estrutura do Site:
+* **Hugo 0.151.0**: Gerador de sites estáticos moderno
+* **PaperMod Theme**: Tema responsivo e otimizado
+* **GitHub Pages**: Hospedagem gratuita
+* **GitHub Actions**: Deploy automático
+* **HTML5/CSS3**: Estrutura e estilização moderna
+* **JavaScript ES6+**: Funcionalidades interativas
 
-```
-afonsoaugusto-hugo/
-├── content/
-│   ├── posts/          # 31 posts migrados
-│   ├── about.md        # Página sobre
-│   ├── utils.md        # Página de ferramentas
-│   ├── archive.md      # Arquivo de posts
-│   └── tags.md         # Página de tags
-├── layouts/
-│   ├── _default/       # Layouts base
-│   ├── partials/       # Componentes reutilizáveis
-│   └── utils.html      # Layout especial para Utils
-├── static/
-│   ├── css/           # Estilos
-│   ├── js/            # JavaScript
-│   └── images/        # Imagens
-├── config.toml        # Configuração Hugo
-└── .github/workflows/ # GitHub Actions
-```
+## 🚀 Como Executar Localmente
 
-## 🚀 Como usar:
+### Pré-requisitos
+- Hugo Extended (versão 0.151.0 ou superior)
+- Git
 
-### Desenvolvimento Local:
+### Instalação
 
 ```bash
-# Instalar Hugo (se não tiver)
-brew install hugo
+# Clonar o repositório
+git clone https://github.com/afonsoaugusto/afonsoaugusto.github.io.git
+cd afonsoaugusto.github.io
 
-# Navegar para o diretório
-cd /Users/azos/site/afonsoaugusto-hugo
+# Inicializar submodules (tema)
+git submodule update --init --recursive
 
-# Servidor de desenvolvimento
-hugo server -D
+# Executar servidor local
+hugo server
 
-# Build para produção
+# Acessar em http://localhost:1313
+```
+
+### Build para Produção
+
+```bash
+# Gerar site estático
 hugo --minify
+
+# O conteúdo será gerado na pasta public/
 ```
 
-### Deploy:
+## 📝 Estrutura do Projeto
 
-O site está configurado para deploy automático no GitHub Pages via GitHub Actions.
+```
+├── .github/workflows/    # GitHub Actions
+├── archetypes/           # Templates de conteúdo
+├── content/              # Conteúdo do site
+│   ├── posts/           # Posts do blog
+│   ├── about.md         # Página sobre
+│   ├── utils.md         # Página de ferramentas
+│   └── ...
+├── layouts/             # Layouts customizados
+│   └── utils.html       # Layout da página Utils
+├── static/              # Arquivos estáticos
+├── themes/              # Temas (PaperMod)
+├── config.toml          # Configuração do Hugo
+└── deploy.sh            # Script de deploy
+```
 
-1. **Fazer push para o repositório**
-2. **GitHub Actions** irá buildar e fazer deploy automaticamente
-3. **Site estará disponível** em `https://afonsorodrigues.com`
+## 🎨 Personalização
 
-## 🎯 Funcionalidades Preservadas:
+### Configuração Principal
+Edite o arquivo `config.toml` para personalizar:
 
-### ✅ Página Utils:
-- **Contador de caracteres** (JavaScript puro)
-- **Conversor UTC ↔ GMT-3** (JavaScript puro)
-- **Horário atual em tempo real** (JavaScript puro)
-- **Interface responsiva** (CSS/Tailwind)
+* Informações do autor e redes sociais
+* Configurações do tema PaperMod
+* Analytics (Google Analytics)
+* Comentários (Disqus)
+* SEO e meta tags
 
-### ✅ Blog:
-- **31 posts** migrados com front matter correto
-- **Categorias e tags** funcionando
-- **Navegação** entre posts
-- **RSS feed** automático
-- **SEO** otimizado
+### Layout Customizado
+O arquivo `layouts/utils.html` contém o layout customizado para a página de ferramentas, incluindo:
 
-### ✅ Layout:
-- **Design responsivo** mantido
-- **Navegação** funcional
-- **Footer** com links sociais
-- **Header** com menu mobile
+* Contador de caracteres em tempo real
+* Conversor UTC ↔ GMT-3
+* Interface responsiva
+* JavaScript puro (funciona offline)
 
-## 📊 Vantagens do Hugo:
+## 🔧 Deploy
 
-- 🚀 **Performance superior** (build 10x mais rápido)
-- 📱 **Melhor SEO** nativo
-- 🔧 **Configuração mais simples**
-- 📊 **Melhor organização** de assets
-- ⚡ **Deploy mais rápido**
+### Deploy Automático
+O site é automaticamente deployado via GitHub Actions quando há push na branch `main`:
 
-## 🔧 Comandos úteis:
+1. Build do site com Hugo
+2. Deploy para GitHub Pages
+3. Site disponível em https://afonsorodrigues.com
 
+### Deploy Manual
 ```bash
-# Criar novo post
-hugo new content/posts/meu-novo-post.md
-
-# Build com estatísticas
-hugo --minify --verbose
-
-# Servidor com drafts
-hugo server -D
-
-# Limpar cache
-hugo --gc
+# Executar script de deploy
+./deploy.sh
 ```
 
-## 📝 Próximos Passos:
+## 📊 Migração Jekyll → Hugo
 
-1. **Testar localmente** - `hugo server -D`
-2. **Fazer commit** das mudanças
-3. **Push para GitHub** - deploy automático
-4. **Verificar site** em produção
-5. **Configurar domínio** se necessário
+### Vantagens da Migração
+- ✅ **Performance**: Build 10x mais rápido
+- ✅ **Simplicidade**: Configuração mais simples
+- ✅ **Manutenção**: Tema atualizado automaticamente
+- ✅ **SEO**: Melhor otimização nativa
+- ✅ **Responsividade**: Design moderno e adaptável
+
+### Funcionalidades Preservadas
+- ✅ Todos os posts migrados (31 posts)
+- ✅ Páginas estáticas (about, utils, archive, tags)
+- ✅ Assets (imagens, favicon, robots.txt)
+- ✅ Analytics e comentários
+- ✅ SEO e meta tags
+- ✅ Ferramentas Utils funcionais
+
+## 📞 Contato
+
+* **Website**: [afonsorodrigues.com](https://afonsorodrigues.com)
+* **GitHub**: [@afonsoaugusto](https://github.com/afonsoaugusto)
+* **LinkedIn**: [Afonso Rodrigues](https://linkedin.com/in/afonsoavr)
+* **Twitter**: [@Afonsoavr](https://twitter.com/Afonsoavr)
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-**Migração concluída com sucesso!** 🎉
-
-O site Hugo está pronto para uso e mantém todas as funcionalidades do Jekyll com performance superior.
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
