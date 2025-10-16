@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-# Jekyll Core
-gem "jekyll", "~> 4.3"
+# Jekyll Core - using stable version
+gem "jekyll", "~> 4.1.0"
 
 # Essential Plugins (GitHub Pages compatible)
-gem "jekyll-feed", "~> 0.16.0"           # RSS feed generation
+gem "jekyll-feed", "~> 0.15.0"           # RSS feed generation
 gem "jekyll-sitemap", "~> 1.4.0"         # XML sitemap generation
 gem "jekyll-seo-tag", "~> 2.8.0"         # SEO meta tags
 gem "jekyll-redirect-from", "~> 0.16.0"  # Redirect pages
@@ -16,6 +16,9 @@ gem "jekyll-include-cache", "~> 0.2.1"   # Performance optimization
 gem "kramdown", "~> 2.4.0"
 gem "kramdown-parser-gfm", "~> 1.1.0"
 gem "rouge", "~> 3.28.0"
+
+# Use sassc with specific version for better compatibility
+gem "sassc", "~> 2.4.0"
 
 # Development Dependencies
 group :development do

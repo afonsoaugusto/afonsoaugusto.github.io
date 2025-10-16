@@ -15,7 +15,7 @@ author:
   name: "Afonso Rodrigues"
   email: "afonsoaugustoventura@gmail.com"
   bio: "Engenheiro DevOps e SRE com foco em automação, Kubernetes e AWS"
-  avatar: "/assets/images/avatar.jpg"
+  avatar: ""
   social:
     twitter: "Afonsoavr"
     github: "afonsoaugusto"
@@ -33,7 +33,7 @@ seo:
   description: "Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS"
   url: "https://afonsorodrigues.com"
   twitter: "@Afonsoavr"
-  image: "/assets/images/og-image.jpg"
+  image: ""
 
 # Build Settings
 markdown: kramdown
@@ -84,7 +84,7 @@ defaults:
       show_sidebar: true
       show_related: true
       show_comments: true
-      image: "/assets/images/default-post.jpg"
+      image: ""
       og:
         type: article
       twitter:

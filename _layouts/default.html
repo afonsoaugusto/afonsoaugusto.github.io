@@ -90,7 +90,7 @@
       "name": "{{ site.title }}",
       "logo": {
         "@type": "ImageObject",
-        "url": "{{ site.url }}/assets/images/logo.png"
+        "url": "{{ site.url }}"
       }
     }
     {% if page.layout == 'post' %},
@@ -109,7 +109,7 @@
 
   <!-- Header -->
   <header>
-    <div class="container">
+    <div class="container" style="text-align: left;">
       <div style="display: flex; justify-content: space-between; align-items: center; height: 4rem;">
         <!-- Logo/Brand -->
         <div>
