@@ -1,0 +1,276 @@
+---
+layout: default
+title: Utils
+description: Ferramentas úteis - Contador de caracteres e conversor de horário UTC/GMT-3
+permalink: /utils/
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Ferramentas Úteis</h1>
+    
+    <!-- Contador de Caracteres -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+        <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        Contador de Caracteres
+      </h2>
+      
+      <div class="bg-gray-50 rounded-lg p-6">
+        <label for="text-input" class="block text-sm font-medium text-gray-700 mb-2">
+          Digite ou cole seu texto:
+        </label>
+        <textarea 
+          id="text-input" 
+          rows="6" 
+          class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+          placeholder="Digite ou cole seu texto aqui..."
+        ></textarea>
+        
+        <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <div class="text-sm text-gray-600">Caracteres</div>
+            <div id="char-count" class="text-2xl font-bold text-blue-600">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <div class="text-sm text-gray-600">Palavras</div>
+            <div id="word-count" class="text-2xl font-bold text-green-600">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <div class="text-sm text-gray-600">Linhas</div>
+            <div id="line-count" class="text-2xl font-bold text-purple-600">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <div class="text-sm text-gray-600">Parágrafos</div>
+            <div id="paragraph-count" class="text-2xl font-bold text-orange-600">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conversor de Horário -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-6 flex items-center">
+        <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Conversor de Horário UTC ↔ GMT-3
+      </h2>
+      
+      <div class="bg-gray-50 rounded-lg p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- UTC para GMT-3 -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">UTC para GMT-3</h3>
+            <div class="space-y-4">
+              <div>
+                <label for="utc-input" class="block text-sm font-medium text-gray-700 mb-2">
+                  Data e Hora UTC:
+                </label>
+                <input 
+                  type="datetime-local" 
+                  id="utc-input" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+              </div>
+              <button 
+                onclick="convertUTCtoGMT3()" 
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+              >
+                Converter
+              </button>
+              <div class="bg-gray-100 p-3 rounded-md">
+                <div class="text-sm text-gray-600">Resultado GMT-3:</div>
+                <div id="gmt3-result" class="text-lg font-semibold text-gray-800">-</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GMT-3 para UTC -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">GMT-3 para UTC</h3>
+            <div class="space-y-4">
+              <div>
+                <label for="gmt3-input" class="block text-sm font-medium text-gray-700 mb-2">
+                  Data e Hora GMT-3:
+                </label>
+                <input 
+                  type="datetime-local" 
+                  id="gmt3-input" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+              </div>
+              <button 
+                onclick="convertGMT3toUTC()" 
+                class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200"
+              >
+                Converter
+              </button>
+              <div class="bg-gray-100 p-3 rounded-md">
+                <div class="text-sm text-gray-600">Resultado UTC:</div>
+                <div id="utc-result" class="text-lg font-semibold text-gray-800">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horário Atual -->
+        <div class="mt-6 bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">Horário Atual</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <div class="text-sm text-blue-600">UTC:</div>
+              <div id="current-utc" class="text-lg font-semibold text-blue-800">-</div>
+            </div>
+            <div>
+              <div class="text-sm text-blue-600">GMT-3 (Brasil):</div>
+              <div id="current-gmt3" class="text-lg font-semibold text-blue-800">-</div>
+            </div>
+          </div>
+          <button 
+            onclick="updateCurrentTime()" 
+            class="mt-3 bg-blue-600 text-white py-1 px-3 rounded text-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+          >
+            Atualizar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Contador de Caracteres
+function updateCharacterCount() {
+  const textInput = document.getElementById('text-input');
+  const text = textInput.value;
+  
+  // Contar caracteres
+  const charCount = text.length;
+  document.getElementById('char-count').textContent = charCount;
+  
+  // Contar palavras
+  const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+  const wordCount = text.trim() === '' ? 0 : words.length;
+  document.getElementById('word-count').textContent = wordCount;
+  
+  // Contar linhas
+  const lineCount = text.split('\n').length;
+  document.getElementById('line-count').textContent = lineCount;
+  
+  // Contar parágrafos
+  const paragraphs = text.split('\n\n').filter(para => para.trim().length > 0);
+  const paragraphCount = text.trim() === '' ? 0 : paragraphs.length;
+  document.getElementById('paragraph-count').textContent = paragraphCount;
+}
+
+// Event listener para o contador de caracteres
+document.getElementById('text-input').addEventListener('input', updateCharacterCount);
+
+// Conversor UTC para GMT-3
+function convertUTCtoGMT3() {
+  const utcInput = document.getElementById('utc-input').value;
+  if (!utcInput) {
+    alert('Por favor, selecione uma data e hora UTC.');
+    return;
+  }
+  
+  try {
+    // Criar objeto Date a partir do input (já está em UTC)
+    const utcDate = new Date(utcInput);
+    
+    // Converter para GMT-3 (subtrair 3 horas)
+    const gmt3Date = new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
+    
+    // Formatar resultado
+    const result = gmt3Date.toLocaleString('pt-BR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'America/Sao_Paulo'
+    });
+    
+    document.getElementById('gmt3-result').textContent = result;
+  } catch (error) {
+    document.getElementById('gmt3-result').textContent = 'Erro na conversão';
+    console.error('Erro na conversão UTC para GMT-3:', error);
+  }
+}
+
+// Conversor GMT-3 para UTC
+function convertGMT3toUTC() {
+  const gmt3Input = document.getElementById('gmt3-input').value;
+  if (!gmt3Input) {
+    alert('Por favor, selecione uma data e hora GMT-3.');
+    return;
+  }
+  
+  try {
+    // Criar objeto Date a partir do input (tratado como GMT-3)
+    const gmt3Date = new Date(gmt3Input);
+    
+    // Converter para UTC (adicionar 3 horas)
+    const utcDate = new Date(gmt3Date.getTime() + (3 * 60 * 60 * 1000));
+    
+    // Formatar resultado
+    const result = utcDate.toLocaleString('pt-BR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'UTC'
+    }) + ' UTC';
+    
+    document.getElementById('utc-result').textContent = result;
+  } catch (error) {
+    document.getElementById('utc-result').textContent = 'Erro na conversão';
+    console.error('Erro na conversão GMT-3 para UTC:', error);
+  }
+}
+
+// Atualizar horário atual
+function updateCurrentTime() {
+  const now = new Date();
+  
+  // Horário UTC
+  const utcTime = now.toLocaleString('pt-BR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'UTC'
+  }) + ' UTC';
+  
+  // Horário GMT-3 (Brasil)
+  const gmt3Time = now.toLocaleString('pt-BR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'America/Sao_Paulo'
+  });
+  
+  document.getElementById('current-utc').textContent = utcTime;
+  document.getElementById('current-gmt3').textContent = gmt3Time;
+}
+
+// Inicializar horário atual ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+  updateCurrentTime();
+  updateCharacterCount();
+  
+  // Atualizar horário a cada segundo
+  setInterval(updateCurrentTime, 1000);
+});
+</script>
