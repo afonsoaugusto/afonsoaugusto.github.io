@@ -764,4 +764,75 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  background-color: #111827;
+  min-height: 100vh;
+}
+
+/* Dark theme for body */
+body {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+/* Dark theme for prose content */
+.prose {
+  color: #e5e7eb;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: #ffffff;
+}
+
+.prose p {
+  color: #d1d5db;
+}
+
+.prose a {
+  color: #60a5fa;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+}
+
+.prose strong {
+  color: #ffffff;
+}
+
+.prose code {
+  color: #fbbf24;
+  background-color: #374151;
+}
+
+.prose pre {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.prose blockquote {
+  color: #d1d5db;
+  border-left-color: #60a5fa;
+  background-color: #374151;
+}
+
+.prose table {
+  background-color: #374151;
+}
+
+.prose th {
+  background-color: #4b5563;
+  color: #ffffff;
+}
+
+.prose td {
+  color: #d1d5db;
+}
+
+.prose tr:hover {
+  background-color: #4b5563;
 }
