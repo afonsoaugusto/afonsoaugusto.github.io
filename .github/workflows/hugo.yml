@@ -22,11 +22,6 @@ jobs:
         hugo-version: '0.151.0'
         extended: true
 
-    - name: Download PaperMod Theme
-      run: |
-        mkdir -p themes
-        git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-
     - name: Build
       run: hugo --minify
 
