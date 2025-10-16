@@ -1,0 +1,234 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    <!-- Utils Content -->
+    <div class="utils-container">
+      <!-- Contador de Caracteres -->
+      <div class="utils-section">
+        <h2>Contador de Caracteres</h2>
+        <div class="utils-card">
+          <textarea id="textInput" placeholder="Digite ou cole seu texto aqui..." rows="6" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; resize: vertical;"></textarea>
+          <div class="utils-stats" style="margin-top: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+            <div class="stat-item">
+              <strong>Caracteres:</strong> <span id="charCount">0</span>
+            </div>
+            <div class="stat-item">
+              <strong>Palavras:</strong> <span id="wordCount">0</span>
+            </div>
+            <div class="stat-item">
+              <strong>Linhas:</strong> <span id="lineCount">0</span>
+            </div>
+            <div class="stat-item">
+              <strong>Parágrafos:</strong> <span id="paragraphCount">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversor de Horário -->
+      <div class="utils-section">
+        <h2>Conversor UTC ↔ GMT-3</h2>
+        <div class="utils-card">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px;">
+            <div>
+              <label for="utcInput" style="display: block; margin-bottom: 5px; font-weight: bold;">UTC:</label>
+              <input type="datetime-local" id="utcInput" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+              <label for="gmt3Input" style="display: block; margin-bottom: 5px; font-weight: bold;">GMT-3 (Brasil):</label>
+              <input type="datetime-local" id="gmt3Input" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <button id="convertBtn" style="padding: 10px 20px; background: #007cba; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 0 5px;">Converter</button>
+            <button id="nowBtn" style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 0 5px;">Agora</button>
+            <button id="clearBtn" style="padding: 10px 20px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 0 5px;">Limpar</button>
+          </div>
+          <div id="result" style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px; text-align: center; font-weight: bold;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Text Content -->
+    <div class="text-content">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+
+<style>
+.utils-container {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.utils-section {
+  margin: 30px 0;
+}
+
+.utils-card {
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.utils-stats {
+  background: var(--code-bg);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 5px;
+}
+
+.text-content {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .utils-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .utils-card {
+    padding: 15px;
+  }
+  
+  .text-content {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+}
+</style>
+
+<script>
+// Contador de Caracteres
+document.addEventListener('DOMContentLoaded', function() {
+    const textInput = document.getElementById('textInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+    const lineCount = document.getElementById('lineCount');
+    const paragraphCount = document.getElementById('paragraphCount');
+
+    function updateStats() {
+        const text = textInput.value;
+        
+        // Contar caracteres
+        charCount.textContent = text.length;
+        
+        // Contar palavras
+        const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+        wordCount.textContent = text.trim() === '' ? 0 : words.length;
+        
+        // Contar linhas
+        const lines = text.split('\n').length;
+        lineCount.textContent = lines;
+        
+        // Contar parágrafos
+        const paragraphs = text.split('\n\n').filter(p => p.trim().length > 0).length;
+        paragraphCount.textContent = paragraphs;
+    }
+
+    textInput.addEventListener('input', updateStats);
+    updateStats(); // Inicializar contadores
+
+    // Conversor de Horário
+    const utcInput = document.getElementById('utcInput');
+    const gmt3Input = document.getElementById('gmt3Input');
+    const convertBtn = document.getElementById('convertBtn');
+    const nowBtn = document.getElementById('nowBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const result = document.getElementById('result');
+
+    function formatDateTimeLocal(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        return `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
+
+    function convertUTCtoGMT3(utcDate) {
+        const gmt3Date = new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
+        return gmt3Date;
+    }
+
+    function convertGMT3toUTC(gmt3Date) {
+        const utcDate = new Date(gmt3Date.getTime() + (3 * 60 * 60 * 1000));
+        return utcDate;
+    }
+
+    function updateResult(utc, gmt3) {
+        result.innerHTML = `
+            <div><strong>UTC:</strong> ${utc.toISOString().replace('T', ' ').substring(0, 19)}</div>
+            <div><strong>GMT-3:</strong> ${gmt3.toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'})}</div>
+        `;
+    }
+
+    convertBtn.addEventListener('click', function() {
+        if (utcInput.value) {
+            const utcDate = new Date(utcInput.value);
+            const gmt3Date = convertUTCtoGMT3(utcDate);
+            gmt3Input.value = formatDateTimeLocal(gmt3Date);
+            updateResult(utcDate, gmt3Date);
+        } else if (gmt3Input.value) {
+            const gmt3Date = new Date(gmt3Input.value);
+            const utcDate = convertGMT3toUTC(gmt3Date);
+            utcInput.value = formatDateTimeLocal(utcDate);
+            updateResult(utcDate, gmt3Date);
+        }
+    });
+
+    nowBtn.addEventListener('click', function() {
+        const now = new Date();
+        utcInput.value = formatDateTimeLocal(now);
+        const gmt3Now = convertUTCtoGMT3(now);
+        gmt3Input.value = formatDateTimeLocal(gmt3Now);
+        updateResult(now, gmt3Now);
+    });
+
+    clearBtn.addEventListener('click', function() {
+        utcInput.value = '';
+        gmt3Input.value = '';
+        result.innerHTML = '';
+    });
+
+    // Atualizar automaticamente quando um campo muda
+    utcInput.addEventListener('change', function() {
+        if (this.value) {
+            const utcDate = new Date(this.value);
+            const gmt3Date = convertUTCtoGMT3(utcDate);
+            gmt3Input.value = formatDateTimeLocal(gmt3Date);
+            updateResult(utcDate, gmt3Date);
+        }
+    });
+
+    gmt3Input.addEventListener('change', function() {
+        if (this.value) {
+            const gmt3Date = new Date(this.value);
+            const utcDate = convertGMT3toUTC(gmt3Date);
+            utcInput.value = formatDateTimeLocal(utcDate);
+            updateResult(utcDate, gmt3Date);
+        }
+    });
+});
+</script>
+{{ end }}

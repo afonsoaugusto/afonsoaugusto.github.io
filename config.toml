@@ -1,0 +1,117 @@
+baseURL = "https://afonsorodrigues.com"
+languageCode = "pt-br"
+title = "Afonso Rodrigues - DevOps & SRE Blog"
+theme = "PaperMod"
+
+[params]
+  description = "Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS. Blog técnico com tutoriais práticos e insights sobre infraestrutura e automação."
+  author = "Afonso Rodrigues"
+  email = "afonsoaugustoventura@gmail.com"
+  
+  [params.social]
+    github = "afonsoaugusto"
+    twitter = "Afonsoavr"
+    linkedin = "in/afonsoavr"
+    instagram = "afonsoavr"
+
+  [params.seo]
+    type = "Person"
+    name = "Afonso Rodrigues"
+    description = "Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS"
+    url = "https://afonsorodrigues.com"
+    twitter = "@Afonsoavr"
+
+  [params.analytics]
+    [params.analytics.google]
+      SiteVerificationTag = "G-8TFSN8203P"
+
+  [params.comments]
+    provider = "disqus"
+    disqus_shortname = "afonsoaugusto-github-io"
+
+  [params.timezone]
+    location = "America/Sao_Paulo"
+
+  # PaperMod Theme Configuration
+  [params.PaperMod]
+    homeInfoParams.Title = "Afonso Rodrigues"
+    homeInfoParams.Content = "DevOps & SRE Blog"
+    
+    # Theme Variants
+    themeVariant = "auto"  # auto, light, dark
+    
+    # Features
+    showReadingTime = true
+    showShareButtons = true
+    showCodeCopy = true
+    showWordCount = true
+    showRssButtonInSectionTermList = true
+    showPageNumbers = true
+    showTaxonomies = true
+    showBreadCrumbs = true
+    showPostNav = true
+    showBackToTop = true
+    
+    # Layout
+    disableSpecial1stPost = false
+    disableScrollToTop = false
+    comments = false
+    hidemeta = false
+    hideSummary = false
+    showAnchors = true
+    icons = true
+    toTopScroll = true
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+  
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Sobre"
+    url = "/about"
+    weight = 2
+  [[menu.main]]
+    name = "Utils"
+    url = "/utils"
+    weight = 3
+  [[menu.main]]
+    name = "Páginas"
+    url = "/pages"
+    weight = 4
+  [[menu.main]]
+    name = "Arquivo"
+    url = "/archive"
+    weight = 5
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 6
+
+[pagination]
+  enabled = true
+  per_page = 10
+  permalink = "/page/:num/"
+  title = ":title - Página :num"
+  sort_reverse = true
+  trail = { before = 2, after = 2 }
+
+[build]
+  writeStats = true
+  minify = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML", "RSS"]
