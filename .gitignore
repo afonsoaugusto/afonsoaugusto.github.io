@@ -69,7 +69,7 @@ temp/
 *.old
 
 # Hugo themes (if using git submodules)
-# themes/
+themes/
 
 # Local development
 .cache/
