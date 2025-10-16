@@ -1,429 +1,254 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | {{ site.title }}</title>
-  {% seo %}
-  <!-- Optional: Link to your main stylesheet if you have one -->
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> -->
+---
+layout: default
+---
 
-  <style>
-    /* --- CSS Variables (Theme) --- */
-    :root {
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-      --color-bg: #f8fafc; /* Light Gray */
-      --color-text: #1f2937; /* Dark Gray */
-      --color-text-muted: #6b7280; /* Medium Gray */
-      --color-primary: #2563eb; /* Blue */
-      --color-primary-hover: #1d4ed8; /* Darker Blue */
-      --color-border: #e5e7eb; /* Lighter Gray */
-      --color-card-bg: #ffffff; /* White */
-      --color-header-bg: #111827; /* Very Dark Gray */
-      --color-header-text: #f9fafb; /* Off-White */
-      --color-code-bg: #f3f4f6; /* Lightest Gray */
-      --color-toc-border: var(--color-primary);
-
-      --spacing-sm: 0.5rem;
-      --spacing-md: 1rem;
-      --spacing-lg: 1.5rem;
-      --spacing-xl: 2rem;
-
-      --border-radius: 0.5rem;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    /* --- Base & Reset --- */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-    body {
-      font-family: var(--font-sans);
-      margin: 0;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-    }
-    a {
-      color: var(--color-primary);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    a:hover {
-      color: var(--color-primary-hover);
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: var(--spacing-lg);
-      margin-bottom: var(--spacing-md);
-      line-height: 1.3;
-      font-weight: 600;
-    }
-    h1 { font-size: 2.25em; }
-    h2 { font-size: 1.75em; border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); }
-    h3 { font-size: 1.35em; }
-
-    /* --- Header & Footer --- */
-    .site-header, .site-footer {
-      background-color: var(--color-header-bg);
-      color: var(--color-header-text);
-      padding: var(--spacing-md) var(--spacing-lg);
-    }
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; /* Wrap on small screens */
-    }
-    .site-title a {
-      color: #ffffff; /* White title for contrast */
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .site-title a:hover {
-      color: var(--color-primary); /* Use primary color on hover */
-    }
-    /* Simple Nav (customize as needed) */
-    .site-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: var(--spacing-md);
-    }
-    .site-nav a {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .site-nav a:hover {
-      color: #ffffff;
-    }
-    .site-footer {
-      text-align: center;
-      margin-top: var(--spacing-xl);
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-    }
-
-    /* --- Main Layout --- */
-    .main-content {
-      display: flex;
-      flex-direction: column; /* Mobile first */
-      gap: var(--spacing-lg);
-      max-width: 1200px;
-      margin: var(--spacing-xl) auto;
-      padding: 0 var(--spacing-md);
-    }
-
-    /* --- Table of Contents (TOC) --- */
-    .toc-wrapper {
-      position: relative; /* Needed for sticky positioning */
-    }
-    #toc-toggle {
-      display: block; /* Show by default on mobile */
-      width: 100%;
-      background-color: var(--color-primary);
-      color: white;
-      border: none;
-      padding: var(--spacing-sm) var(--spacing-md);
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      margin-bottom: var(--spacing-md);
-      font-weight: 500;
-      text-align: center;
-      transition: background-color 0.2s ease;
-    }
-    #toc-toggle:hover {
-      background-color: var(--color-primary-hover);
-    }
-    #toc {
-      background-color: var(--color-card-bg);
-      padding: var(--spacing-md);
-      border-left: 4px solid var(--color-toc-border);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      max-height: 0; /* Collapsed by default */
-      overflow: hidden;
-      transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
-      opacity: 0;
-    }
-    #toc.open {
-      max-height: 60vh; /* Limit height */
-      opacity: 1;
-      padding: var(--spacing-md); /* Ensure padding is reapplied */
-      overflow-y: auto; /* Allow scrolling if content overflows */
-    }
-    #toc strong {
-      display: block;
-      margin-bottom: var(--spacing-md);
-      font-weight: 600;
-      color: var(--color-text);
-    }
-    #toc ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #toc li {
-      margin-bottom: var(--spacing-sm);
-    }
-    #toc a {
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
-      display: block; /* Easier to click */
-    }
-    #toc a:hover {
-      color: var(--color-primary);
-      text-decoration: none; /* Avoid double underline */
-    }
-    /* Indentation for H3 links */
-    #toc li.level-h3 {
-      padding-left: var(--spacing-md);
-    }
-
-    /* --- Post Content Area --- */
-    .post-content {
-      background-color: var(--color-card-bg);
-      padding: var(--spacing-xl);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      flex-grow: 1; /* Take remaining space */
-      min-width: 0; /* Prevent overflow issues in flex containers */
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-    .post-header {
-      margin-bottom: var(--spacing-lg);
-      border-bottom: 1px solid var(--color-border);
-      padding-bottom: var(--spacing-lg);
-    }
-    .post-title {
-      margin-top: 0;
-      margin-bottom: var(--spacing-sm);
-      color: var(--color-text);
-    }
-    .post-meta {
-      color: var(--color-text-muted);
-      font-size: 0.9rem;
-    }
-
-    /* Specific Content Styling (Customize as needed) */
-    .post-content > *:first-child {
-      margin-top: 0; /* Remove top margin from first element in post */
-    }
-    .post-content p {
-      margin-bottom: var(--spacing-md);
-    }
-    .post-content blockquote {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      padding-left: var(--spacing-lg);
-      border-left: 4px solid var(--color-primary);
-      background-color: var(--color-code-bg);
-      color: var(--color-text-muted);
-      font-style: italic;
-    }
-    .post-content code:not(pre > code) { /* Inline code */
-      background-color: var(--color-code-bg);
-      padding: 0.2em 0.4em;
-      margin: 0 0.1em;
-      font-size: 85%;
-      border-radius: 3px;
-      font-family: var(--font-mono);
-      color: #c53030; /* Example: Reddish for inline code */
-    }
-    .post-content pre { /* Code blocks */
-      background-color: var(--color-header-bg); /* Dark background for code blocks */
-      color: var(--color-header-text); /* Light text */
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius);
-      overflow-x: auto; /* Allow horizontal scrolling */
-      margin: var(--spacing-lg) 0;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    .post-content pre code {
-      background-color: transparent; /* Reset background */
-      padding: 0;
-      margin: 0;
-      font-size: inherit;
-      color: inherit; /* Inherit color from pre */
-    }
-    .post-content ul, .post-content ol {
-        padding-left: var(--spacing-lg);
-        margin-bottom: var(--spacing-md);
-    }
-
-
-    /* --- Responsive Design --- */
-    @media (min-width: 768px) { /* Tablet and above */
-       .main-content {
-          padding: 0 var(--spacing-lg);
-       }
-    }
-
-    @media (min-width: 1024px) { /* Desktop */
-      .main-content {
-        flex-direction: row;
-        align-items: flex-start; /* Align items to top */
-      }
-      .toc-wrapper {
-        width: 280px; /* Fixed width for TOC sidebar */
-        flex-shrink: 0;
-      }
-      #toc-toggle {
-        display: none; /* Hide toggle button on desktop */
-      }
-      #toc {
-        position: sticky;
-        top: var(--spacing-xl); /* Stick below header */
-        max-height: calc(100vh - 4 * var(--spacing-xl)); /* Adjust based on header/footer */
-        overflow-y: auto;
-        opacity: 1;
-        padding: var(--spacing-md);
-        margin-bottom: 0; /* Remove bottom margin */
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="site-title">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <!-- Post Header -->
+  <header class="mb-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+      {{ page.title }}
+    </h1>
+    
+    <div class="flex flex-wrap items-center text-sm text-gray-600 mb-6">
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="flex items-center mr-6">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        {{ page.date | date: "%d de %B de %Y" }}
+      </time>
+      
+      {% if page.author %}
+        <span class="flex items-center mr-6">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          {{ page.author }}
+        </span>
+      {% endif %}
+      
+      {% if page.categories.size > 0 %}
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+          </svg>
+          {% for category in page.categories %}
+            <a href="{{ '/categories/' | append: category | downcase | relative_url }}" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              {{ category }}
+            </a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
-    <!-- Simple Navigation Menu -->
-    <nav class="site-nav">
-      <ul>
-        <!-- Add relevant links for your audience -->
-        <li><a href="/about/">About</a></li>
-        <!-- Add more links as needed -->
-      </ul>
-    </nav>
+
+    {% if page.image %}
+      <div class="mb-8">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg">
+      </div>
+    {% endif %}
+
+    {% if page.description %}
+      <div class="prose prose-lg max-w-none mb-8">
+        <p class="text-xl text-gray-700 leading-relaxed">{{ page.description }}</p>
+      </div>
+    {% endif %}
   </header>
 
-  <main class="main-content">
-    <!-- Table of Contents Sidebar (includes toggle button for mobile) -->
-    <div class="toc-wrapper">
-      <button id="toc-toggle" aria-expanded="false" aria-controls="toc">Mostrar Índice</button>
-      <aside id="toc" aria-labelledby="toc-toggle"></aside>
+  <!-- Table of Contents (if enabled) -->
+  {% if page.toc and page.toc != false %}
+    <div class="bg-gray-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+      <h2 class="text-lg font-semibold text-gray-900 mb-4">Índice</h2>
+      <div id="toc" class="prose prose-sm max-w-none">
+        <!-- TOC will be generated by JavaScript -->
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Post Content -->
+  <div class="prose prose-lg max-w-none">
+    {{ content }}
+  </div>
+
+  <!-- Post Footer -->
+  <footer class="mt-12 pt-8 border-t border-gray-200">
+    <!-- Tags -->
+    {% if page.tags.size > 0 %}
+      <div class="mb-6">
+        <h3 class="text-sm font-semibold text-gray-900 mb-3">Tags:</h3>
+        <div class="flex flex-wrap gap-2">
+          {% for tag in page.tags %}
+            <a href="{{ '/tags/' | append: tag | downcase | relative_url }}" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-200">
+              #{{ tag }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Share Buttons -->
+    <div class="mb-8">
+      <h3 class="text-sm font-semibold text-gray-900 mb-3">Compartilhar:</h3>
+      <div class="flex space-x-4">
+        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" 
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          </svg>
+          Twitter
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" 
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors duration-200">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <button onclick="copyToClipboard('{{ page.url | absolute_url }}')" 
+                class="inline-flex items-center px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors duration-200">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          Copiar Link
+        </button>
+      </div>
     </div>
 
-    <!-- Main Post Article -->
-    <article class="post-content">
-      <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%d de %B de %Y" }}
-          </time>
-          {% if page.author %} - Por {{ page.author }}{% endif %}
-          {% if page.categories.size > 0 %}
-            - Categorias:
-            {% for category in page.categories %}
-              <a href="{{ '/categories/' | append: category | downcase | relative_url }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+    <!-- Related Posts -->
+    {% if page.show_related != false %}
+      {% assign related_posts = site.posts | where_exp:"post","post.url != page.url" | where_exp:"post","post.categories contains page.categories.first" | limit: 3 %}
+      {% if related_posts.size > 0 %}
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Posts Relacionados</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {% for related_post in related_posts %}
+              <article class="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
+                <h4 class="font-semibold text-gray-900 mb-2">
+                  <a href="{{ related_post.url | relative_url }}" class="hover:text-blue-600 transition-colors duration-200">
+                    {{ related_post.title }}
+                  </a>
+                </h4>
+                <p class="text-sm text-gray-600 mb-2">
+                  {{ related_post.date | date: "%d/%m/%Y" }}
+                </p>
+                <p class="text-sm text-gray-700">
+                  {{ related_post.excerpt | strip_html | truncate: 100 }}
+                </p>
+              </article>
             {% endfor %}
-          {% endif %}
-        </p>
-      </header>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
 
-      {{ content }}
-    </article>
-  </main>
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-6 border-t border-gray-200">
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span class="hidden sm:inline">Post Anterior:</span>
+          <span class="sm:ml-1">{{ page.previous.title | truncate: 30 }}</span>
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
 
-  <footer class="site-footer">
-    <p>© {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}. Todos os direitos reservados.</p>
-    <!-- Add social links or other footer content here -->
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
+          <span class="hidden sm:inline">Próximo Post:</span>
+          <span class="sm:mr-1">{{ page.next.title | truncate: 30 }}</span>
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
+    </div>
   </footer>
+</article>
 
-  <!-- Script for TOC Generation and Mobile Toggle -->
+<!-- Comments Section -->
+{% if page.show_comments != false and site.comments.provider %}
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white border border-gray-200 rounded-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">Comentários</h3>
+      {% if site.comments.provider == 'disqus' %}
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = '{{ page.url | absolute_url }}';
+            this.page.identifier = '{{ page.url | relative_url }}';
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Por favor, habilite JavaScript para visualizar os <a href="https://disqus.com/?ref_noscript">comentários do Disqus.</a></noscript>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+<!-- TOC Generation Script -->
+{% if page.toc and page.toc != false %}
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const contentContainer = document.querySelector(".post-content");
-      const tocContainer = document.getElementById("toc");
-      const tocToggle = document.getElementById("toc-toggle");
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocContainer = document.getElementById('toc');
+      if (!tocContainer) return;
 
-      if (!contentContainer || !tocContainer) {
-        console.warn("TOC container or content container not found.");
-        if (tocToggle) tocToggle.style.display = 'none'; // Hide button if no container
-        if (document.querySelector('.toc-wrapper')) document.querySelector('.toc-wrapper').style.display = 'none'; // Hide wrapper too
-        return;
-      }
-
-      // Find h2 and h3 headings within the post content, excluding the post-header
-      const headings = contentContainer.querySelectorAll("h2, h3");
+      const headings = document.querySelectorAll('h2, h3, h4');
       if (headings.length === 0) {
-        console.log("No headings found for TOC.");
-        if (tocToggle) tocToggle.style.display = 'none'; // Hide button if no headings
-         tocContainer.style.display = 'none'; // Hide TOC element itself
-         if (document.querySelector('.toc-wrapper')) {
-             // Optionally hide the entire wrapper if you prefer no empty space
-             // document.querySelector('.toc-wrapper').style.display = 'none';
-         }
+        tocContainer.parentElement.style.display = 'none';
         return;
       }
 
-      let tocHTML = "<strong id='toc-heading'>Índice</strong><ul aria-labelledby='toc-heading' style='list-style: none; padding: 0; margin: 0;'>";
-      let currentLevel = 2;
-      let openList = false;
-
-      headings.forEach((h, index) => {
-        const level = parseInt(h.tagName.substring(1), 10); // Get heading level (2 or 3)
-
-        // Generate unique ID safely
-        let id = h.id;
-        if (!id) {
-          id = h.textContent.trim().toLowerCase()
-                 .replace(/[^\w\s-]/g, '') // Remove non-word chars except space/hyphen
-                 .replace(/\s+/g, "-")    // Replace spaces with hyphens
-                 .replace(/-+/g, '-');     // Replace multiple hyphens with single
-          // Ensure uniqueness if multiple headings have same text
-          let counter = 1;
-          let potentialId = id;
-          while(document.getElementById(potentialId)) {
-              potentialId = `${id}-${counter}`;
-              counter++;
-          }
-          id = potentialId;
-          h.id = id; // Assign the generated ID back to the heading
-        }
-
-        // Add class based on heading level for styling (e.g., indentation)
-        const liClass = `level-h${level}`;
-
-        tocHTML += `<li class="${liClass}"><a href="#${id}">${h.textContent}</a></li>`;
+      let tocHTML = '<ul class="space-y-1">';
+      headings.forEach(function(heading) {
+        const id = heading.id || heading.textContent.toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+        
+        if (!heading.id) heading.id = id;
+        
+        const level = parseInt(heading.tagName.substring(1));
+        const indent = level > 2 ? 'pl-4' : '';
+        
+        tocHTML += `<li class="${indent}">
+          <a href="#${id}" class="text-blue-600 hover:text-blue-800 text-sm transition-colors duration-200">
+            ${heading.textContent}
+          </a>
+        </li>`;
       });
-
-      tocHTML += "</ul>";
+      tocHTML += '</ul>';
+      
       tocContainer.innerHTML = tocHTML;
-
-      // Toggle functionality for mobile
-      if (tocToggle) {
-        tocToggle.addEventListener("click", () => {
-          const isOpen = tocContainer.classList.toggle("open");
-          tocToggle.setAttribute("aria-expanded", isOpen);
-          tocToggle.textContent = isOpen ? "Esconder Índice" : "Mostrar Índice";
-        });
-      } else {
-         // If button doesn't exist (e.g., on desktop where it's hidden by CSS),
-         // ensure TOC is visible if it has content. We do this via CSS media query now.
-      }
     });
   </script>
+{% endif %}
 
-</body>
-</html>
+<!-- Copy to Clipboard Script -->
+<script>
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      // Show success message
+      const button = event.target.closest('button');
+      const originalText = button.innerHTML;
+      button.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copiado!';
+      button.classList.add('bg-green-500', 'hover:bg-green-600');
+      button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
+      
+      setTimeout(function() {
+        button.innerHTML = originalText;
+        button.classList.remove('bg-green-500', 'hover:bg-green-600');
+        button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+      }, 2000);
+    });
+  }
+</script>

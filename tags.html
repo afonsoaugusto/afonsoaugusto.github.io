@@ -1,0 +1,116 @@
+---
+layout: default
+title: Tags
+description: Explore posts por tags
+permalink: /tags/
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      Tags
+    </h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Explore posts organizados por tags
+    </p>
+  </header>
+
+  {% if site.tags.size > 0 %}
+    <!-- Tags Cloud -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Nuvem de Tags</h2>
+      <div class="flex flex-wrap gap-2">
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags %}
+          {% assign tag_size = tag[1].size %}
+          {% if tag_size == 1 %}
+            {% assign size_class = 'text-sm' %}
+          {% elsif tag_size <= 3 %}
+            {% assign size_class = 'text-base' %}
+          {% elsif tag_size <= 6 %}
+            {% assign size_class = 'text-lg' %}
+          {% else %}
+            {% assign size_class = 'text-xl' %}
+          {% endif %}
+          
+          <a href="#{{ tag[0] | slugify }}" 
+             class="{{ size_class }} inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-200">
+            {{ tag[0] }}
+            <span class="ml-1 text-xs bg-blue-200 text-blue-900 px-2 py-0.5 rounded-full">
+              {{ tag_size }}
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Posts by Tag -->
+    {% for tag in sorted_tags %}
+      <section id="{{ tag[0] | slugify }}" class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-200 pb-2">
+          {{ tag[0] }}
+          <span class="text-lg font-normal text-gray-600">({{ tag[1].size }} posts)</span>
+        </h2>
+        
+        <div class="space-y-6">
+          {% for post in tag[1] %}
+            <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    <a href="{{ post.url | relative_url }}" class="hover:text-blue-600 transition-colors duration-200">
+                      {{ post.title }}
+                    </a>
+                  </h3>
+                  
+                  <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3">
+                    <time datetime="{{ post.date | date_to_xmlschema }}" class="flex items-center mr-4">
+                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      {{ post.date | date: "%d de %B de %Y" }}
+                    </time>
+                    
+                    {% if post.categories.size > 0 %}
+                      <div class="flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                        </svg>
+                        {% for category in post.categories %}
+                          <a href="{{ '/categories/' | append: category | downcase | relative_url }}" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+                            {{ category }}
+                          </a>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                  
+                  <p class="text-gray-700 leading-relaxed">
+                    {{ post.excerpt | strip_html | truncate: 200 }}
+                  </p>
+                </div>
+                
+                <div class="mt-4 md:mt-0 md:ml-6">
+                  <a href="{{ post.url | relative_url }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
+                    Ler mais
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  {% else %}
+    <div class="text-center py-16">
+      <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+      </svg>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Nenhuma tag encontrada</h3>
+      <p class="text-gray-600">Volte em breve para ver posts com tags!</p>
+    </div>
+  {% endif %}
+</div>

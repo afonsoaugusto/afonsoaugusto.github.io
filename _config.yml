@@ -1,27 +1,48 @@
-title: Afonso Rodrigues blog's
+# Site Configuration
+title: "Afonso Rodrigues - DevOps & SRE Blog"
 email: afonsoaugustoventura@gmail.com
 description: >-
-  Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS
+  Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS. 
+  Blog técnico com tutoriais práticos e insights sobre infraestrutura e automação.
 baseurl: ""
 url: "https://afonsorodrigues.com"
 lang: "pt-BR"
 encoding: "utf-8"
+timezone: "America/Sao_Paulo"
 
+# Author Information
+author:
+  name: "Afonso Rodrigues"
+  email: "afonsoaugustoventura@gmail.com"
+  bio: "Engenheiro DevOps e SRE com foco em automação, Kubernetes e AWS"
+  avatar: "/assets/images/avatar.jpg"
+  social:
+    twitter: "Afonsoavr"
+    github: "afonsoaugusto"
+    linkedin: "in/afonsoavr"
+    instagram: "afonsoavr"
+
+# Social Media
 twitter_username: Afonsoavr
 github_username: afonsoaugusto
 
-# SEO
+# SEO Configuration
 seo:
   type: "Person"
   name: "Afonso Rodrigues"
-  description: "Anotações, Scripts e Dicas de DevOps e SRE"
+  description: "Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS"
   url: "https://afonsorodrigues.com"
   twitter: "@Afonsoavr"
+  image: "/assets/images/og-image.jpg"
 
-# Build settings
+# Build Settings
 markdown: kramdown
 permalink: /:categories/:title/
-theme: minima
+highlighter: rouge
+incremental: false
+future: false
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -29,51 +50,113 @@ plugins:
   - jekyll-redirect-from
   - jekyll-paginate
   - jekyll-toc
-  - kramdown
-  - rouge
+  - jekyll-include-cache
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
 
-highlighter: rouge
-
+# Kramdown Configuration
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-minima:
-  name: Afonso Rodrigues
-  social_links:
-    twitter: Afonsoavr
-    github: afonsoaugusto
-    linkedin: in/afonsoavr
-    instagram: afonsoavr
+# Rouge Configuration
+rouge:
+  theme: github
 
+# Default Layouts and Values
 defaults:
   - scope:
       path: ""
       type: pages
     values:
       layout: "default"
+      show_sidebar: true
   - scope:
       path: ""
       type: posts
     values:
-      layout: "default"
-      image: /assets/images/default.jpg
+      layout: "post"
+      show_sidebar: true
+      show_related: true
+      show_comments: true
+      image: "/assets/images/default-post.jpg"
       og:
         type: article
+      twitter:
+        card: summary_large_image
 
-comments:
-  provider: disqus
-disqus:
-  shortname: afonsoaugusto-github-io
-
-google_analytics: G-8TFSN8203P
-
-# Pagination settings
+# Pagination Settings
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 10
   permalink: /page/:num/
   title: ':title - Página :num'
   sort_reverse: true
   trail:
     before: 2
     after: 2
+
+# Comments
+comments:
+  provider: disqus
+disqus:
+  shortname: afonsoaugusto-github-io
+
+# Analytics
+google_analytics: G-8TFSN8203P
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - .bundle/
+  - _site/
+  - .DS_Store
+  - Thumbs.db
+
+# Include in processing
+include:
+  - _pages
+  - _drafts
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  drafts:
+    output: false
+    permalink: /drafts/:name/
+
+# Sass Configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+  sourcemap: false
+
+# Performance
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]

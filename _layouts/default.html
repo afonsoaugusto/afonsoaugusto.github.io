@@ -1,86 +1,283 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'pt-BR' }}">
+<html lang="{{ site.lang | default: 'pt-BR' }}" class="h-full">
 <head>
   <meta charset="{{ site.encoding | default: 'utf-8' }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <title>{{ page.title | default: site.title }}</title>
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944065967644535" crossorigin="anonymous"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="author" content="{{ site.author.name | default: site.title }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta property="og:image" content="{{ page.image | default: site.seo.image | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:locale" content="{{ site.lang | default: 'pt_BR' }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta property="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta property="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta property="twitter:image" content="{{ page.image | default: site.seo.image | absolute_url }}">
+  {% if site.author.social.twitter %}<meta property="twitter:creator" content="@{{ site.author.social.twitter }}">{% endif %}
+  
+  <!-- Article specific meta tags -->
+  {% if page.layout == 'post' %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:author" content="{{ site.author.name | default: site.title }}">
+    {% if page.categories %}{% for category in page.categories %}<meta property="article:section" content="{{ category }}">{% endfor %}{% endif %}
+    {% if page.tags %}{% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">{% endfor %}{% endif %}
+  {% endif %}
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.stylesheets %}{% for stylesheet in page.stylesheets %}<link rel="stylesheet" href="{{ stylesheet | relative_url }}">{% endfor %}{% endif %}
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+  <link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
+  
   <!-- Jekyll SEO Tag -->
   {% seo %}
+  
+  <!-- Google Analytics -->
+  {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
+  {% endif %}
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944065967644535" crossorigin="anonymous"></script>
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebSite{% endif %}",
+    "headline": "{{ page.title | default: site.title | escape }}",
+    "description": "{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}",
+    "url": "{{ page.url | absolute_url }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author.name | default: site.title }}",
+      "url": "{{ site.url }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/images/logo.png"
+      }
+    }
+    {% if page.layout == 'post' %},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
+    {% endif %}
+  }
+  </script>
 </head>
-<body class="bg-gray-100 font-sans">
-  <!-- Navigation -->
-  <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="{{ site.url }}" class="text-xl font-bold">{{ site.title }}</a>
-      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-      <ul id="nav-menu" class="hidden md:flex space-x-4">
-        <li><a href="{{ site.url }}" class="hover:underline">Home</a></li>
-        <li><a href="{{ site.url }}/about" class="hover:underline">Sobre</a></li>
-        <li><a href="{{ site.url }}/pages" class="hover:underline">Pages</a></li>
-        {% for link in site.minima.social_links %}
-          {% if link.twitter %}
-            <li><a href="https://twitter.com/{{ link.twitter }}" class="hover:underline">Twitter</a></li>
+
+<body class="h-full bg-gray-50 text-gray-900 antialiased">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo/Brand -->
+        <div class="flex-shrink-0">
+          <a href="{{ '/' | relative_url }}" class="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200">
+            <span>{{ site.title }}</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8" role="navigation" aria-label="Navegação principal">
+          <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+          <a href="{{ '/about' | relative_url }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Sobre</a>
+          <a href="{{ '/archive' | relative_url }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Arquivo</a>
+          <a href="{{ '/tags' | relative_url }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Tags</a>
+        </nav>
+
+        <!-- Social Links -->
+        <div class="hidden md:flex items-center space-x-4">
+          {% if site.author.social.github %}
+            <a href="https://github.com/{{ site.author.social.github }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
           {% endif %}
-          {% if link.github %}
-            <li><a href="https://github.com/{{ link.github }}" class="hover:underline">GitHub</a></li>
+          {% if site.author.social.twitter %}
+            <a href="https://twitter.com/{{ site.author.social.twitter }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
           {% endif %}
-          {% if link.linkedin %}
-            <li><a href="https://linkedin.com/{{ link.linkedin }}" class="hover:underline">LinkedIn</a></li>
+          {% if site.author.social.linkedin %}
+            <a href="https://linkedin.com/{{ site.author.social.linkedin }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
           {% endif %}
-          {% if link.instagram %}
-            <li><a href="https://instagram.com/{{ link.instagram }}" class="hover:underline">Instagram</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+          <span class="sr-only">Abrir menu principal</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-    <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
-      <li><a href="{{ site.url }}" class="block py-2 hover:underline">Home</a></li>
-      <li><a href="{{ site.url }}/about" class="block py-2 hover:underline">Sobre</a></li>
-      <li><a href="{{ site.url }}/pages" class="block py-2 hover:underline">Pages</a></li>
-      {% for link in site.minima.social_links %}
-        {% if link.twitter %}
-          <li><a href="https://twitter.com/{{ link.twitter }}" class="block py-2 hover:underline">Twitter</a></li>
-        {% endif %}
-        {% if link.github %}
-          <li><a href="https://github.com/{{ link.github }}" class="block py-2 hover:underline">GitHub</a></li>
-        {% endif %}
-        {% if link.linkedin %}
-          <li><a href="https://linkedin.com/{{ link.linkedin }}" class="block py-2 hover:underline">LinkedIn</a></li>
-        {% endif %}
-        {% if link.instagram %}
-          <li><a href="https://instagram.com/{{ link.instagram }}" class="block py-2 hover:underline">Instagram</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200" role="navigation" aria-label="Menu móvel">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="{{ '/' | relative_url }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Home</a>
+        <a href="{{ '/about' | relative_url }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Sobre</a>
+        <a href="{{ '/archive' | relative_url }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Arquivo</a>
+        <a href="{{ '/tags' | relative_url }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200">Tags</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-200">
+        <div class="flex items-center px-3 space-x-4">
+          {% if site.author.social.github %}
+            <a href="https://github.com/{{ site.author.social.github }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if site.author.social.twitter %}
+            <a href="https://twitter.com/{{ site.author.social.twitter }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if site.author.social.linkedin %}
+            <a href="https://linkedin.com/{{ site.author.social.linkedin }}" class="text-gray-400 hover:text-gray-600 transition-colors duration-200" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto p-4">
+  <main id="main-content" class="flex-1">
     {{ content }}
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white p-4 text-center">
-    <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Todos os direitos reservados.</p>
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- About -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">{{ site.title }}</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">{{ site.description }}</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+          <ul class="space-y-2">
+            <li><a href="{{ '/' | relative_url }}" class="text-gray-300 hover:text-white text-sm transition-colors duration-200">Home</a></li>
+            <li><a href="{{ '/about' | relative_url }}" class="text-gray-300 hover:text-white text-sm transition-colors duration-200">Sobre</a></li>
+            <li><a href="{{ '/archive' | relative_url }}" class="text-gray-300 hover:text-white text-sm transition-colors duration-200">Arquivo</a></li>
+            <li><a href="{{ '/tags' | relative_url }}" class="text-gray-300 hover:text-white text-sm transition-colors duration-200">Tags</a></li>
+            <li><a href="{{ '/feed.xml' | relative_url }}" class="text-gray-300 hover:text-white text-sm transition-colors duration-200">RSS Feed</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Redes Sociais</h3>
+          <div class="flex space-x-4">
+            {% if site.author.social.github %}
+              <a href="https://github.com/{{ site.author.social.github }}" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="GitHub">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            {% endif %}
+            {% if site.author.social.twitter %}
+              <a href="https://twitter.com/{{ site.author.social.twitter }}" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="Twitter">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            {% endif %}
+            {% if site.author.social.linkedin %}
+              <a href="https://linkedin.com/{{ site.author.social.linkedin }}" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-gray-800">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-300 text-sm">
+            © {{ 'now' | date: "%Y" }} {{ site.author.name | default: site.title }}. Todos os direitos reservados.
+          </p>
+          <p class="text-gray-400 text-xs mt-2 md:mt-0">
+            Feito com ❤️ usando <a href="https://jekyllrb.com/" class="hover:text-white transition-colors duration-200">Jekyll</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- JavaScript for Mobile Menu Toggle -->
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  
+  <!-- Mobile menu toggle script -->
   <script>
-    function toggleMenu() {
+    function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
+      const button = document.querySelector('[aria-controls="mobile-menu"]');
+      const isExpanded = menu.classList.contains('hidden');
+      
       menu.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', isExpanded);
     }
   </script>
 </body>
