@@ -10,7 +10,6 @@
  * Configurações globais da aplicação
  */
 const CONFIG = {
-    TIMEZONE_OFFSET: -3, // GMT-3 (Brasil)
     TIMEZONE_LOCALE: 'pt-BR',
     TIMEZONE_REGION: 'America/Sao_Paulo',
     DEBOUNCE_DELAY: 300
@@ -193,7 +192,8 @@ class TimeConverter {
             throw new Error('Data UTC inválida');
         }
 
-        const gmt3Date = new Date(utcDate.getTime() + (CONFIG.TIMEZONE_OFFSET * 60 * 60 * 1000));
+        // GMT-3 está 3 horas atrás do UTC, então subtraímos 3 horas
+        const gmt3Date = new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
         return gmt3Date;
     }
 
@@ -207,7 +207,8 @@ class TimeConverter {
             throw new Error('Data GMT-3 inválida');
         }
 
-        const utcDate = new Date(gmt3Date.getTime() - (CONFIG.TIMEZONE_OFFSET * 60 * 60 * 1000));
+        // GMT-3 está 3 horas atrás do UTC, então adicionamos 3 horas para obter UTC
+        const utcDate = new Date(gmt3Date.getTime() + (3 * 60 * 60 * 1000));
         return utcDate;
     }
 
