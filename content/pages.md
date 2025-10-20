@@ -1,21 +1,16 @@
 ---
-title: "Páginas"
-description: "Lista de todas as páginas do site"
+title: "Pages"
+description: "Check this"
 date: 2024-01-01
 draft: false
 ---
 
-# Páginas
-
-Lista de todas as páginas disponíveis no site.
-
-## Páginas Principais
-
-- [Sobre](/about) - Conheça mais sobre Afonso Rodrigues
-- [Utils](/utils) - Ferramentas úteis para desenvolvedores
-- [Arquivo](/archive) - Todos os posts organizados por data
-- [Tags](/tags) - Explore posts por tags
-
-## Posts Recentes
-
-Confira os últimos posts publicados no blog.
+- [Sobre Meu Usuário no Github](https://afonsorodrigues.com/afonsoaugusto/)
+- [CKS - Certified Kubernetes Security Specialist](https://afonsorodrigues.com/cks)
+- [Karpenter - Melhores Práticas](https://afonsorodrigues.com/karpenter-best-pratices)
+- [Terraform 101](https://afonsorodrigues.com/terraform-101)
+- [Questões sobre Nginx](https://afonsorodrigues.com/nginx-questions/)
+- [Dynamic Servers Nginx](https://afonsorodrigues.com/dynamic-servers-nginx)
+- [Percona 3Day](https://afonsorodrigues.com/percona-3day)
+- [Data Challenge Stone](https://afonsorodrigues.com/data-challenge-stone)
+- [Transfeera Use Case](https://afonsorodrigues.com/Teste-Transfeera)
