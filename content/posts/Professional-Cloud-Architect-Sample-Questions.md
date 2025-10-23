@@ -105,5 +105,3 @@ Seu desempenho mostra uma base sólida, mas há lacunas importantes em áreas-ch
 2.  **Prática com SRE e Operações:** Revise os conceitos de SRE e pratique a solução de problemas comuns, como os relacionados a load balancers e autoscaling.
 3.  **Domine os Serviços de Dados:** Crie uma matriz mental para decidir quando usar cada serviço de armazenamento e banco de dados do GCP. Entenda os trade-offs entre custo, performance e funcionalidades.
 4.  **Faça Mais Simulados:** Continue fazendo simulados para se acostumar com o formato das perguntas e para identificar outras áreas de melhoria.
-
-Você está no caminho certo! Com um estudo focado nessas áreas, suas chances de sucesso na certificação aumentarão consideravelmente. Boa sorte
