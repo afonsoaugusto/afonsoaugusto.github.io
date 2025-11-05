@@ -1,6 +1,6 @@
 ---
 title: "Anotações para a certificação GCP PCA: Gerenciamento de Clusters Multi-tenant no GKE"
-date: 2025-11-5 12:00:00 +0000
+date: 2025-11-5 00:00:00 +0000
 categories: ["article"]
 draft: false
 ---
