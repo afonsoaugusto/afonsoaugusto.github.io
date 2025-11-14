@@ -133,6 +133,11 @@ Ao adotar o Kargo, as equipes podem alcançar um processo de entrega contínua m
 
 O diagrama abaixo ilustra as relações e o fluxo de dados entre os principais objetos do Kargo, demonstrando como eles se interconectam para formar um pipeline de promoção completo:
 
+![Diagrama de Relações do Kargo](/images/kargo-diagram.png)
+
+<details>
+<summary>Ver diagrama Mermaid (código fonte)</summary>
+
 ```mermaid
 graph TB
     subgraph "Cluster Level"
@@ -223,6 +228,8 @@ graph TB
     class F,S1,S2,S3,PROM pipeline
     class ARGO,GITREPO gitops
 ```
+
+</details>
 
 ### Legenda do Diagrama
 
