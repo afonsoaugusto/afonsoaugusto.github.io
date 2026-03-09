@@ -1,6 +1,6 @@
 ---
 title: "Kong Operator: Como Funciona, Recursos e Diagrama de Dependências"
-date: 2025-03-09 12:00:00 +0000
+date: 2025-03-08 12:00:00 +0000
 categories: ["article"]
 draft: false
 ---
