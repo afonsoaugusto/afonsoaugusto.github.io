@@ -23,7 +23,6 @@ Disallow: /.git/
 Disallow: /.gitignore
 
 # Allow access to important files
-Allow: /assets/
 Allow: /images/
 Allow: /css/
 Allow: /js/

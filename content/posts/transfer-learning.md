@@ -2,6 +2,8 @@
 title: "Domain2 - Transfer-Learning"
 date: 2025-04-07 00:00:00 +0000
 categories: ["article"]
+description: "Transfer Learning: reutilizar modelos pré-treinados para novas tarefas com menos dados e tempo."
+tags: ["machine-learning", "transfer-learning", "deep-learning", "ia"]
 draft: false
 ---
 

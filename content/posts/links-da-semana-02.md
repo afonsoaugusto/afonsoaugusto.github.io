@@ -2,6 +2,8 @@
 title: "Links da Semana 02 - 23/05/2022 a 27/05/2022"
 date: 2022-05-30 00:00:00 +0000
 categories: ["newsletter"]
+description: "Curadoria de links da semana 23/05 a 27/05/2022: Nginx, data platform, Soda Core, Kafka e mais."
+tags: ["newsletter", "links", "dados", "devops"]
 draft: false
 ---
 

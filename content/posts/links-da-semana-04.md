@@ -2,6 +2,8 @@
 title: "Links da Semana 04 - 06/06/2022 a 10/06/2022"
 date: 2022-06-13 00:00:00 +0000
 categories: ["newsletter"]
+description: "Curadoria de links da semana: artigos e recursos técnicos selecionados."
+tags: ["newsletter", "links", "dados", "devops"]
 draft: false
 ---
 

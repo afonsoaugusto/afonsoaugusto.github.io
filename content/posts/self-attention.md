@@ -2,6 +2,8 @@
 title: "Domain2 - Self-Attention"
 date: 2025-04-07 00:00:00 +0000
 categories: ["article"]
+description: "Mecanismo de Self-Attention (autoatenção) em Transformers: Query, Key, Value e processamento de sequências."
+tags: ["deep-learning", "transformers", "attention", "nlp"]
 draft: false
 ---
 

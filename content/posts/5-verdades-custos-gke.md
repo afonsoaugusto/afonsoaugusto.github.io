@@ -2,6 +2,8 @@
 title: "5 Verdades Surpreendentes Sobre Custos no Kubernetes que Aprendemos com a Pesquisa do Google"
 date: 2025-11-03 12:00:00 +0000
 categories: ["article"]
+description: "Cinco verdades contraintuitivas sobre custos no Kubernetes com base em pesquisa do Google e melhores práticas do GKE para otimização sustentável."
+tags: ["kubernetes", "gke", "custos", "otimização", "sre"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "Proposta de Solução: Implementação do Identity-Aware Proxy para Acesso Seguro e Contextual"
 date: 2025-10-24 00:00:00 +0000
 categories: ["article"]
+description: "Identity-Aware Proxy (IAP) no Google Cloud: conceitos e uso para controle de acesso a aplicações."
+tags: ["gcp", "iap", "segurança", "identidade"]
 draft: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Pages"
-description: "Check this"
+description: "Links para artigos, certificações e projetos destacados."
 date: 2024-01-01
 draft: false
 ---

@@ -2,6 +2,8 @@
 title: "Anotações para a certificação GCP PCA: Gerenciamento de Clusters Multi-tenant no GKE"
 date: 2025-11-05 00:00:00 +0000
 categories: ["article"]
+description: "Conceitos e práticas para gerenciamento de clusters GKE multi-tenant: IAM, RBAC, Resource Quotas e Usage Metering para a PCA."
+tags: ["gke", "gcp", "multi-tenant", "rbac", "certificação"]
 draft: false
 ---
 

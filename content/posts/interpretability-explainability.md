@@ -2,6 +2,8 @@
 title: "Desvendando a Caixa Preta: Interpretability vs. Explainability em Machine Learning"
 date: 2025-04-13 00:00:00 +0000
 categories: ["article"]
+description: "Interpretabilidade e explicabilidade em modelos de Machine Learning: conceitos e práticas."
+tags: ["ml", "interpretabilidade", "explicabilidade", "ia"]
 draft: false
 ---
 

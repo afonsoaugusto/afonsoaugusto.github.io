@@ -2,6 +2,8 @@
 title: "Terraform 101"
 date: 2022-08-15 00:00:00 +0000
 categories: ["article"]
+description: "Terraform 101: fundamentos de IaC, workflow, variables, providers, resources e preparação para o exame Terraform Associate."
+tags: ["terraform", "iac", "hashicorp", "certificação", "devops"]
 draft: false
 ---
 
@@ -79,11 +81,11 @@ O Workflow do terraform consiste em basicamente 3 etapas:
 - Plan - Preview changes before applying.
 - Apply - Provision reproducible infrastructure.
 
-![IaC](/assets/IaC.png)
+![IaC](/images/IaC.png)
 
 A ideia por trás do terraform é ele gerenciar o estado de uma infraestrutura, ou seja, o estado de cada recurso com base na interação com o seu provider.
 
-![Interacao Api](/assets/interacao-api.png)
+![Interacao Api](/images/interacao-api.png)
 
 ### Arquivos
 
@@ -458,7 +460,7 @@ Algumas opções de backend:
 
 Workspaces é uma forma de gerenciar múltiplos ambientes de forma independente. Onde você pode associar cada ambiente com um conjunto de variáveis.
 
-![Workspaces](/assets/workspaces.png)
+![Workspaces](/images/workspaces.png)
 
 ## [HashiCorp Certified Terraform Associate](https://www.hashicorp.com/certification/terraform-associate){:target="_blank"}
 
@@ -467,7 +469,7 @@ Ela não vai cobrir todos os aspectos do dia-a-dia, mas vai guiar você para ent
 
 A Hashicorp está atualizando o exame Terraform Associate 002 para a 003. A recomendação é que quem tem a Terraform Associate 002, faça o upgrade para a 003 quando for lançada, e quem não tem a 002 espere até o 003 ser lançada.
 
-![Timeline dos exames Terraform](/assets/1654637486-terraform-associate-002-vs-003-timeline.png)
+![Timeline dos exames Terraform](/images/1654637486-terraform-associate-002-vs-003-timeline.png)
 
 ### Características
 

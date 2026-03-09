@@ -2,6 +2,8 @@
 title: "Serviços de Inteligência Artificial da AWS: Uma Análise Abrangente para a Certificação AIF-C01"
 date: 2025-04-22 00:00:00 +0000
 categories: ["article"]
+description: "Serviços de IA e ML da AWS mapeados aos domínios do exame AIF-C01 (AWS Certified AI Practitioner)."
+tags: ["aws", "ia", "machine-learning", "certificação", "aif-c01"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "Texto de Estudo Detalhado sobre Fine-tuning Contínuo de LLMs"
 date: 2025-04-12 00:00:00 +0000
 categories: ["article"]
+description: "Fine-tuning de modelos: ajuste fino de modelos pré-treinados para tarefas específicas."
+tags: ["machine-learning", "fine-tuning", "deep-learning", "ia"]
 draft: false
 ---
 

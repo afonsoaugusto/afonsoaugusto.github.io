@@ -2,6 +2,8 @@
 title: "Diff Amazon A2I and SageMaker Ground Truth"
 date: 2025-04-13 00:00:00 +0000
 categories: ["article"]
+description: "Diferenças entre Amazon A2I e SageMaker Ground Truth: propósito, fase do ciclo de ML e casos de uso."
+tags: ["aws", "ml", "a2i", "sagemaker", "ground-truth"]
 draft: false
 ---
 

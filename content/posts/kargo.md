@@ -2,6 +2,8 @@
 title: "Dominando a Promoção Contínua com Kargo: Um Guia Abrangente"
 date: 2025-11-14 02:00:00 +0000
 categories: ["article"]
+description: "Visão geral do Kargo: ferramentas, componentes e diagrama de relações para deploy de Kubernetes."
+tags: ["kubernetes", "kargo", "gitops", "deploy"]
 draft: false
 ---
 

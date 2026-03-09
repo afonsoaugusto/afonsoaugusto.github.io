@@ -2,6 +2,8 @@
 title: "Arquitetura de Nuvem e Gerenciamento de Identidade no Google Cloud"
 date: 2025-11-06 00:00:00 +0000
 categories: ["article"]
+description: "Guia de estudo sobre arquitetura de nuvem, IAM, políticas e identidade no Google Cloud com questionário e gabarito."
+tags: ["google-cloud", "iam", "cloud-identity", "certificação", "gcp"]
 draft: false
 ---
 
@@ -115,4 +117,4 @@ Responda às seguintes questões em formato de redação, sintetizando informaç
 
 [📄 Baixar PDF: Session 2 - PCA for AWS](/pdfs/[Session%202]%20PCA%20for%20AWS.pdf)
 
-![NotebookLM Mind Map](/images/NotebookLM%20Mind%20Map%20(3).png)
+![Mapa mental do guia de estudo: Arquitetura de Nuvem e Gerenciamento de Identidade no Google Cloud](/images/notebooklm-mind-map.png)

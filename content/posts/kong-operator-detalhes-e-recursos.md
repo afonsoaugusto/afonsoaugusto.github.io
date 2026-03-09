@@ -2,6 +2,8 @@
 title: "Kong Operator: Como Funciona, Recursos e Diagrama de Dependências"
 date: 2025-03-08 12:00:00 +0000
 categories: ["article"]
+description: "Kong Operator: funcionamento, recursos (CRDs) e diagrama de dependências para Kubernetes e Gateway API."
+tags: ["kong", "kubernetes", "gateway-api", "operator", "api-gateway"]
 draft: false
 ---
 

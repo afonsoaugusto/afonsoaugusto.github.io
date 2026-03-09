@@ -2,6 +2,8 @@
 title: "Domain 3: Applications of Foundation Models (Standard AIF)"
 date: 2025-04-10 00:00:00 +0000
 categories: ["article"]
+description: "Domain 3: tópicos e aplicações de IA para preparação de certificação."
+tags: ["ia", "machine-learning", "certificação"]
 draft: false
 ---
 

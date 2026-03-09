@@ -2,6 +2,8 @@
 title: "Welcome to Here!"
 date: 2020-01-13 13:15:00 +0000
 categories: ["welcome"]
+description: "Boas-vindas ao blog: espaço para consolidar conhecimentos, dicas e anotações técnicas."
+tags: ["blog", "boas-vindas"]
 draft: false
 ---
 

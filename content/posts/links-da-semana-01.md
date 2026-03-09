@@ -2,6 +2,8 @@
 title: "Links da Semana 01 - 16/05/2022 a 20/05/2022"
 date: 2022-05-23 00:00:00 +0000
 categories: ["newsletter"]
+description: "Curadoria de links da semana 16/05 a 20/05/2022: Trino, governança de dados, PostgreSQL, data quality e mais."
+tags: ["newsletter", "links", "dados", "devops"]
 draft: false
 ---
 

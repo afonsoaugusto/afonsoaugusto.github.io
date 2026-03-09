@@ -1,0 +1,2 @@
+{{/* Render hook: adiciona loading="lazy" para imagens (performance). */}}
+<img src="{{ .Destination }}" alt="{{ .Text }}" loading="lazy"{{ with .Title }} title="{{ . }}"{{ end }}>

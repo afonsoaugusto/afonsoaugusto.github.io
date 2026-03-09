@@ -2,6 +2,8 @@
 title: "Domain2"
 date: 2025-04-07 00:00:00 +0000
 categories: ["article"]
+description: "Domain 2: conceitos avançados e aplicações práticas de IA e Machine Learning."
+tags: ["ia", "machine-learning", "certificação"]
 draft: false
 ---
 

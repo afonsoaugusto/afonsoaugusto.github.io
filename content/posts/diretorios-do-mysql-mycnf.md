@@ -2,6 +2,8 @@
 title: "Diretórios do MySQL e o my.cnf"
 date: 2018-02-15 12:00:00 +0000
 categories: ["article"]
+description: "Visão geral dos diretórios do MySQL e do arquivo de configuração my.cnf. Link para o artigo completo no Medium."
+tags: ["mysql", "my.cnf", "banco-de-dados", "configuração"]
 draft: false
 ---
 

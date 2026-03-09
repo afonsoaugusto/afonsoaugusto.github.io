@@ -2,6 +2,8 @@
 title: "AWS Solutions Architect Associate - Dicas para a certificação"
 date: 2020-01-16 12:00:00 +0000
 categories: ["article"]
+description: "Dicas de preparação e realização do exame AWS Solutions Architect Associate com base em experiência prática."
+tags: ["aws", "certificação", "solutions-architect", "saa"]
 draft: false
 ---
 

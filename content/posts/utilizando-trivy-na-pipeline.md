@@ -2,6 +2,8 @@
 title: "Utilizando trivy na pipeline"
 date: 2023-08-16 00:00:00 +0000
 categories: ["article"]
+description: "Visão do Trivy, uso em pipelines de CI/CD e boas práticas para scan de vulnerabilidades e compliance."
+tags: ["trivy", "segurança", "cicd", "vulnerabilidades", "containers"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "5 Verdades sobre Argo CD que Vão Mudar a Forma Como Você Opera Kubernetes"
 date: 2025-10-24 00:00:00 +0000
 categories: ["article"]
+description: "Cinco verdades sobre Argo CD que mudam a forma de operar Kubernetes: Helm, GitOps e práticas avançadas."
+tags: ["argocd", "gitops", "kubernetes", "helm", "devops"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "Aprofundando nas Métricas de Avaliação de Modelos"
 date: 2025-04-06 00:00:00 +0000
 categories: ["article"]
+description: "Métricas de avaliação de modelos de ML: matriz de confusão, precisão, recall e F1 para classificação binária."
+tags: ["machine-learning", "métricas", "avaliação", "classificação"]
 draft: false
 ---
 

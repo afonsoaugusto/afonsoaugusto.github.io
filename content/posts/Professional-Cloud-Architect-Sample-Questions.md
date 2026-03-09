@@ -2,6 +2,8 @@
 title: "Professional Cloud Architect Sample Questions"
 date: 2025-10-23 12:00:00 +0000
 categories: ["article"]
+description: "Análise de desempenho e recomendações de estudo para as questões de exemplo do exame Professional Cloud Architect (GCP)."
+tags: ["gcp", "certificação", "professional-cloud-architect", "google-cloud"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "Serviços AWS"
 date: 2025-04-23 00:00:00 +0000
 categories: ["article"]
+description: "Referência dos principais serviços AWS por categoria: Analytics, Compute, Storage e mais."
+tags: ["aws", "serviços", "cloud", "referência"]
 draft: false
 ---
 

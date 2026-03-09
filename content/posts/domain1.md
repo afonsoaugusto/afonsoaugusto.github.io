@@ -2,6 +2,8 @@
 title: "Deep Dive into Domain 1: Fundamental Concepts and Practical Applications of Artificial Intelligence"
 date: 2025-04-06 00:00:00 +0000
 categories: ["article"]
+description: "Conceitos fundamentais de IA, terminologia, ciclo de vida do ML e casos de uso — Domain 1 do material de certificação."
+tags: ["ia", "machine-learning", "certificação", "fundamentos"]
 draft: false
 ---
 

@@ -2,6 +2,8 @@
 title: "Links da Semana 07 - 27/06/2022 a 01/07/2022"
 date: 2022-07-04 00:00:00 +0000
 categories: ["newsletter"]
+description: "Curadoria de links da semana 27/06 a 01/07/2022: AWS containers, custos de data transfer, cursos e mais."
+tags: ["newsletter", "links", "aws", "devops"]
 draft: false
 ---
 

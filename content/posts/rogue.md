@@ -2,6 +2,8 @@
 title: "Estudo Detalhado sobre Métricas ROUGE para Avaliação de LLMs"
 date: 2025-04-17 00:00:00 +0000
 categories: ["article"]
+description: "Métricas ROUGE para avaliação de LLMs: recall-oriented, variantes e uso em sumarização e geração de texto."
+tags: ["nlp", "llm", "rouge", "avaliação", "métricas"]
 draft: false
 ---
 

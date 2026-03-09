@@ -2,6 +2,8 @@
 title: "Domain2 - Stable-Diffusion"
 date: 2025-04-07 00:00:00 +0000
 categories: ["article"]
+description: "Modelos de difusão e Stable Diffusion: reversão do ruído, geração de imagens e componentes principais."
+tags: ["ia", "stable-diffusion", "diffusion", "geração-de-imagens"]
 draft: false
 ---
 

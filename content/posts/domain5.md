@@ -2,6 +2,8 @@
 title: "Domain 5: Security, Compliance, and Governance for AI Solutions (Standard AIF)"
 date: 2025-04-13 00:00:00 +0000
 categories: ["article"]
+description: "Domain 5: tópicos e aplicações de IA para preparação de certificação."
+tags: ["ia", "machine-learning", "certificação"]
 draft: false
 ---
 

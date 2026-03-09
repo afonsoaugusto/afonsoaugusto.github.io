@@ -20,6 +20,7 @@ theme = "PaperMod"
     description = "Anotações, Scripts e Dicas de DevOps, SRE, Kubernetes e AWS"
     url = "https://afonsorodrigues.com"
     twitter = "@Afonsoavr"
+  keywords = ["DevOps", "SRE", "Kubernetes", "AWS", "Terraform", "infraestrutura como código", "cloud", "automação", "Google Cloud", "certificações"]
 
   [params.analytics]
     [params.analytics.google]
