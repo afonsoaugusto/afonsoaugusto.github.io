@@ -14,6 +14,7 @@ draft: false
 - [Percona 3Day](https://afonsorodrigues.com/percona-3day)
 - [Data Challenge Stone](https://afonsorodrigues.com/data-challenge-stone)
 - [Transfeera Use Case](https://afonsorodrigues.com/Teste-Transfeera)
+- [WOD Timer](https://afonsorodrigues.com/wod/)
 
 ## Lista auxiliar — GitHub Pages (repositórios públicos)
 
@@ -31,4 +32,5 @@ draft: false
 - [Send MIDI](https://afonsorodrigues.com/send-midi/) — `afonsoaugusto/send-midi`
 - [Teste Transfeera](https://afonsorodrigues.com/Teste-Transfeera/) — `afonsoaugusto/Teste-Transfeera`
 - [Terraform 101](https://afonsorodrigues.com/terraform-101/) — `afonsoaugusto/terraform-101`
+- [WOD Timer](https://afonsorodrigues.com/wod/) — `afonsoaugusto/wod`
 - [Zoom MS Utility](https://afonsorodrigues.com/zoom-ms-utility/) — `afonsoaugusto/zoom-ms-utility`
