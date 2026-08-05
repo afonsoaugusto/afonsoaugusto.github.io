@@ -15,6 +15,7 @@ draft: false
 - [Data Challenge Stone](https://afonsorodrigues.com/data-challenge-stone)
 - [Transfeera Use Case](https://afonsorodrigues.com/Teste-Transfeera)
 - [WOD Timer](https://afonsorodrigues.com/wod/)
+- [WOD Contador](https://wod-sandy.vercel.app/counter)
 
 ## Lista auxiliar — GitHub Pages (repositórios públicos)
 
@@ -33,4 +34,5 @@ draft: false
 - [Teste Transfeera](https://afonsorodrigues.com/Teste-Transfeera/) — `afonsoaugusto/Teste-Transfeera`
 - [Terraform 101](https://afonsorodrigues.com/terraform-101/) — `afonsoaugusto/terraform-101`
 - [WOD Timer](https://afonsorodrigues.com/wod/) — `afonsoaugusto/wod`
+- [WOD Contador](https://wod-sandy.vercel.app/counter) — página `/counter` do `afonsoaugusto/wod`
 - [Zoom MS Utility](https://afonsorodrigues.com/zoom-ms-utility/) — `afonsoaugusto/zoom-ms-utility`
