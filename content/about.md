@@ -27,6 +27,10 @@ Atualmente, trabalho como Cloud Architect, liderando iniciativas estratégicas q
 *   **DevOps e SRE:** Implementação de ferramentas como Terraform, Helm, ArgoCD, Karpenter e Prometheus para construir infraestruturas eficientes e resilientes.
 *   **Dados:** Experiência na manipulação e tratamento de fontes de dados com ODI e na criação de plataformas de dados na AWS envolvendo Jobs Streaming (Kafka - MSK) e Batch (CDC - AWS DMS).
 
+## Música
+
+Além da tecnologia, toco guitarra há 15 anos — rock, MPB, samba e metal. Já passei pelo O Bando BH e gravei as guitarras do EP da Pinga Anã. O material está no [portfólio de guitarra](/portifolio-guitarra/).
+
 ## Sobre Este Blog
 
 Este blog é um espaço para compartilhar meus estudos, testes, anotações e hipóteses. Meu objetivo é retribuir à comunidade, compartilhando conhecimentos práticos sobre os desafios e soluções que encontro no dia a dia. Aqui você encontrará:

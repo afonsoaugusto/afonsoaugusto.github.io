@@ -5,6 +5,7 @@ date: 2024-01-01
 draft: false
 ---
 
+- [Portfólio de Guitarra](/portifolio-guitarra/)
 - [Sobre Meu Usuário no Github](https://afonsorodrigues.com/afonsoaugusto/)
 - [CKS - Certified Kubernetes Security Specialist](https://afonsorodrigues.com/cks)
 - [Karpenter - Melhores Práticas](https://afonsorodrigues.com/karpenter-best-pratices)
